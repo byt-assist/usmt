@@ -1,1 +1,129 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMT — Investors | Tokenomics & Roadmap</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0B2B5E 0%, #0A1C3A 100%);
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: #FFFFFF; text-decoration: none; font-weight: 500; }
+        .nav-links a:hover, .nav-links a.active { color: #00E6B4; border-bottom: 2px solid #00E6B4; }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(8px);
+            border-radius: 48px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0,230,180,0.3);
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        h2 { font-size: 1.6rem; margin: 2rem 0 1rem; border-left: 6px solid #00E6B4; padding-left: 1rem; color: #CFFAFE; }
+        .tokenomics-grid { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0; }
+        .token-card { background: rgba(0,0,0,0.4); border-radius: 20px; padding: 1rem; flex: 1; min-width: 150px; text-align: center; border: 1px solid #00E6B4; }
+        .roadmap-step { margin: 1.5rem 0; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 20px; border-left: 4px solid #00E6B4; }
+        .lang-switcher { position: fixed; bottom: 20px; right: 20px; background: #1E2A3A; color: #00E6B4; padding: 10px 20px; border-radius: 60px; cursor: pointer; z-index: 1000; border: 1px solid #00E6B4; }
+        .lang-menu { position: fixed; bottom: 80px; right: 20px; background: #1E2A3A; border-radius: 20px; padding: 10px 0; display: none; flex-direction: column; z-index: 1000; min-width: 160px; border: 1px solid #00E6B4; }
+        .lang-menu a { padding: 8px 20px; text-decoration: none; color: #FFF; display: block; }
+        .lang-menu a:hover { background: #00E6B4; color: #0A1C3A; }
+        .lang-menu.show { display: flex; }
+        footer { text-align: center; margin-top: 2rem; font-size: 0.7rem; opacity: 0.7; }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">💎 USMT</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="whitepaper.html">Whitepaper</a>
+        <a href="investors.html" class="active">Investors</a>
+    </div>
+</div>
+<div class="container" id="invContainer">
+    <h1 id="invTitle">For Investors</h1>
+    <div class="subhead" id="invSubhead" style="color:#A0C4E2;">Tokenomics · Roadmap · Legal</div>
+    <div id="invContent"></div>
+    <footer>© 2025 USMT — Muslim Usmanov Ecosystem</footer>
+</div>
+<div class="lang-switcher" id="langSwitcher">🌐 EN</div>
+<div class="lang-menu" id="langMenu">
+    <a href="#" data-lang="en">🇬🇧 English</a><a href="#" data-lang="ru">🇷🇺 Русский</a><a href="#" data-lang="tr">🇹🇷 Türkçe</a>
+    <a href="#" data-lang="mn">🇲🇳 Монгол</a><a href="#" data-lang="sk">🇸🇰 Slovenčina</a><a href="#" data-lang="kk">🇰🇿 Қазақша</a>
+    <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a><a href="#" data-lang="ar">🇦🇪 العربية</a>
+</div>
+<script>
+const invContent = {
+    en: `
+        <h2>💰 Tokenomics</h2>
+        <div class="tokenomics-grid">
+            <div class="token-card"><strong>Total Supply</strong><br>10,000,000,000 USMT</div>
+            <div class="token-card"><strong>Liquidity Pool</strong><br>$592.9M (Meteora)</div>
+            <div class="token-card"><strong>Current Price</strong><br>$0.9898 USDC</div>
+            <div class="token-card"><strong>Holders</strong><br>20</div>
+        </div>
+        <h2>📊 Distribution</h2>
+        <div class="tokenomics-grid">
+            <div class="token-card"><strong>Liquidity</strong><br>30%</div>
+            <div class="token-card"><strong>Ecosystem Fund</strong><br>25%</div>
+            <div class="token-card"><strong>Marketing</strong><br>20%</div>
+            <div class="token-card"><strong>Reserve</strong><br>15%</div>
+            <div class="token-card"><strong>Founder</strong><br>10%</div>
+        </div>
+        <div class="disclaimer" style="background:rgba(0,0,0,0.5);padding:1rem;border-radius:20px;margin:1rem 0;"><strong>Disclaimer:</strong> Utility token only. Not a security. No profit-sharing.</div>
+        <h2>🗺️ Roadmap</h2>
+        <div class="roadmap-step">✅ <strong>Phase 1 (Completed):</strong> Pool creation on Meteora, website launch, initial liquidity.</div>
+        <div class="roadmap-step">🔜 <strong>Phase 2 (Q3 2025):</strong> B2B integrations with Diamond Foundry, Brilliant Earth, Ada Diamonds, Clean Origin.</div>
+        <div class="roadmap-step">🔜 <strong>Phase 3 (Q4 2025):</strong> Staking rewards, NFT diamond certificates, CEX listings.</div>
+        <div class="roadmap-step">🔜 <strong>Phase 4 (2026):</strong> Full coverage of 18 trading zones, payment gateway partnerships.</div>
+        <h2>🔗 Important Links</h2>
+        <p>• <a href="https://jup.ag/swap/USDC-USMT" target="_blank" style="color:#00E6B4;">Trade on Jupiter</a><br>
+        • <a href="https://app.meteora.ag/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" style="color:#00E6B4;">Meteora Pool</a><br>
+        • <a href="https://solscan.io/account/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" style="color:#00E6B4;">Solscan Contract</a><br>
+        • <a href="https://www.geckoterminal.com/solana/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" style="color:#00E6B4;">GeckoTerminal Chart</a></p>
+    `,
+    ru: `
+        <h2>💰 Токеномика</h2>
+        <div class="tokenomics-grid"><div class="token-card"><strong>Общее предложение</strong><br>10 000 000 000 USMT</div><div class="token-card"><strong>Ликвидность</strong><br>$592.9 млн</div><div class="token-card"><strong>Цена</strong><br>$0.9898</div><div class="token-card"><strong>Держателей</strong><br>20</div></div>
+        <h2>📊 Распределение</h2>
+        <div class="tokenomics-grid"><div class="token-card"><strong>Ликвидность</strong><br>30%</div><div class="token-card"><strong>Фонд роста</strong><br>25%</div><div class="token-card"><strong>Маркетинг</strong><br>20%</div><div class="token-card"><strong>Резерв</strong><br>15%</div><div class="token-card"><strong>Основатель</strong><br>10%</div></div>
+        <div class="disclaimer" style="background:rgba(0,0,0,0.5);padding:1rem;border-radius:20px;">⚠️ Только утилитарный токен. Не ценная бумага.</div>
+        <h2>🗺️ Дорожная карта</h2>
+        <div class="roadmap-step">✅ Фаза 1: Создание пула, сайт</div>
+        <div class="roadmap-step">🔜 Фаза 2: Интеграция с партнёрами</div>
+        <div class="roadmap-step">🔜 Фаза 3: Стейкинг, NFT, CEX</div>
+        <div class="roadmap-step">🔜 Фаза 4: 18 торговых зон</div>
+    `
+};
+for(let lang of ['tr','mn','sk','kk','uz','ar']) invContent[lang] = invContent.en;
+let currentLang = 'en';
+function setLanguage(lang) {
+    currentLang = lang;
+    document.getElementById('invContent').innerHTML = (invContent[lang] || invContent.en);
+    document.getElementById('langSwitcher').innerHTML = `🌐 ${lang.toUpperCase()}`;
+    localStorage.setItem('usmt_inv_lang', lang);
+}
+document.getElementById('langSwitcher').onclick = () => document.getElementById('langMenu').classList.toggle('show');
+document.querySelectorAll('.lang-menu a').forEach(a => a.onclick = (e) => { e.preventDefault(); setLanguage(a.dataset.lang); document.getElementById('langMenu').classList.remove('show'); });
+document.onclick = (e) => { if (!e.target.closest('.lang-switcher') && !e.target.closest('.lang-menu')) document.getElementById('langMenu').classList.remove('show'); };
+setLanguage(localStorage.getItem('usmt_inv_lang') || 'en');
+</script>
+</body>
+</html>
