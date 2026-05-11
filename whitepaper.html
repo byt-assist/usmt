@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMT Whitepaper — Lab-Grown Diamond Token</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0B2B5E 0%, #0A1C3A 100%);
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: #FFFFFF; text-decoration: none; font-weight: 500; }
+        .nav-links a:hover, .nav-links a.active { color: #00E6B4; border-bottom: 2px solid #00E6B4; }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(8px);
+            border-radius: 48px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0,230,180,0.3);
+        }
+        h1 { font-size: 2.8rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        h2 { font-size: 1.8rem; margin: 2rem 0 1rem; border-left: 6px solid #00E6B4; padding-left: 1rem; color: #CFFAFE; }
+        h3 { font-size: 1.3rem; margin: 1rem 0 0.5rem; color: #00E6B4; }
+        .subhead { color: #A0C4E2; margin-bottom: 2rem; border-bottom: 1px solid #2D4A6E; padding-bottom: 1rem; }
+        .disclaimer { background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 20px; margin: 1.5rem 0; font-size: 0.75rem; border-left: 4px solid #00E6B4; }
+        .lang-switcher { position: fixed; bottom: 20px; right: 20px; background: #1E2A3A; color: #00E6B4; padding: 10px 20px; border-radius: 60px; cursor: pointer; z-index: 1000; border: 1px solid #00E6B4; }
+        .lang-menu { position: fixed; bottom: 80px; right: 20px; background: #1E2A3A; border-radius: 20px; padding: 10px 0; display: none; flex-direction: column; z-index: 1000; min-width: 160px; border: 1px solid #00E6B4; }
+        .lang-menu a { padding: 8px 20px; text-decoration: none; color: #FFF; display: block; }
+        .lang-menu a:hover { background: #00E6B4; color: #0A1C3A; }
+        .lang-menu.show { display: flex; }
+        footer { text-align: center; margin-top: 2rem; font-size: 0.7rem; opacity: 0.7; }
+        @media (max-width: 700px) { .container { padding: 1rem; } h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">💎 USMT</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="whitepaper.html" class="active">Whitepaper</a>
+        <a href="investors.html">Investors</a>
+    </div>
+</div>
+<div class="container" id="wpContainer">
+    <h1 id="wpTitle">USMT Whitepaper</h1>
+    <div class="subhead" id="wpSubhead">Version 1.0 · Lab-Grown Diamond Ecosystem · Muslim Usmanov</div>
+    <div id="wpContent"></div>
+    <footer>© 2025 USMT — Muslim Usmanov Ecosystem</footer>
+</div>
+<div class="lang-switcher" id="langSwitcher">🌐 EN</div>
+<div class="lang-menu" id="langMenu">
+    <a href="#" data-lang="en">🇬🇧 English</a><a href="#" data-lang="ru">🇷🇺 Русский</a><a href="#" data-lang="tr">🇹🇷 Türkçe</a>
+    <a href="#" data-lang="mn">🇲🇳 Монгол</a><a href="#" data-lang="sk">🇸🇰 Slovenčina</a><a href="#" data-lang="kk">🇰🇿 Қазақша</a>
+    <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a><a href="#" data-lang="ar">🇦🇪 العربية</a>
+</div>
+<script>
+const wpContent = {
+    en: `
+        <h2>1. Executive Summary</h2>
+        <p>USMT is a utility token on Solana designed to tokenize the $64 billion lab-grown diamond industry. It enables transparent, borderless B2B settlement across 18 countries.</p>
+        <h2>2. Problem & Solution</h2>
+        <p><strong>Problem:</strong> Traditional diamond trade lacks transparency, cross-border payments are slow and expensive.<br>
+        <strong>Solution:</strong> USMT provides instant settlement on Solana with near-zero fees.</p>
+        <h2>3. Market Opportunity</h2>
+        <p>Lab-grown diamonds market is growing at 15-20% annually. USMT captures this growth by providing liquidity and payment infrastructure.</p>
+        <h2>4. Tokenomics</h2>
+        <p><strong>Total Supply:</strong> 10,000,000,000 USMT (fixed)<br>
+        <strong>Liquidity Pool:</strong> $592.9M on Meteora<br>
+        <strong>Peg:</strong> ~0.99 USDC for stability</p>
+        <div class="disclaimer"><strong>Disclaimer:</strong> USMT is a utility token only. It does not represent equity, debt, or profit-sharing. Always DYOR.</div>
+        <h2>5. Technology</h2>
+        <p>Built on Solana (Token-2022). Mint authority revoked. Contract: FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv</p>
+        <h2>6. Trading Zones (18 countries)</h2>
+        <p>Turkey, Mongolia, Slovakia, Kazakhstan, Uzbekistan, Russia, Ukraine, Belarus, Moldova, Kyrgyzstan, Tajikistan, Turkmenistan, Azerbaijan, Armenia, Georgia, Lithuania, Latvia, Estonia.</p>
+        <h2>7. Diamond Partners</h2>
+        <p>Diamond Foundry, Brilliant Earth, Ada Diamonds, Clean Origin — leading lab-grown diamond traders.</p>
+        <h2>8. Technology Partners</h2>
+        <p>Solana (blockchain), Meteora (DEX), Jupiter (aggregator).</p>
+        <h2>9. Roadmap</h2>
+        <p><strong>Phase 1 (Completed):</strong> Pool creation on Meteora, website launch.<br>
+        <strong>Phase 2 (Q3 2025):</strong> B2B integrations with diamond partners.<br>
+        <strong>Phase 3 (Q4 2025):</strong> Staking rewards & NFT certificates.<br>
+        <strong>Phase 4 (2026):</strong> Full coverage of 18 trading zones.</p>
+        <h2>10. Legal & Risks</h2>
+        <p>Regulatory uncertainty in some jurisdictions. USMT is not a security. Consult local laws before trading.</p>
+        <h2>11. Conclusion</h2>
+        <p>USMT bridges physical lab-grown diamonds with DeFi liquidity. The infrastructure is live. The mission is clear.</p>
+    `,
+    ru: `
+        <h2>1. Резюме</h2>
+        <p>USMT — утилитарный токен на Solana для токенизации рынка лабораторных бриллиантов ($64 млрд).</p>
+        <h2>2. Проблема и решение</h2>
+        <p>Медленные跨境платежи → мгновенные расчёты на Solana.</p>
+        <h2>3. Токеномика</h2>
+        <p>10B USMT, ликвидность $592.9M на Meteora, привязка к USDC.</p>
+        <div class="disclaimer">⚠️ Только утилитарный токен. Не ценная бумага.</div>
+        <h2>4. Торговые зоны (18 стран)</h2>
+        <p>Турция, Монголия, Словакия, Казахстан, Узбекистан, Россия и другие.</p>
+        <h2>5. Партнёры</h2>
+        <p>Diamond Foundry, Brilliant Earth, Ada Diamonds, Clean Origin, Solana, Meteora, Jupiter.</p>
+    `
+};
+for(let lang of ['tr','mn','sk','kk','uz','ar']) wpContent[lang] = wpContent.en;
+let currentLang = 'en';
+function setLanguage(lang) {
+    currentLang = lang;
+    const t = wpContent[lang] || wpContent.en;
+    document.getElementById('wpContent').innerHTML = t;
+    document.getElementById('langSwitcher').innerHTML = `🌐 ${lang.toUpperCase()}`;
+    localStorage.setItem('usmt_wp_lang', lang);
+}
+document.getElementById('langSwitcher').onclick = () => document.getElementById('langMenu').classList.toggle('show');
+document.querySelectorAll('.lang-menu a').forEach(a => a.onclick = (e) => { e.preventDefault(); setLanguage(a.dataset.lang); document.getElementById('langMenu').classList.remove('show'); });
+document.onclick = (e) => { if (!e.target.closest('.lang-switcher') && !e.target.closest('.lang-menu')) document.getElementById('langMenu').classList.remove('show'); };
+setLanguage(localStorage.getItem('usmt_wp_lang') || 'en');
+</script>
+</body>
+</html>
