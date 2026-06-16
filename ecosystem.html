@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USMT Ecosystem — 50+ Products | Lab-Grown Diamond Token</title>
+    <title>USMT Ecosystem — 50+ Products | Diamond Trade Token</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', 'Inter', system-ui, sans-serif; background: linear-gradient(135deg, #0B2B5E 0%, #0A1C3A 100%); color: #FFFFFF; line-height: 1.6; }
@@ -15,10 +15,9 @@
         .container { max-width: 1400px; margin: 0 auto; padding: 2rem; background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border-radius: 48px; margin-bottom: 2rem; border: 1px solid rgba(0,230,180,0.3); }
         h1 { font-size: 2.8rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
         h2 { font-size: 1.6rem; margin: 2rem 0 1rem; border-left: 6px solid #00E6B4; padding-left: 1rem; color: #CFFAFE; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
-        .card { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 1.2rem; border: 1px solid rgba(0,230,180,0.2); transition: 0.2s; text-align: center; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
+        .card { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 1.2rem; border: 1px solid rgba(0,230,180,0.2); transition: 0.2s; }
         .card:hover { transform: translateY(-3px); background: rgba(0,230,180,0.1); border-color: #00E6B4; }
-        .card-icon { font-size: 2rem; margin-bottom: 0.5rem; }
         .wallet-box { background: rgba(0,0,0,0.4); border-radius: 16px; padding: 1rem; margin: 1rem 0; border: 1px solid #00E6B4; word-break: break-all; font-family: monospace; color: #00E6B4; }
         .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; }
         .btn:hover { background: #3B82F6; color: white; }
@@ -44,11 +43,14 @@
         <a href="card.html">💳 Card</a>
         <a href="bridge.html">🌉 Bridge</a>
         <a href="islamic.html">🕌 Islamic</a>
+        <a href="precious.html">💎 Precious</a>
+        <a href="mining.html">⛏️ Mining</a>
         <a href="whitepaper.html">📄 WP</a>
         <a href="investors.html">📊 Investors</a>
+        <a href="how-to-buy.html">🇹🇲 How to Buy</a>
     </div>
 </div>
-<div class="container" id="ecosystemContainer">
+<div class="container" id="ecoContainer">
     <h1 id="ecoTitle">🌿 USMT Ecosystem</h1>
     <div class="subhead" id="ecoSubhead" style="color:#A0C4E2;">50+ Products · Lab-Grown Diamonds · DeFi · RWA · Islamic Finance</div>
     <div class="wallet-box">📤 USMT Wallet: F9vGgzKayqAUcbedagXzMhgXUfs5ranRftwGASALRvK9</div>
@@ -96,23 +98,10 @@ const ecoProducts = [
     { icon: "📊", name: "Mean Reversion", desc: "Average return" },
     { icon: "📊", name: "Breakout Trading", desc: "Resistance/support" },
     { icon: "📊", name: "Price Alerts", desc: "Target price" },
-    { icon: "🏠", name: "Real Estate", desc: "Dubai tokenized" },
-    { icon: "🥇", name: "Gold Tokenization", desc: "Physical gold" },
-    { icon: "🥈", name: "Silver Tokenization", desc: "Physical silver" },
-    { icon: "🛢️", name: "Oil & Gas", desc: "Futures" },
-    { icon: "🌾", name: "Agriculture", desc: "Farmland" },
-    { icon: "🌍", name: "Carbon Credits", desc: "Trade" },
-    { icon: "🎨", name: "Art Tokenization", desc: "Picasso, Monet" },
-    { icon: "📦", name: "Private Equity", desc: "Startups" },
-    { icon: "🚀", name: "Space Assets", desc: "Satellites" },
-    { icon: "🧬", name: "Biotech Patents", desc: "Royalties" },
-    { icon: "🎵", name: "Music Royalties", desc: "Catalogues" },
-    { icon: "🎬", name: "Film Rights", desc: "Production" },
-    { icon: "🏆", name: "Sports Teams", desc: "Shares" },
-    { icon: "🚗", name: "Classic Cars", desc: "Ferrari" },
-    { icon: "✈️", name: "Private Jets", desc: "Shares" },
-    { icon: "🏔️", name: "Ski Resorts", desc: "Switzerland" },
-    { icon: "🌴", name: "Eco-Resorts", desc: "Bali" },
+    { icon: "🥇", name: "Gold Trading", desc: "Live prices" },
+    { icon: "🥈", name: "Silver Trading", desc: "Live prices" },
+    { icon: "🔷", name: "Platinum Trading", desc: "Live prices" },
+    { icon: "⛏️", name: "Mining", desc: "Exploration projects" },
     { icon: "🕌", name: "Islamic Finance", desc: "Sharia-compliant" },
     { icon: "💱", name: "Currency Exchange", desc: "12 currencies" },
     { icon: "🌉", name: "Cross-Chain Bridge", desc: "10+ chains" },
@@ -121,76 +110,41 @@ const ecoProducts = [
     { icon: "🎯", name: "Quest Board", desc: "Rewards" },
     { icon: "👥", name: "Referral Program", desc: "5%" }
 ];
-
 const content = {
-    en: {
-        title: "🌿 USMT Ecosystem",
-        sub: "50+ Products · Lab-Grown Diamonds · DeFi · RWA · Islamic Finance",
-        products: "📦 Ecosystem Products"
-    },
-    ru: {
-        title: "🌿 Экосистема USMT",
-        sub: "50+ продуктов · Лабораторные бриллианты · DeFi · RWA · Исламское финансирование",
-        products: "📦 Продукты экосистемы"
-    },
-    tr: {
-        title: "🌿 USMT Ekosistemi",
-        sub: "50+ Ürün · Laboratuvar Elmasları · DeFi · RWA · İslami Finans",
-        products: "📦 Ekosistem Ürünleri"
-    },
-    mn: {
-        title: "🌿 USMT Экосистем",
-        sub: "50+ Бүтээгдэхүүн · Лабораторийн алмааз · DeFi · RWA · Ислам санхүүжилт",
-        products: "📦 Экосистемын бүтээгдэхүүн"
-    },
-    sk: {
-        title: "🌿 USMT Ekosystém",
-        sub: "50+ Produktov · Laboratórne diamanty · DeFi · RWA · Islamské financovanie",
-        products: "📦 Produkty ekosystému"
-    },
-    kk: {
-        title: "🌿 USMT Экожүйесі",
-        sub: "50+ Өнім · Зертханалық алмастар · DeFi · RWA · Ислам қаржыландыру",
-        products: "📦 Экожүйе өнімдері"
-    },
-    uz: {
-        title: "🌿 USMT Ekotizimi",
-        sub: "50+ Mahsulot · Laboratoriya olmoslari · DeFi · RWA · Islom moliyasi",
-        products: "📦 Ekotizim mahsulotlari"
-    },
-    ar: {
-        title: "🌿 نظام USMT البيئي",
-        sub: "50+ منتج · الماس المعملي · DeFi · RWA · التمويل الإسلامي",
-        products: "📦 منتجات النظام البيئي"
-    }
+    en: { title: "🌿 USMT Ecosystem", sub: "50+ Products · Lab-Grown Diamonds · DeFi · RWA · Islamic Finance" },
+    ru: { title: "🌿 Экосистема USMT", sub: "50+ продуктов · Лабораторные бриллианты · DeFi · RWA · Исламское финансирование" },
+    tr: { title: "🌿 USMT Ekosistemi", sub: "50+ Ürün · Laboratuvar Elmasları · DeFi · RWA · İslami Finans" },
+    mn: { title: "🌿 USMT Экосистем", sub: "50+ бүтээгдэхүүн · Лабораторийн алмааз · DeFi · RWA · Ислам санхүүжилт" },
+    sk: { title: "🌿 USMT Ekosystém", sub: "50+ produktov · Laboratórne diamanty · DeFi · RWA · Islamské financovanie" },
+    kk: { title: "🌿 USMT Экожүйесі", sub: "50+ өнім · Зертханалық алмастар · DeFi · RWA · Ислам қаржыландыру" },
+    uz: { title: "🌿 USMT Ekotizimi", sub: "50+ mahsulot · Laboratoriya olmoslari · DeFi · RWA · Islom moliyasi" },
+    ar: { title: "🌿 نظام USMT البيئي", sub: "50+ منتج · الماس المعملي · DeFi · RWA · التمويل الإسلامي" }
 };
-
-function renderEcosystem() {
+function renderEco() {
     const t = content[currentLang] || content.en;
-    let html = `<h2>${t.products}</h2><div class="grid-4">`;
+    let html = `<h2>📦 Ecosystem Products</h2><div class="grid-4">`;
     ecoProducts.forEach(p => {
-        html += `<div class="card"><div class="card-icon">${p.icon}</div><strong>${p.name}</strong><br><small>${p.desc}</small></div>`;
+        html += `<div class="card"><div style="font-size:2rem;">${p.icon}</div><strong>${p.name}</strong><br><small>${p.desc}</small></div>`;
     });
     html += `</div>`;
     document.getElementById('ecoContent').innerHTML = html;
     document.getElementById('ecoTitle').innerText = t.title;
     document.getElementById('ecoSubhead').innerText = t.sub;
 }
-
 let currentLang = 'en';
 function setLanguage(lang) {
     currentLang = lang;
     const t = content[lang] || content.en;
     document.getElementById('ecoTitle').innerText = t.title;
     document.getElementById('ecoSubhead').innerText = t.sub;
-    renderEcosystem();
+    renderEco();
     document.getElementById('langSwitcher').innerHTML = `🌐 ${lang.toUpperCase()}`;
     localStorage.setItem('usmt_eco_lang', lang);
 }
 document.getElementById('langSwitcher').onclick = () => document.getElementById('langMenu').classList.toggle('show');
 document.querySelectorAll('.lang-menu a').forEach(a => a.onclick = (e) => { e.preventDefault(); setLanguage(a.dataset.lang); document.getElementById('langMenu').classList.remove('show'); });
 document.onclick = (e) => { if (!e.target.closest('.lang-switcher') && !e.target.closest('.lang-menu')) document.getElementById('langMenu').classList.remove('show'); };
-renderEcosystem();
+renderEco();
 setLanguage(localStorage.getItem('usmt_eco_lang') || 'en');
 </script>
 </body>
