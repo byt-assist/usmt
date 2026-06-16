@@ -15,17 +15,13 @@
         .container { max-width: 1400px; margin: 0 auto; padding: 2rem; background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border-radius: 48px; margin-bottom: 2rem; border: 1px solid rgba(0,230,180,0.3); }
         h1 { font-size: 2.8rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
         h2 { font-size: 1.6rem; margin: 2rem 0 1rem; border-left: 6px solid #00E6B4; padding-left: 1rem; color: #CFFAFE; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
         .card { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 1.2rem; border: 1px solid rgba(0,230,180,0.2); transition: 0.2s; }
         .card:hover { transform: translateY(-3px); background: rgba(0,230,180,0.1); border-color: #00E6B4; }
         .wallet-box { background: rgba(0,0,0,0.4); border-radius: 16px; padding: 1rem; margin: 1rem 0; border: 1px solid #00E6B4; word-break: break-all; font-family: monospace; color: #00E6B4; }
-        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; border: none; cursor: pointer; }
+        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; }
         .btn:hover { background: #3B82F6; color: white; }
-        .btn-outline { background: transparent; border: 1px solid #00E6B4; color: #00E6B4; }
-        .btn-outline:hover { background: #00E6B4; color: #0A1C3A; }
-        .stat { display: flex; justify-content: space-between; margin: 0.5rem 0; padding: 0.3rem 0; border-bottom: 1px solid rgba(0,230,180,0.15); }
-        .badge-rate { color: #00E6B4; font-weight: bold; }
+        .stat { display: flex; justify-content: space-between; margin: 0.4rem 0; padding: 0.3rem 0; border-bottom: 1px solid rgba(0,230,180,0.15); }
         .lang-switcher { position: fixed; bottom: 20px; right: 20px; background: #1E2A3A; color: #00E6B4; padding: 10px 20px; border-radius: 60px; cursor: pointer; z-index: 1000; border: 1px solid #00E6B4; }
         .lang-menu { position: fixed; bottom: 80px; right: 20px; background: #1E2A3A; border-radius: 20px; padding: 10px 0; display: none; flex-direction: column; z-index: 1000; min-width: 160px; border: 1px solid #00E6B4; }
         .lang-menu a { padding: 8px 20px; text-decoration: none; color: #FFF; display: block; }
@@ -48,8 +44,11 @@
         <a href="card.html">💳 Card</a>
         <a href="bridge.html">🌉 Bridge</a>
         <a href="islamic.html">🕌 Islamic</a>
+        <a href="precious.html">💎 Precious</a>
+        <a href="mining.html">⛏️ Mining</a>
         <a href="whitepaper.html">📄 WP</a>
         <a href="investors.html">📊 Investors</a>
+        <a href="how-to-buy.html">🇹🇲 How to Buy</a>
     </div>
 </div>
 <div class="container" id="lendContainer">
@@ -66,127 +65,39 @@
     <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a><a href="#" data-lang="ar">🇦🇪 العربية</a>
 </div>
 <script>
-const content = {
-    en: { title: "🏦 USMT Lending", sub: "50+ Credit Products · P2P · Collateralized · Institutional", products: "📊 Credit Products", direct: "💎 USMT Direct Loans", dashboard: "📊 Lending Dashboard" },
-    ru: { title: "🏦 Кредитование USMT", sub: "50+ кредитных продуктов · P2P · Под залог · Институциональные", products: "📊 Кредитные продукты", direct: "💎 Прямые кредиты USMT", dashboard: "📊 Дашборд кредитования" },
-    tr: { title: "🏦 USMT Borç Verme", sub: "50+ Kredi Ürünü · P2P · Teminatlı · Kurumsal", products: "📊 Kredi Ürünleri", direct: "💎 USMT Doğrudan Krediler", dashboard: "📊 Kredi Göstergesi" },
-    mn: { title: "🏦 USMT Зээл", sub: "50+ зээлийн бүтээгдэхүүн · P2P · Барьцаатай · Институцийн", products: "📊 Зээлийн бүтээгдэхүүн", direct: "💎 USMT Шууд зээл", dashboard: "📊 Зээлийн хяналтын самбар" },
-    sk: { title: "🏦 USMT Požičiavanie", sub: "50+ úverových produktov · P2P · Kolateralizované · Inštitucionálne", products: "📊 Úverové produkty", direct: "💎 USMT Priame pôžičky", dashboard: "📊 Úverový dashboard" },
-    kk: { title: "🏦 USMT Кредиттеу", sub: "50+ несие өнімі · P2P · Кепілмен · Институционалдық", products: "📊 Несие өнімдері", direct: "💎 USMT Тікелей несиелер", dashboard: "📊 Несие тақтасы" },
-    uz: { title: "🏦 USMT Kreditlash", sub: "50+ kredit mahsuloti · P2P · Garovli · Institutsional", products: "📊 Kredit mahsulotlari", direct: "💎 USMT To'g'ridan-to'g'ri kreditlar", dashboard: "📊 Kredit paneli" },
-    ar: { title: "🏦 إقراض USMT", sub: "50+ منتج ائتماني · P2P · بضمان · مؤسسي", products: "📊 منتجات الائتمان", direct: "💎 قروض USMT المباشرة", dashboard: "📊 لوحة معلومات الإقراض" }
-};
-
-// ============ 50+ CREDIT PRODUCTS ============
-const creditProducts = [
-    // ГРУППА 1: P2P (6)
-    { name: "P2P Lending", cat: "P2P", yield: "6-15%", desc: "Peer-to-peer loans. You choose the borrower.", link: "https://jup.ag", icon: "🔄" },
-    { name: "P2P Fixed Rate", cat: "P2P", yield: "6.5-14%", desc: "Fixed rates, no surprises. Predictable income.", link: "https://jup.ag", icon: "📊" },
-    { name: "P2P Flexible", cat: "P2P", yield: "5-12%", desc: "Flexible terms. Withdraw anytime.", link: "https://jup.ag", icon: "💪" },
-    { name: "P2P Business", cat: "P2P", yield: "8-16%", desc: "Business loans with higher returns.", link: "https://jup.ag", icon: "🏢" },
-    { name: "P2P Short-term", cat: "P2P", yield: "4-8%", desc: "7-30 day loans. Quick turnover.", link: "https://jup.ag", icon: "⚡" },
-    { name: "P2P Long-term", cat: "P2P", yield: "10-18%", desc: "6-12 month loans. Higher returns.", link: "https://jup.ag", icon: "📈" },
-
-    // ГРУППА 2: Collateralized (6)
-    { name: "USMT Collateralized", cat: "Collateralized", yield: "9-20%", desc: "Borrow against USMT collateral.", link: "https://jup.ag/lend", icon: "🔒" },
-    { name: "SOL Collateralized", cat: "Collateralized", yield: "8-16%", desc: "Borrow against SOL collateral.", link: "https://jup.ag/lend", icon: "⚡" },
-    { name: "BTC Collateralized", cat: "Collateralized", yield: "7-14%", desc: "Borrow against BTC collateral.", link: "https://jup.ag/lend", icon: "₿" },
-    { name: "ETH Collateralized", cat: "Collateralized", yield: "7-14%", desc: "Borrow against ETH collateral.", link: "https://jup.ag/lend", icon: "⟠" },
-    { name: "USDC Collateralized", cat: "Collateralized", yield: "6-12%", desc: "Borrow against USDC collateral.", link: "https://jup.ag/lend", icon: "💵" },
-    { name: "Multi-Collateral", cat: "Collateralized", yield: "8-18%", desc: "Borrow against multiple assets.", link: "https://jup.ag/lend", icon: "📊" },
-
-    // ГРУППА 3: Jupiter Lend (6)
-    { name: "Jupiter Lend USDC", cat: "Jupiter Lend", yield: "1.7-4.9%", desc: "Earn interest on USDC deposits.", link: "https://jup.ag/lend", icon: "💵" },
-    { name: "Jupiter Lend USDT", cat: "Jupiter Lend", yield: "1.5-4.5%", desc: "Earn interest on USDT deposits.", link: "https://jup.ag/lend", icon: "🪙" },
-    { name: "Jupiter Lend SOL", cat: "Jupiter Lend", yield: "2-5%", desc: "Earn interest on SOL deposits.", link: "https://jup.ag/lend", icon: "⚡" },
-    { name: "Jupiter Lend USMT", cat: "Jupiter Lend", yield: "3-7%", desc: "Earn interest on USMT deposits.", link: "https://jup.ag/lend", icon: "💎" },
-    { name: "Jupiter Lend EURC", cat: "Jupiter Lend", yield: "1.5-4%", desc: "Earn interest on EURC deposits.", link: "https://jup.ag/lend", icon: "💶" },
-    { name: "Jupiter Lend PYUSD", cat: "Jupiter Lend", yield: "1.8-4.2%", desc: "Earn interest on PYUSD deposits.", link: "https://jup.ag/lend", icon: "💰" },
-
-    // ГРУППА 4: Kamino Lend (6)
-    { name: "Kamino Lend USDC", cat: "Kamino Lend", yield: "3.5-8.5%", desc: "Earn on Kamino USDC pools.", link: "https://app.kamino.finance", icon: "🏦" },
-    { name: "Kamino Lend USDT", cat: "Kamino Lend", yield: "3.2-8%", desc: "Earn on Kamino USDT pools.", link: "https://app.kamino.finance", icon: "🏦" },
-    { name: "Kamino Lend SOL", cat: "Kamino Lend", yield: "4-9%", desc: "Earn on Kamino SOL pools.", link: "https://app.kamino.finance", icon: "⚡" },
-    { name: "Kamino Lend USMT", cat: "Kamino Lend", yield: "5-12%", desc: "Earn on Kamino USMT pools.", link: "https://app.kamino.finance", icon: "💎" },
-    { name: "Kamino Leveraged", cat: "Kamino Lend", yield: "8.2-27%", desc: "Leveraged lending strategies.", link: "https://app.kamino.finance", icon: "📈" },
-    { name: "Kamino Multiply", cat: "Kamino Lend", yield: "10-20%", desc: "Multiply your yield with leverage.", link: "https://app.kamino.finance", icon: "🔄" },
-
-    // ГРУППА 5: Institutional (6)
-    { name: "Institutional USDC", cat: "Institutional", yield: "4-6%", desc: "Large-scale USDC lending.", link: "https://jup.ag/lend", icon: "🏛️" },
-    { name: "Institutional USDT", cat: "Institutional", yield: "3.8-5.8%", desc: "Large-scale USDT lending.", link: "https://jup.ag/lend", icon: "🏛️" },
-    { name: "Institutional USMT", cat: "Institutional", yield: "6-10%", desc: "Large-scale USMT lending.", link: "https://jup.ag/lend", icon: "💎" },
-    { name: "Corporate Bonds", cat: "Institutional", yield: "5-8%", desc: "USMT-backed corporate bonds.", link: "https://jup.ag/lend", icon: "📜" },
-    { name: "Treasury Bills", cat: "Institutional", yield: "3-5%", desc: "USMT-denominated T-bills.", link: "https://jup.ag/lend", icon: "📊" },
-    { name: "Commercial Paper", cat: "Institutional", yield: "4-7%", desc: "Short-term corporate paper.", link: "https://jup.ag/lend", icon: "📄" },
-
-    // ГРУППА 6: Specialized (6)
-    { name: "Diamond Trade Finance", cat: "Specialized", yield: "8-15%", desc: "Finance diamond trading operations.", link: "https://jup.ag/lend", icon: "💎" },
-    { name: "Gold-Backed Loans", cat: "Specialized", yield: "6-12%", desc: "Loans backed by physical gold.", link: "https://jup.ag/lend", icon: "🥇" },
-    { name: "Real Estate Loans", cat: "Specialized", yield: "7-14%", desc: "Property-backed lending.", link: "https://jup.ag/lend", icon: "🏠" },
-    { name: "Art-Backed Loans", cat: "Specialized", yield: "8-16%", desc: "Loans against art collections.", link: "https://jup.ag/lend", icon: "🎨" },
-    { name: "Crypto-Backed", cat: "Specialized", yield: "7-14%", desc: "Loans against crypto portfolios.", link: "https://jup.ag/lend", icon: "🪙" },
-    { name: "Invoice Factoring", cat: "Specialized", yield: "6-10%", desc: "Finance unpaid invoices.", link: "https://jup.ag/lend", icon: "📃" },
-
-    // ГРУППА 7: Fixed Income (6)
-    { name: "USMT Fixed 6%", cat: "Fixed Income", yield: "6%", desc: "Fixed 6% APY on USMT deposits.", link: "https://jup.ag/lend", icon: "📊" },
-    { name: "USMT Fixed 8%", cat: "Fixed Income", yield: "8%", desc: "Fixed 8% APY on USMT deposits.", link: "https://jup.ag/lend", icon: "📊" },
-    { name: "USMT Fixed 10%", cat: "Fixed Income", yield: "10%", desc: "Fixed 10% APY on USMT deposits.", link: "https://jup.ag/lend", icon: "📊" },
-    { name: "USMT Fixed 12%", cat: "Fixed Income", yield: "12%", desc: "Fixed 12% APY on USMT deposits.", link: "https://jup.ag/lend", icon: "📊" },
-    { name: "USDC Fixed 5%", cat: "Fixed Income", yield: "5%", desc: "Fixed 5% APY on USDC deposits.", link: "https://jup.ag/lend", icon: "💵" },
-    { name: "SOL Fixed 7%", cat: "Fixed Income", yield: "7%", desc: "Fixed 7% APY on SOL deposits.", link: "https://jup.ag/lend", icon: "⚡" },
-
-    // ГРУППА 8: Islamic Finance (6)
-    { name: "Murabaha Finance", cat: "Islamic", yield: "8%", desc: "Sharia-compliant cost-plus financing.", link: "islamic.html", icon: "🕌" },
-    { name: "Mudarabah Finance", cat: "Islamic", yield: "12-20%", desc: "Sharia-compliant profit-sharing.", link: "islamic.html", icon: "🕌" },
-    { name: "Ijara Finance", cat: "Islamic", yield: "Variable", desc: "Sharia-compliant lease financing.", link: "islamic.html", icon: "🕌" },
-    { name: "Sukuk Finance", cat: "Islamic", yield: "6-9%", desc: "Sharia-compliant bond financing.", link: "islamic.html", icon: "🕌" },
-    { name: "Qard al-Hasan", cat: "Islamic", yield: "0%", desc: "Sharia-compliant benevolent loans.", link: "islamic.html", icon: "🕌" },
-    { name: "Istisna Finance", cat: "Islamic", yield: "Custom", desc: "Sharia-compliant project finance.", link: "islamic.html", icon: "🕌" }
+const lendingCategories = [
+    { cat: "P2P Lending", items: ["P2P Lending 6-15%", "P2P Fixed Rate 6.5-14%", "P2P Flexible 5-12%", "P2P Business 8-16%", "P2P Short-term 4-8%", "P2P Long-term 10-18%"] },
+    { cat: "Collateralized", items: ["USMT Collateralized 9-20%", "SOL Collateralized 8-16%", "BTC Collateralized 7-14%", "ETH Collateralized 7-14%", "USDC Collateralized 6-12%", "Multi-Collateral 8-18%"] },
+    { cat: "Jupiter Lend", items: ["Jupiter Lend USDC 1.7-4.9%", "Jupiter Lend USDT 1.5-4.5%", "Jupiter Lend SOL 2-5%", "Jupiter Lend USMT 3-7%"] },
+    { cat: "Kamino Lend", items: ["Kamino Lend USDC 3.5-8.5%", "Kamino Lend SOL 4-9%", "Kamino Lend USMT 5-12%", "Kamino Multiply 10-20%"] },
+    { cat: "Institutional", items: ["Institutional USDC 4-6%", "Institutional USDT 3.8-5.8%", "Institutional USMT 6-10%", "Corporate Bonds 5-8%"] },
+    { cat: "Islamic Finance", items: ["Murabaha 8%", "Mudarabah 12-20%", "Ijara Variable", "Sukuk 6-9%", "Qard al-Hasan 0%"] }
 ];
-
-// ============ РЕНДЕР ============
+const content = {
+    en: { title: "🏦 USMT Lending", sub: "50+ Credit Products · P2P · Collateralized · Institutional" },
+    ru: { title: "🏦 Кредитование USMT", sub: "50+ кредитных продуктов · P2P · Под залог · Институциональные" },
+    tr: { title: "🏦 USMT Borç Verme", sub: "50+ Kredi Ürünü · P2P · Teminatlı · Kurumsal" },
+    mn: { title: "🏦 USMT Зээл", sub: "50+ зээлийн бүтээгдэхүүн · P2P · Барьцаатай · Институцийн" },
+    sk: { title: "🏦 USMT Požičiavanie", sub: "50+ úverových produktov · P2P · Kolateralizované · Inštitucionálne" },
+    kk: { title: "🏦 USMT Кредиттеу", sub: "50+ несие өнімі · P2P · Кепілмен · Институционалдық" },
+    uz: { title: "🏦 USMT Kreditlash", sub: "50+ kredit mahsuloti · P2P · Garovli · Institutsional" },
+    ar: { title: "🏦 إقراض USMT", sub: "50+ منتج ائتماني · P2P · بضمان · مؤسسي" }
+};
 function renderLending() {
     const t = content[currentLang] || content.en;
-
-    let html = `<h2>${t.products}</h2>`;
-
-    // Группировка по категориям
-    const categories = [...new Set(creditProducts.map(p => p.cat))];
-    categories.forEach(cat => {
-        html += `<h3 style="color:#CFFAFE; margin:1rem 0 0.5rem;">${cat}</h3><div class="grid-4">`;
-        const items = creditProducts.filter(p => p.cat === cat);
-        items.forEach(p => {
-            html += `<div class="card">
-                <div style="font-size:2.5rem;">${p.icon}</div>
-                <strong>${p.name}</strong>
-                <div style="color:#00E6B4; font-weight:bold;">${p.yield}</div>
-                <p>${p.desc}</p>
-                <a href="${p.link}" target="_blank" class="btn">Open →</a>
-            </div>`;
+    let html = `<h2>📊 Credit Products</h2>`;
+    lendingCategories.forEach(cat => {
+        html += `<h3 style="color:#CFFAFE;margin:1rem 0 0.5rem;">${cat.cat}</h3><div class="grid-4">`;
+        cat.items.forEach(item => {
+            html += `<div class="card"><strong>${item}</strong><br><a href="https://jup.ag/lend" target="_blank" class="btn" style="margin-top:0.5rem;">Open →</a></div>`;
         });
         html += `</div>`;
     });
-
-    // ===== ПРЯМЫЕ КРЕДИТЫ USMT =====
-    html += `<h2>${t.direct}</h2><div class="grid-3">
-        <div class="card"><h3>Direct USMT Loans</h3><p>Borrow USMT directly from our reserve. No intermediaries, low rates.</p><div class="stat"><span>Min Amount</span><span>10,000 USMT</span></div><div class="stat"><span>Rate</span><span style="color:#00E6B4;">10-20%</span></div><div class="stat"><span>Term</span><span>30-365 days</span></div><a href="mailto:loans@usmt.io" class="btn">Apply →</a></div>
-        <div class="card"><h3>Direct USDC Loans</h3><p>Borrow USDC against USMT collateral. Instant approval.</p><div class="stat"><span>Min Amount</span><span>5,000 USDC</span></div><div class="stat"><span>LTV</span><span>60-80%</span></div><a href="mailto:loans@usmt.io" class="btn">Apply →</a></div>
-        <div class="card"><h3>Direct SOL Loans</h3><p>Borrow SOL against USMT collateral. Competitive rates.</p><div class="stat"><span>Min Amount</span><span>10 SOL</span></div><div class="stat"><span>Rate</span><span style="color:#00E6B4;">8-15%</span></div><a href="mailto:loans@usmt.io" class="btn">Apply →</a></div>
-    </div>`;
-
-    // ===== ДАШБОРД =====
-    html += `<h2>${t.dashboard}</h2><div class="grid-4">
-        <div class="card"><h3>Total Loans Active</h3><div style="font-size:2rem;color:#00E6B4;">$42.7M</div><small>All products</small></div>
-        <div class="card"><h3>Active Borrowers</h3><div style="font-size:2rem;color:#00E6B4;">1,247</div><small>Unique wallets</small></div>
-        <div class="card"><h3>Avg. Loan Size</h3><div style="font-size:2rem;color:#00E6B4;">$34,200</div><small>All loans</small></div>
-        <div class="card"><h3>Repayment Rate</h3><div style="font-size:2rem;color:#00E6B4;">98.7%</div><small>On-time payments</small></div>
-    </div>`;
-
+    html += `<h2>💎 USMT Direct Loans</h2><div class="grid-4"><div class="card"><h3>Direct USMT Loans</h3><div class="stat"><span>Min</span><span>10,000 USMT</span></div><div class="stat"><span>Rate</span><span style="color:#00E6B4;">10-20%</span></div><a href="mailto:loans@usmt.io" class="btn">Apply →</a></div></div>`;
     document.getElementById('lendContent').innerHTML = html;
     document.getElementById('lendTitle').innerText = t.title;
     document.getElementById('lendSubhead').innerText = t.sub;
 }
-
 let currentLang = 'en';
 function setLanguage(lang) {
     currentLang = lang;
