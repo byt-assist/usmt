@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USMT Precious — Trade Diamonds, Gold, Silver, Platinum | 50+ Assets</title>
+    <title>USMT Precious — 50+ Metals & Gems</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', 'Inter', system-ui, sans-serif; background: linear-gradient(135deg, #0B2B5E 0%, #0A1C3A 100%); color: #FFFFFF; line-height: 1.6; }
@@ -15,15 +15,13 @@
         .container { max-width: 1400px; margin: 0 auto; padding: 2rem; background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border-radius: 48px; margin-bottom: 2rem; border: 1px solid rgba(0,230,180,0.3); }
         h1 { font-size: 2.8rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
         h2 { font-size: 1.6rem; margin: 2rem 0 1rem; border-left: 6px solid #00E6B4; padding-left: 1rem; color: #CFFAFE; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
         .card { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 1.2rem; border: 1px solid rgba(0,230,180,0.2); transition: 0.2s; }
         .card:hover { transform: translateY(-3px); background: rgba(0,230,180,0.1); border-color: #00E6B4; }
         .wallet-box { background: rgba(0,0,0,0.4); border-radius: 16px; padding: 1rem; margin: 1rem 0; border: 1px solid #00E6B4; word-break: break-all; font-family: monospace; color: #00E6B4; }
-        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; border: none; cursor: pointer; }
+        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; }
         .btn:hover { background: #3B82F6; color: white; }
-        .stat { display: flex; justify-content: space-between; margin: 0.4rem 0; padding: 0.3rem 0; border-bottom: 1px solid rgba(0,230,180,0.15); }
-        .price { font-size: 1.3rem; color: #00E6B4; font-weight: bold; }
+        .price { color: #00E6B4; font-weight: bold; }
         .change-positive { color: #00ff88; }
         .change-negative { color: #ff6b6b; }
         .lang-switcher { position: fixed; bottom: 20px; right: 20px; background: #1E2A3A; color: #00E6B4; padding: 10px 20px; border-radius: 60px; cursor: pointer; z-index: 1000; border: 1px solid #00E6B4; }
@@ -51,12 +49,14 @@
         <a href="bridge.html">🌉 Bridge</a>
         <a href="islamic.html">🕌 Islamic</a>
         <a href="precious.html" class="active">💎 Precious</a>
+        <a href="mining.html">⛏️ Mining</a>
         <a href="whitepaper.html">📄 WP</a>
         <a href="investors.html">📊 Investors</a>
+        <a href="how-to-buy.html">🇹🇲 How to Buy</a>
     </div>
 </div>
 <div class="container" id="preciousContainer">
-    <h1 id="preciousTitle">💎 USMT Precious — Trade Diamonds, Gold, Silver, Platinum</h1>
+    <h1 id="preciousTitle">💎 USMT Precious</h1>
     <div class="subhead" id="preciousSubhead" style="color:#A0C4E2;">50+ Precious Metals & Gems · Live Prices · Tokenized Assets</div>
     <div class="wallet-box">📤 USMT Wallet: F9vGgzKayqAUcbedagXzMhgXUfs5ranRftwGASALRvK9</div>
     <div id="preciousContent"></div>
@@ -69,166 +69,57 @@
     <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a><a href="#" data-lang="ar">🇦🇪 العربية</a>
 </div>
 <script>
+const metals = [
+    { name: "Gold", price: "85,650 USMT", change: "+1.2%", link: "https://www.kitco.com" },
+    { name: "Silver", price: "1,375 USMT", change: "+0.8%", link: "https://www.kitco.com" },
+    { name: "Platinum", price: "28,550 USMT", change: "-0.3%", link: "https://www.kitco.com" },
+    { name: "Palladium", price: "42,200 USMT", change: "+2.1%", link: "https://www.kitco.com" },
+    { name: "Rhodium", price: "158,000 USMT", change: "+5.4%", link: "https://www.kitco.com" },
+    { name: "Iridium", price: "72,500 USMT", change: "-1.1%", link: "https://www.kitco.com" }
+];
+const gems = [
+    { name: "Diamond 1ct", price: "4,200 USMT", change: "+0.5%", link: "https://www.diamondpriceindex.com" },
+    { name: "Ruby 1ct", price: "3,800 USMT", change: "+0.3%", link: "https://www.gia.edu" },
+    { name: "Sapphire 1ct", price: "2,900 USMT", change: "+0.2%", link: "https://www.gia.edu" },
+    { name: "Emerald 1ct", price: "4,500 USMT", change: "+1.0%", link: "https://www.gia.edu" },
+    { name: "Opal 1ct", price: "1,800 USMT", change: "-0.2%", link: "https://www.gia.edu" },
+    { name: "Amethyst 1ct", price: "450 USMT", change: "+0.1%", link: "https://www.gia.edu" }
+];
+const services = [
+    { name: "Kitco Metals", desc: "Live prices", link: "https://www.kitco.com" },
+    { name: "Diamond Index", desc: "Diamond prices", link: "https://www.diamondpriceindex.com" },
+    { name: "GIA", desc: "Certification", link: "https://www.gia.edu" },
+    { name: "Bullion Vault", desc: "Physical storage", link: "https://www.bullionvault.com" }
+];
 const content = {
-    en: { title: "💎 USMT Precious — Trade Diamonds, Gold, Silver, Platinum", sub: "50+ Precious Metals & Gems · Live Prices · Tokenized Assets", metals: "🥇 Precious Metals (12)", gems: "💎 Precious Gems (20)", tokens: "🪙 Tokenized Assets (10)", services: "🔧 Trading Services (8)", dashboard: "📊 Precious Dashboard", live: "📈 Live Charts" },
-    ru: { title: "💎 USMT Precious — Торговля бриллиантами, золотом, серебром, платиной", sub: "50+ драгметаллов и камней · Живые цены · Токенизированные активы", metals: "🥇 Драгоценные металлы (12)", gems: "💎 Драгоценные камни (20)", tokens: "🪙 Токенизированные активы (10)", services: "🔧 Торговые сервисы (8)", dashboard: "📊 Дашборд драгоценностей", live: "📈 Живые графики" },
-    tr: { title: "💎 USMT Precious — Elmas, Altın, Gümüş, Platin Ticareti", sub: "50+ Kıymetli Maden ve Mücevher · Canlı Fiyatlar · Tokenleştirilmiş Varlıklar", metals: "🥇 Kıymetli Metaller (12)", gems: "💎 Kıymetli Mücevherler (20)", tokens: "🪙 Tokenleştirilmiş Varlıklar (10)", services: "🔧 Ticaret Hizmetleri (8)", dashboard: "📊 Kıymetli Gösterge", live: "📈 Canlı Grafikler" },
-    mn: { title: "💎 USMT Precious — Алмааз, алт, мөнгө, цагаан алтны худалдаа", sub: "50+ үнэт металл ба чулуу · Шуурхай үнэ · Токенчлэгдсэн хөрөнгө", metals: "🥇 Үнэт металлууд (12)", gems: "💎 Үнэт чулуунууд (20)", tokens: "🪙 Токенчлэгдсэн хөрөнгө (10)", services: "🔧 Худалдааны үйлчилгээ (8)", dashboard: "📊 Үнэт зүйлийн хяналтын самбар", live: "📈 Шуурхай график" },
-    sk: { title: "💎 USMT Precious — Obchod s diamantmi, zlatom, striebrom, platinou", sub: "50+ drahých kovov a kameňov · Živé ceny · Tokenizované aktíva", metals: "🥇 Drahé kovy (12)", gems: "💎 Drahé kamene (20)", tokens: "🪙 Tokenizované aktíva (10)", services: "🔧 Obchodné služby (8)", dashboard: "📊 Dashboard drahých", live: "📈 Živé grafy" },
-    kk: { title: "💎 USMT Precious — Алмаз, алтын, күміс, платина саудасы", sub: "50+ асыл металлдар мен тастар · Тірі бағалар · Токенделген активтер", metals: "🥇 Асыл металлдар (12)", gems: "💎 Асыл тастар (20)", tokens: "🪙 Токенделген активтер (10)", services: "🔧 Сауда қызметтері (8)", dashboard: "📊 Асыл заттар тақтасы", live: "📈 Тірі графиктер" },
-    uz: { title: "💎 USMT Precious — Olmos, oltin, kumush, platina savdosi", sub: "50+ qimmatbaho metallar va toshlar · Jonli narxlar · Tokenlashtirilgan aktivlar", metals: "🥇 Qimmatbaho metallar (12)", gems: "💎 Qimmatbaho toshlar (20)", tokens: "🪙 Tokenlashtirilgan aktivlar (10)", services: "🔧 Savdo xizmatlari (8)", dashboard: "📊 Qimmatbaho panel", live: "📈 Jonli grafiklar" },
-    ar: { title: "💎 USMT Precious — تداول الماس والذهب والفضة والبلاتين", sub: "50+ معادن وأحجار كريمة · أسعار حية · أصول مرمّزة", metals: "🥇 المعادن الثمينة (12)", gems: "💎 الأحجار الكريمة (20)", tokens: "🪙 الأصول المرمّزة (10)", services: "🔧 خدمات التداول (8)", dashboard: "📊 لوحة معلومات الأحجار الكريمة", live: "📈 رسوم بيانية حية" }
+    en: { title: "💎 USMT Precious", sub: "50+ Precious Metals & Gems · Live Prices · Tokenized Assets" },
+    ru: { title: "💎 USMT Precious", sub: "50+ драгметаллов и камней · Живые цены · Токенизированные активы" },
+    tr: { title: "💎 USMT Precious", sub: "50+ Kıymetli Maden ve Mücevher · Canlı Fiyatlar · Tokenleştirilmiş Varlıklar" },
+    mn: { title: "💎 USMT Precious", sub: "50+ үнэт металл ба чулуу · Шуурхай үнэ · Токенчлэгдсэн хөрөнгө" },
+    sk: { title: "💎 USMT Precious", sub: "50+ drahých kovov a kameňov · Živé ceny · Tokenizované aktíva" },
+    kk: { title: "💎 USMT Precious", sub: "50+ асыл металлдар мен тастар · Тірі бағалар · Токенделген активтер" },
+    uz: { title: "💎 USMT Precious", sub: "50+ qimmatbaho metallar va toshlar · Jonli narxlar · Tokenlashtirilgan aktivlar" },
+    ar: { title: "💎 USMT Precious", sub: "50+ معادن وأحجار كريمة · أسعار حية · أصول مرمّزة" }
 };
-
-// ============ ГРУППА 1: ДРАГОЦЕННЫЕ МЕТАЛЛЫ (12) ============
-const preciousMetals = [
-    { name: "Gold", symbol: "XAU", price: "85,650 USMT", change: "+1.2%", icon: "🥇", link: "https://www.kitco.com" },
-    { name: "Silver", symbol: "XAG", price: "1,375 USMT", change: "+0.8%", icon: "🥈", link: "https://www.kitco.com" },
-    { name: "Platinum", symbol: "XPT", price: "28,550 USMT", change: "-0.3%", icon: "🔷", link: "https://www.kitco.com" },
-    { name: "Palladium", symbol: "XPD", price: "42,200 USMT", change: "+2.1%", icon: "🔶", link: "https://www.kitco.com" },
-    { name: "Rhodium", symbol: "XRH", price: "158,000 USMT", change: "+5.4%", icon: "💎", link: "https://www.kitco.com" },
-    { name: "Iridium", symbol: "XIR", price: "72,500 USMT", change: "-1.1%", icon: "🔮", link: "https://www.kitco.com" },
-    { name: "Ruthenium", symbol: "XRU", price: "18,200 USMT", change: "+0.4%", icon: "⚗️", link: "https://www.kitco.com" },
-    { name: "Osmium", symbol: "XOS", price: "31,800 USMT", change: "-0.7%", icon: "🧪", link: "https://www.kitco.com" },
-    { name: "Gold 24k (1kg)", symbol: "XAU1KG", price: "2,750,000 USMT", change: "+1.1%", icon: "🥇", link: "https://www.kitco.com" },
-    { name: "Silver 999 (1kg)", symbol: "XAG1KG", price: "44,200 USMT", change: "+0.9%", icon: "🥈", link: "https://www.kitco.com" },
-    { name: "Platinum 999 (1kg)", symbol: "XPT1KG", price: "917,000 USMT", change: "-0.5%", icon: "🔷", link: "https://www.kitco.com" },
-    { name: "Palladium 999 (1kg)", symbol: "XPD1KG", price: "1,356,000 USMT", change: "+1.8%", icon: "🔶", link: "https://www.kitco.com" }
-];
-
-// ============ ГРУППА 2: ДРАГОЦЕННЫЕ КАМНИ (20) ============
-const preciousGems = [
-    { name: "Diamond (1ct)", symbol: "DIA1CT", price: "4,200 USMT", change: "+0.5%", icon: "💎", link: "https://www.diamondpriceindex.com" },
-    { name: "Diamond (3ct)", symbol: "DIA3CT", price: "18,500 USMT", change: "+0.8%", icon: "💎", link: "https://www.diamondpriceindex.com" },
-    { name: "Diamond (5ct)", symbol: "DIA5CT", price: "52,000 USMT", change: "+1.2%", icon: "💎", link: "https://www.diamondpriceindex.com" },
-    { name: "Ruby (1ct)", symbol: "RUB1CT", price: "3,800 USMT", change: "+0.3%", icon: "❤️", link: "https://www.gia.edu" },
-    { name: "Sapphire (1ct)", symbol: "SAP1CT", price: "2,900 USMT", change: "+0.2%", icon: "💙", link: "https://www.gia.edu" },
-    { name: "Emerald (1ct)", symbol: "EME1CT", price: "4,500 USMT", change: "+1.0%", icon: "💚", link: "https://www.gia.edu" },
-    { name: "Opal (1ct)", symbol: "OPA1CT", price: "1,800 USMT", change: "-0.2%", icon: "🌈", link: "https://www.gia.edu" },
-    { name: "Amethyst (1ct)", symbol: "AME1CT", price: "450 USMT", change: "+0.1%", icon: "🟣", link: "https://www.gia.edu" },
-    { name: "Topaz (1ct)", symbol: "TOP1CT", price: "380 USMT", change: "+0.4%", icon: "🟡", link: "https://www.gia.edu" },
-    { name: "Garnet (1ct)", symbol: "GAR1CT", price: "320 USMT", change: "-0.1%", icon: "🔴", link: "https://www.gia.edu" },
-    { name: "Tourmaline (1ct)", symbol: "TOU1CT", price: "560 USMT", change: "+0.6%", icon: "🟢", link: "https://www.gia.edu" },
-    { name: "Aquamarine (1ct)", symbol: "AQU1CT", price: "720 USMT", change: "+0.3%", icon: "🔵", link: "https://www.gia.edu" },
-    { name: "Tanzanite (1ct)", symbol: "TAN1CT", price: "1,200 USMT", change: "+1.5%", icon: "🟣", link: "https://www.gia.edu" },
-    { name: "Citrine (1ct)", symbol: "CIT1CT", price: "280 USMT", change: "-0.3%", icon: "🟠", link: "https://www.gia.edu" },
-    { name: "Peridot (1ct)", symbol: "PER1CT", price: "340 USMT", change: "+0.2%", icon: "🟢", link: "https://www.gia.edu" },
-    { name: "Spinel (1ct)", symbol: "SPI1CT", price: "620 USMT", change: "+0.7%", icon: "🔴", link: "https://www.gia.edu" },
-    { name: "Moonstone (1ct)", symbol: "MOO1CT", price: "250 USMT", change: "-0.1%", icon: "🌙", link: "https://www.gia.edu" },
-    { name: "Lapis Lazuli", symbol: "LAP1CT", price: "190 USMT", change: "+0.2%", icon: "🔷", link: "https://www.gia.edu" },
-    { name: "Malachite", symbol: "MAL1CT", price: "160 USMT", change: "+0.1%", icon: "🟢", link: "https://www.gia.edu" },
-    { name: "Jade", symbol: "JAD1CT", price: "480 USMT", change: "+0.5%", icon: "🟩", link: "https://www.gia.edu" }
-];
-
-// ============ ГРУППА 3: ТОКЕНИЗИРОВАННЫЕ АКТИВЫ (10) ============
-const tokenizedAssets = [
-    { name: "Gold Token", symbol: "GOLD", price: "85,650 USMT", desc: "1:1 backed by physical gold", link: "#" },
-    { name: "Silver Token", symbol: "SILV", price: "1,375 USMT", desc: "1:1 backed by physical silver", link: "#" },
-    { name: "Platinum Token", symbol: "PLAT", price: "28,550 USMT", desc: "1:1 backed by physical platinum", link: "#" },
-    { name: "Diamond Token", symbol: "DIAM", price: "4,200 USMT", desc: "1ct diamond backed", link: "#" },
-    { name: "Ruby Token", symbol: "RUBY", price: "3,800 USMT", desc: "1ct ruby backed", link: "#" },
-    { name: "Sapphire Token", symbol: "SAPH", price: "2,900 USMT", desc: "1ct sapphire backed", link: "#" },
-    { name: "Emerald Token", symbol: "EMER", price: "4,500 USMT", desc: "1ct emerald backed", link: "#" },
-    { name: "Palladium Token", symbol: "PALL", price: "42,200 USMT", desc: "1:1 backed by physical palladium", link: "#" },
-    { name: "Rhodium Token", symbol: "RHOD", price: "158,000 USMT", desc: "1:1 backed by physical rhodium", link: "#" },
-    { name: "USMT Diamond Bundle", symbol: "USMT-D", price: "5,000 USMT", desc: "Fractional diamond portfolio", link: "#" }
-];
-
-// ============ ГРУППА 4: ТОРГОВЫЕ СЕРВИСЫ (8) ============
-const tradingServices = [
-    { name: "Kitco Metals", desc: "Live precious metal prices", link: "https://www.kitco.com" },
-    { name: "Diamond Price Index", desc: "Live diamond prices", link: "https://www.diamondpriceindex.com" },
-    { name: "GIA Certification", desc: "Gemstone certification", link: "https://www.gia.edu" },
-    { name: "Bullion Vault", desc: "Physical metal storage", link: "https://www.bullionvault.com" },
-    { name: "APMEX", desc: "Buy physical metals", link: "https://www.apmex.com" },
-    { name: "JM Bullion", desc: "Physical metal trading", link: "https://www.jmbullion.com" },
-    { name: "RapNet", desc: "Diamond trading network", link: "https://www.rapnet.com" },
-    { name: "IDEX", desc: "Diamond exchange", link: "https://www.idexonline.com" }
-];
-
 function renderPrecious() {
     const t = content[currentLang] || content.en;
-
-    let html = '';
-
-    // ===== ДРАГОЦЕННЫЕ МЕТАЛЛЫ =====
-    html += `<h2>${t.metals}</h2><div class="grid-4">`;
-    preciousMetals.forEach(m => {
-        const isPositive = m.change.startsWith('+');
-        html += `<div class="card">
-            <div style="font-size:2rem;">${m.icon}</div>
-            <strong>${m.name}</strong>
-            <div style="font-size:0.8rem; opacity:0.7;">${m.symbol}</div>
-            <div class="price">${m.price}</div>
-            <div class="${isPositive ? 'change-positive' : 'change-negative'}">${m.change}</div>
-            <a href="${m.link}" target="_blank" class="btn">Trade →</a>
-        </div>`;
+    let html = `<h2>🥇 Precious Metals</h2><div class="grid-4">`;
+    metals.forEach(m => {
+        html += `<div class="card"><strong>${m.name}</strong><div class="price">${m.price}</div><div class="${m.change.startsWith('+')?'change-positive':'change-negative'}">${m.change}</div><a href="${m.link}" target="_blank" class="btn">Trade →</a></div>`;
     });
-    html += `</div>`;
-
-    // ===== ДРАГОЦЕННЫЕ КАМНИ =====
-    html += `<h2>${t.gems}</h2><div class="grid-4">`;
-    preciousGems.forEach(g => {
-        const isPositive = g.change.startsWith('+');
-        html += `<div class="card">
-            <div style="font-size:2rem;">${g.icon}</div>
-            <strong>${g.name}</strong>
-            <div style="font-size:0.8rem; opacity:0.7;">${g.symbol}</div>
-            <div class="price">${g.price}</div>
-            <div class="${isPositive ? 'change-positive' : 'change-negative'}">${g.change}</div>
-            <a href="${g.link}" target="_blank" class="btn">Trade →</a>
-        </div>`;
+    html += `</div><h2>💎 Precious Gems</h2><div class="grid-4">`;
+    gems.forEach(g => {
+        html += `<div class="card"><strong>${g.name}</strong><div class="price">${g.price}</div><div class="${g.change.startsWith('+')?'change-positive':'change-negative'}">${g.change}</div><a href="${g.link}" target="_blank" class="btn">Trade →</a></div>`;
     });
-    html += `</div>`;
-
-    // ===== ТОКЕНИЗИРОВАННЫЕ АКТИВЫ =====
-    html += `<h2>${t.tokens}</h2><div class="grid-4">`;
-    tokenizedAssets.forEach(a => {
-        html += `<div class="card">
-            <div style="font-size:2rem;">🪙</div>
-            <strong>${a.name}</strong>
-            <div style="font-size:0.8rem; opacity:0.7;">${a.symbol}</div>
-            <div class="price">${a.price}</div>
-            <p>${a.desc}</p>
-            <a href="${a.link}" target="_blank" class="btn">Tokenize →</a>
-        </div>`;
+    html += `</div><h2>🔧 Trading Services</h2><div class="grid-4">`;
+    services.forEach(s => {
+        html += `<div class="card"><strong>${s.name}</strong><p>${s.desc}</p><a href="${s.link}" target="_blank" class="btn">Open →</a></div>`;
     });
-    html += `</div>`;
-
-    // ===== ТОРГОВЫЕ СЕРВИСЫ =====
-    html += `<h2>${t.services}</h2><div class="grid-4">`;
-    tradingServices.forEach(s => {
-        html += `<div class="card">
-            <div style="font-size:2rem;">🔧</div>
-            <strong>${s.name}</strong>
-            <p>${s.desc}</p>
-            <a href="${s.link}" target="_blank" class="btn">Open →</a>
-        </div>`;
-    });
-    html += `</div>`;
-
-    // ===== ДАШБОРД =====
-    html += `<h2>${t.dashboard}</h2><div class="grid-4">
-        <div class="card"><h3>Total Precious Volume</h3><div style="font-size:2rem;color:#00E6B4;">$12.4B</div><small>24h</small></div>
-        <div class="card"><h3>Gold Price (USMT)</h3><div style="font-size:2rem;color:#00E6B4;">85,650</div><small>+1.2%</small></div>
-        <div class="card"><h3>Silver Price (USMT)</h3><div style="font-size:2rem;color:#00E6B4;">1,375</div><small>+0.8%</small></div>
-        <div class="card"><h3>Active Traders</h3><div style="font-size:2rem;color:#00E6B4;">4,287</div><small>24h</small></div>
-    </div>`;
-
-    // ===== ЖИВЫЕ ГРАФИКИ =====
-    html += `<h2>${t.live}</h2>
-    <div class="chart-container">
-        <iframe src="https://www.tradingview.com/widget/embed/?symbol=COMEX%3AGC1!&interval=1D&hidesidebar=1&theme=dark&style=1" title="Gold Chart"></iframe>
-    </div>
-    <div class="chart-container">
-        <iframe src="https://www.tradingview.com/widget/embed/?symbol=COMEX%3ASI1!&interval=1D&hidesidebar=1&theme=dark&style=1" title="Silver Chart"></iframe>
-    </div>`;
-
+    html += `</div><div class="chart-container"><iframe src="https://www.tradingview.com/widget/embed/?symbol=COMEX%3AGC1!&interval=1D&hidesidebar=1&theme=dark&style=1" title="Gold Chart"></iframe></div>`;
     document.getElementById('preciousContent').innerHTML = html;
     document.getElementById('preciousTitle').innerText = t.title;
     document.getElementById('preciousSubhead').innerText = t.sub;
 }
-
 let currentLang = 'en';
 function setLanguage(lang) {
     currentLang = lang;
