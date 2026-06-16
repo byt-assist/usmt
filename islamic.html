@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USMT Islamic Finance — Sharia-Compliant | Halal Diamond Finance</title>
+    <title>USMT Islamic Finance — Sharia-Compliant</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', 'Inter', system-ui, sans-serif; background: linear-gradient(135deg, #0B2B5E 0%, #0A1C3A 100%); color: #FFFFFF; line-height: 1.6; }
@@ -15,20 +15,12 @@
         .container { max-width: 1400px; margin: 0 auto; padding: 2rem; background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border-radius: 48px; margin-bottom: 2rem; border: 1px solid rgba(0,230,180,0.3); }
         h1 { font-size: 2.8rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
         h2 { font-size: 1.6rem; margin: 2rem 0 1rem; border-left: 6px solid #00E6B4; padding-left: 1rem; color: #CFFAFE; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
         .card { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 1.2rem; border: 1px solid rgba(0,230,180,0.2); transition: 0.2s; }
         .card:hover { transform: translateY(-3px); background: rgba(0,230,180,0.1); border-color: #00E6B4; }
         .wallet-box { background: rgba(0,0,0,0.4); border-radius: 16px; padding: 1rem; margin: 1rem 0; border: 1px solid #00E6B4; word-break: break-all; font-family: monospace; color: #00E6B4; }
-        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; border: none; cursor: pointer; }
+        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; }
         .btn:hover { background: #3B82F6; color: white; }
-        .btn-outline { background: transparent; border: 1px solid #00E6B4; color: #00E6B4; }
-        .btn-outline:hover { background: #00E6B4; color: #0A1C3A; }
-        .stat { display: flex; justify-content: space-between; margin: 0.5rem 0; padding: 0.3rem 0; border-bottom: 1px solid rgba(0,230,180,0.15); }
-        .badge-sharia { background: #00a86b; display: inline-block; padding: 0.2rem 0.8rem; border-radius: 40px; font-size: 0.7rem; margin-bottom: 1rem; }
-        .form-group { margin-bottom: 1rem; }
-        label { display: block; margin-bottom: 0.3rem; font-weight: bold; }
-        input, select, textarea { width: 100%; padding: 0.8rem; border-radius: 12px; border: 1px solid rgba(0,230,180,0.5); background: rgba(0,0,0,0.4); color: #FFFFFF; font-size: 1rem; }
-        .zakat-box { background: rgba(0,100,0,0.2); border-radius: 20px; padding: 1.5rem; margin: 1rem 0; }
         .lang-switcher { position: fixed; bottom: 20px; right: 20px; background: #1E2A3A; color: #00E6B4; padding: 10px 20px; border-radius: 60px; cursor: pointer; z-index: 1000; border: 1px solid #00E6B4; }
         .lang-menu { position: fixed; bottom: 80px; right: 20px; background: #1E2A3A; border-radius: 20px; padding: 10px 0; display: none; flex-direction: column; z-index: 1000; min-width: 160px; border: 1px solid #00E6B4; }
         .lang-menu a { padding: 8px 20px; text-decoration: none; color: #FFF; display: block; }
@@ -51,8 +43,11 @@
         <a href="card.html">💳 Card</a>
         <a href="bridge.html">🌉 Bridge</a>
         <a href="islamic.html" class="active">🕌 Islamic</a>
+        <a href="precious.html">💎 Precious</a>
+        <a href="mining.html">⛏️ Mining</a>
         <a href="whitepaper.html">📄 WP</a>
         <a href="investors.html">📊 Investors</a>
+        <a href="how-to-buy.html">🇹🇲 How to Buy</a>
     </div>
 </div>
 <div class="container" id="islamicContainer">
@@ -69,158 +64,35 @@
     <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a><a href="#" data-lang="ar">🇦🇪 العربية</a>
 </div>
 <script>
-const content = {
-    en: { title: "🕌 USMT Islamic Finance", sub: "Sharia-Compliant · AAOIFI Certified · Halal Diamond Finance", products: "📜 Sharia-Compliant Products", apply: "📋 Apply for Financing", dashboard: "📊 Islamic Finance Dashboard", zakat: "🤲 Zakat Calculator" },
-    ru: { title: "🕌 USMT Исламское финансирование", sub: "Шариат-комплаент · Сертифицировано AAOIFI · Халяльное финансирование бриллиантов", products: "📜 Шариат-комплаентные продукты", apply: "📋 Подать заявку на финансирование", dashboard: "📊 Дашборд исламского финансирования", zakat: "🤲 Калькулятор закята" },
-    tr: { title: "🕌 USMT İslami Finans", sub: "Şeriat Uyumlu · AAOIFI Sertifikalı · Helal Elmas Finansmanı", products: "📜 Şeriat Uyumlu Ürünler", apply: "📋 Finansman Başvurusu", dashboard: "📊 İslami Finans Göstergesi", zakat: "🤲 Zekat Hesaplayıcı" },
-    mn: { title: "🕌 USMT Ислам санхүүжилт", sub: "Шариат-нийцсэн · AAOIFI сертификаттай · Халал алмааны санхүүжилт", products: "📜 Шариат-нийцсэн бүтээгдэхүүн", apply: "📋 Санхүүжилтийн өргөдөл", dashboard: "📊 Исламын санхүүжилтийн хяналтын самбар", zakat: "🤲 Закят тооцоолуур" },
-    sk: { title: "🕌 USMT Islamské financovanie", sub: "V súlade so šaríou · Certifikované AAOIFI · Halal diamantové financovanie", products: "📜 Produkty v súlade so šaríou", apply: "📋 Požiadať o financovanie", dashboard: "📊 Islamský finančný dashboard", zakat: "🤲 Kalkulačka zakátu" },
-    kk: { title: "🕌 USMT Ислам қаржыландыру", sub: "Шариатқа сай · AAOIFI сертификатталған · Халал алмас қаржыландыру", products: "📜 Шариатқа сай өнімдер", apply: "📋 Қаржыландыруға өтініш", dashboard: "📊 Ислам қаржыландыру тақтасы", zakat: "🤲 Зекет калькуляторы" },
-    uz: { title: "🕌 USMT Islom moliyasi", sub: "Shariatga muvofiq · AAOIFI sertifikatlangan · Halol olmos moliyasi", products: "📜 Shariatga muvofiq mahsulotlar", apply: "📋 Moliyalashtirish uchun ariza", dashboard: "📊 Islom moliyasi paneli", zakat: "🤲 Zakat kalkulyatori" },
-    ar: { title: "🕌 التمويل الإسلامي USMT", sub: "متوافق مع الشريعة · معتمد من AAOIFI · تمويل الماس الحلال", products: "📜 منتجات متوافقة مع الشريعة", apply: "📋 التقدم بطلب للحصول على تمويل", dashboard: "📊 لوحة معلومات التمويل الإسلامي", zakat: "🤲 حاسبة الزكاة" }
-};
-
-// ============ ШАРИАТСКИЕ ПРОДУКТЫ ============
 const islamicProducts = [
-    { name: "Murabaha", desc: "Cost-Plus financing for diamond purchases. Transparent markup, no riba.", yield: "8% fixed", min: "10,000 USMT", tenor: "6-36 months" },
-    { name: "Mudarabah", desc: "Profit-sharing partnership. You provide capital, we manage diamond trade.", yield: "12-20%", min: "50,000 USMT", tenor: "12 months" },
-    { name: "Ijara", desc: "Lease-to-own for diamond equipment and real estate.", yield: "Variable", min: "Custom", tenor: "12-60 months" },
-    { name: "Sukuk", desc: "Islamic bonds backed by diamond inventory. Regular profit distributions.", yield: "6-9%", min: "5,000 USMT", tenor: "1-5 years" },
-    { name: "Qard al-Hasan", desc: "Benevolent loan (0% interest) for small businesses and education.", yield: "0%", min: "1,000 USMT", tenor: "Up to 24 months" },
-    { name: "Istisna", desc: "Project finance for diamond manufacturing and construction.", yield: "Custom", min: "100,000 USMT", tenor: "Milestone-based" }
+    { name: "Murabaha", yield: "8% fixed", desc: "Cost-Plus financing for diamond purchases" },
+    { name: "Mudarabah", yield: "12-20%", desc: "Profit-sharing partnership" },
+    { name: "Ijara", yield: "Variable", desc: "Lease-to-own for equipment" },
+    { name: "Sukuk", yield: "6-9%", desc: "Islamic bonds backed by diamonds" },
+    { name: "Qard al-Hasan", yield: "0%", desc: "Benevolent loan (0% interest)" },
+    { name: "Istisna", yield: "Custom", desc: "Project finance for manufacturing" }
 ];
-
-// ============ КАЛЬКУЛЯТОР ЗАКЯТА ============
-function calculateZakat() {
-    const wealth = parseFloat(document.getElementById('zakatWealth').value) || 0;
-    const zakat = wealth * 0.025;
-    document.getElementById('zakatResult').innerHTML = zakat.toLocaleString('en-US', {minimumFractionDigits:0, maximumFractionDigits:0}) + ' USMT';
-}
-
-// ============ ФОРМА ЗАЯВКИ ============
-function submitApplication() {
-    const form = document.getElementById('islamicForm');
-    const name = document.getElementById('appName').value;
-    const email = document.getElementById('appEmail').value;
-    const phone = document.getElementById('appPhone').value;
-    const country = document.getElementById('appCountry').value;
-    const product = document.getElementById('appProduct').value;
-    const amount = document.getElementById('appAmount').value;
-    const notes = document.getElementById('appNotes').value;
-
-    if (!name || !email || !phone || !country || !product || !amount) {
-        alert('Please fill in all required fields.');
-        return;
-    }
-
-    // В реальном проекте здесь отправка на сервер
-    alert('✅ Application submitted! Our Sharia board will contact you within 5-7 business days.');
-    form.reset();
-}
-
+const content = {
+    en: { title: "🕌 USMT Islamic Finance", sub: "Sharia-Compliant · AAOIFI Certified · Halal Diamond Finance" },
+    ru: { title: "🕌 USMT Исламское финансирование", sub: "Шариат-комплаент · Сертифицировано AAOIFI · Халяльное финансирование" },
+    tr: { title: "🕌 USMT İslami Finans", sub: "Şeriat Uyumlu · AAOIFI Sertifikalı · Helal Elmas Finansmanı" },
+    mn: { title: "🕌 USMT Ислам санхүүжилт", sub: "Шариат-нийцсэн · AAOIFI сертификаттай · Халал алмааны санхүүжилт" },
+    sk: { title: "🕌 USMT Islamské financovanie", sub: "V súlade so šaríou · Certifikované AAOIFI · Halal diamantové financovanie" },
+    kk: { title: "🕌 USMT Ислам қаржыландыру", sub: "Шариатқа сай · AAOIFI сертификатталған · Халал алмас қаржыландыру" },
+    uz: { title: "🕌 USMT Islom moliyasi", sub: "Shariatga muvofiq · AAOIFI sertifikatlangan · Halol olmos moliyasi" },
+    ar: { title: "🕌 التمويل الإسلامي USMT", sub: "متوافق مع الشريعة · معتمد من AAOIFI · تمويل الماس الحلال" }
+};
 function renderIslamic() {
     const t = content[currentLang] || content.en;
-
-    let html = '';
-
-    // ===== ШАРИАТСКИЕ ПРОДУКТЫ =====
-    html += `<h2>${t.products}</h2><div class="grid-3">`;
+    let html = `<h2>📜 Sharia-Compliant Products</h2><div class="grid-3">`;
     islamicProducts.forEach(p => {
-        html += `<div class="card">
-            <div style="font-size:2.5rem;">🕌</div>
-            <h3>${p.name}</h3>
-            <div class="badge-sharia">Sharia-Compliant</div>
-            <p>${p.desc}</p>
-            <div class="stat"><span>Min Amount</span><span>${p.min}</span></div>
-            <div class="stat"><span>Tenor</span><span>${p.tenor}</span></div>
-            <div class="stat"><span>Profit Rate</span><span style="color:#00E6B4;">${p.yield}</span></div>
-            <a href="#apply" class="btn">Apply →</a>
-        </div>`;
+        html += `<div class="card"><h3>${p.name}</h3><div style="color:#00E6B4;font-weight:bold;">${p.yield}</div><p>${p.desc}</p><a href="#" class="btn">Apply →</a></div>`;
     });
-    html += `</div>`;
-
-    // ===== КАЛЬКУЛЯТОР ЗАКЯТА =====
-    html += `<div class="zakat-box"><h2>${t.zakat}</h2>
-        <p>Calculate your Zakat (2.5% of wealth held for one lunar year).</p>
-        <div style="display:flex; gap:1rem; flex-wrap:wrap; margin:1rem 0;">
-            <div style="flex:1; min-width:200px;">
-                <label>Your Wealth (USMT)</label>
-                <input type="number" id="zakatWealth" placeholder="100,000" value="100000" style="font-size:1.2rem;">
-            </div>
-            <div style="flex:1; min-width:200px;">
-                <label>Zakat Due (USMT)</label>
-                <div id="zakatResult" style="font-size:2rem; color:#00E6B4; font-weight:bold;">2,500 USMT</div>
-            </div>
-        </div>
-        <button onclick="calculateZakat()" class="btn">🧮 Calculate</button>
-        <p style="font-size:0.8rem; margin-top:0.5rem;">100% distributed to verified charities. Sadaqah Jariyah options available.</p>
-    </div>`;
-
-    // ===== ФОРМА ЗАЯВКИ =====
-    html += `<h2 id="apply">${t.apply}</h2>
-        <div class="card"><p>Complete the application below. Our Sharia board will review within 5-7 business days.</p>
-        <form id="islamicForm" onsubmit="event.preventDefault(); submitApplication();">
-            <div class="grid-3">
-                <div class="form-group"><label>Full Name</label><input type="text" id="appName" required placeholder="Ahmed Al-Mansouri"></div>
-                <div class="form-group"><label>Email Address</label><input type="email" id="appEmail" required placeholder="ahmed@example.com"></div>
-                <div class="form-group"><label>Phone (WhatsApp)</label><input type="tel" id="appPhone" required placeholder="+993 XX XXX XXX"></div>
-                <div class="form-group"><label>Country of Residence</label><input type="text" id="appCountry" required placeholder="Turkmenistan, UAE, Saudi Arabia..."></div>
-                <div class="form-group"><label>Select Product</label>
-                    <select id="appProduct" required>
-                        <option value="">-- Select --</option>
-                        <option value="Murabaha">Murabaha</option>
-                        <option value="Mudarabah">Mudarabah</option>
-                        <option value="Ijara">Ijara</option>
-                        <option value="Sukuk">Sukuk</option>
-                        <option value="Qard al-Hasan">Qard al-Hasan</option>
-                        <option value="Istisna">Istisna</option>
-                    </select>
-                </div>
-                <div class="form-group"><label>Amount (USMT)</label><input type="number" id="appAmount" required placeholder="Min 5,000 USMT"></div>
-                <div class="form-group"><label>Upload KYC (Passport/ID)</label><input type="file" id="appKyc" accept=".pdf,.jpg,.png"></div>
-                <div class="form-group"><label>Business Plan (PDF)</label><input type="file" id="appBizPlan" accept=".pdf"></div>
-                <div class="form-group"><label>Feasibility Study (ТЭО)</label><input type="file" id="appFeasibility" accept=".pdf"></div>
-                <div class="form-group"><label>Additional Notes</label><textarea id="appNotes" rows="3"></textarea></div>
-            </div>
-            <div class="form-group"><label><input type="checkbox" required> I confirm no haram activities (gambling, alcohol, pork, riba).</label></div>
-            <button type="submit" class="btn">📤 Submit Application →</button>
-        </form>
-        </div>`;
-
-    // ===== ДАШБОРД =====
-    html += `<h2>${t.dashboard}</h2><div class="grid-3">
-        <div class="card"><h3>Total Financing Disbursed</h3><div style="font-size:1.8rem;color:#00E6B4;">$12.4M</div><small>All time</small></div>
-        <div class="card"><h3>Active Murabaha Contracts</h3><div style="font-size:1.8rem;color:#00E6B4;">87</div><small>Active</small></div>
-        <div class="card"><h3>Sukuk Outstanding</h3><div style="font-size:1.8rem;color:#00E6B4;">$5.1M</div><small>In circulation</small></div>
-        <div class="card"><h3>Qard al-Hasan Recipients</h3><div style="font-size:1.8rem;color:#00E6B4;">143</div><small>Families helped</small></div>
-        <div class="card"><h3>Sharia Audit</h3><div style="font-size:1.8rem;color:#00E6B4;">✅ PASSED</div><small>June 2025</small></div>
-        <div class="card"><h3>Zakat Collected</h3><div style="font-size:1.8rem;color:#00E6B4;">34,250 USMT</div><small>2025</small></div>
-    </div>`;
-
-    // ===== ШАРИАТСКИЙ СОВЕТ =====
-    html += `<h2>🕋 Sharia Supervisory Board</h2><div class="grid-3">
-        <div class="card"><h3>Dr. Yusuf Al-Qaradawi</h3><p>AAOIFI Certified</p></div>
-        <div class="card"><h3>Sheikh Nizam Yaquby</h3><p>Islamic Finance Expert</p></div>
-        <div class="card"><h3>Dr. Mohamed Elgari</h3><p>Sharia Scholar</p></div>
-    </div>`;
-
-    // ===== ДИСКЛЕЙМЕР =====
-    html += `<div style="background:rgba(255,100,100,0.1); padding:1rem; border-radius:20px; margin:1rem 0; border-left:4px solid #ff6464;">
-        <strong>⚠️ Disclaimer:</strong> USMT Islamic Finance products are available only after full Sharia screening. Past profits do not guarantee future results.
-    </div>`;
-
+    html += `</div><div style="background:rgba(0,100,0,0.2);padding:1.5rem;border-radius:20px;margin:1rem 0;"><h2>🤲 Zakat Calculator</h2><p>Calculate your Zakat (2.5% of wealth).</p><input type="number" id="zakatWealth" placeholder="100,000 USMT" style="width:100%;padding:0.8rem;border-radius:12px;border:1px solid #00E6B4;background:rgba(0,0,0,0.4);color:#FFF;font-size:1rem;"><button onclick="alert('Zakat Due: ' + (document.getElementById('zakatWealth').value * 0.025) + ' USMT')" class="btn" style="margin-top:0.5rem;">Calculate</button></div>`;
     document.getElementById('islamicContent').innerHTML = html;
     document.getElementById('islamicTitle').innerText = t.title;
     document.getElementById('islamicSubhead').innerText = t.sub;
-
-    // Пересчёт закята при изменении
-    document.addEventListener('input', function(e) {
-        if (e.target && e.target.id === 'zakatWealth') {
-            calculateZakat();
-        }
-    });
 }
-
 let currentLang = 'en';
 function setLanguage(lang) {
     currentLang = lang;
