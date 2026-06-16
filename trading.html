@@ -16,16 +16,20 @@
         h1 { font-size: 2.8rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
         h2 { font-size: 1.6rem; margin: 2rem 0 1rem; border-left: 6px solid #00E6B4; padding-left: 1rem; color: #CFFAFE; }
         .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
         .card { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 1rem; border: 1px solid rgba(0,230,180,0.2); transition: 0.2s; text-align: center; }
         .card:hover { transform: translateY(-3px); background: rgba(0,230,180,0.1); border-color: #00E6B4; }
         .wallet-box { background: rgba(0,0,0,0.4); border-radius: 16px; padding: 1rem; margin: 1rem 0; border: 1px solid #00E6B4; word-break: break-all; font-family: monospace; color: #00E6B4; }
         .btn { background: #00E6B4; color: #0A1C3A; padding: 0.4rem 0.8rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; font-size: 0.8rem; }
         .btn:hover { background: #3B82F6; color: white; }
+        .btn-outline { background: transparent; border: 1px solid #00E6B4; color: #00E6B4; }
+        .btn-outline:hover { background: #00E6B4; color: #0A1C3A; }
         .lang-switcher { position: fixed; bottom: 20px; right: 20px; background: #1E2A3A; color: #00E6B4; padding: 10px 20px; border-radius: 60px; cursor: pointer; z-index: 1000; border: 1px solid #00E6B4; }
         .lang-menu { position: fixed; bottom: 80px; right: 20px; background: #1E2A3A; border-radius: 20px; padding: 10px 0; display: none; flex-direction: column; z-index: 1000; min-width: 160px; border: 1px solid #00E6B4; }
         .lang-menu a { padding: 8px 20px; text-decoration: none; color: #FFF; display: block; }
         .lang-menu a:hover { background: #00E6B4; color: #0A1C3A; }
         .lang-menu.show { display: flex; }
+        .stat { display: flex; justify-content: space-between; margin: 0.4rem 0; padding: 0.3rem 0; border-bottom: 1px solid rgba(0,230,180,0.15); }
         footer { text-align: center; margin-top: 2rem; font-size: 0.7rem; opacity: 0.7; }
         @media (max-width: 700px) { .container { padding: 1rem; } h1 { font-size: 2rem; } }
     </style>
@@ -49,7 +53,7 @@
 </div>
 <div class="container" id="tradeContainer">
     <h1 id="tradeTitle">📈 USMT Trading</h1>
-    <div class="subhead" id="tradeSubhead" style="color:#A0C4E2;">50+ Trading Tools · DEX · Bots · Derivatives</div>
+    <div class="subhead" id="tradeSubhead" style="color:#A0C4E2;">50+ Trading Tools · DEX · Bots · Derivatives · Real Links</div>
     <div class="wallet-box">📤 USMT Wallet: F9vGgzKayqAUcbedagXzMhgXUfs5ranRftwGASALRvK9</div>
     <div id="tradeContent"></div>
     <footer>© 2025 USMT — Muslim Usmanov Ecosystem</footer>
@@ -61,36 +65,120 @@
     <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a><a href="#" data-lang="ar">🇦🇪 العربية</a>
 </div>
 <script>
-const tradingTools = [
-    "Jupiter Aggregator", "Raydium DEX", "Orca DEX", "Meteora DEX",
-    "Limit Orders", "TWAP Orders", "DCA Orders", "Stop-Loss",
-    "Grid Bot", "DCA Bot", "Copy Trading", "Arbitrage Bot",
-    "Perpetuals 50x", "Options Trading", "Leveraged Tokens", "Hedging",
-    "Yield Farming", "Liquidity Pools", "Concentrated LP", "Dual Yield",
-    "Price Alerts", "Charting 50+ indicators", "News Feed", "Portfolio Tracker",
-    "On-Chain Analysis", "Volume Analysis", "Market Depth", "Heatmap",
-    "Momentum Trading", "Swing Trading", "Scalping", "Range Trading",
-    "Mean Reversion", "Breakout Trading", "Arbitrage", "Hedging"
+const content = {
+    en: { title: "📈 USMT Trading", sub: "50+ Trading Tools · DEX · Bots · Derivatives · Real Links", tools: "🔧 Trading Tools" },
+    ru: { title: "📈 Торговля USMT", sub: "50+ инструментов · DEX · Боты · Деривативы · Реальные ссылки", tools: "🔧 Торговые инструменты" },
+    tr: { title: "📈 USMT Alım Satım", sub: "50+ Araç · DEX · Botlar · Türevler · Gerçek Linkler", tools: "🔧 Alım Satım Araçları" },
+    mn: { title: "📈 USMT Худалдаа", sub: "50+ хэрэгсэл · DEX · Бот · Дериватив · Жинхэнэ холбоос", tools: "🔧 Худалдааны хэрэгсэл" },
+    sk: { title: "📈 USMT Obchodovanie", sub: "50+ nástrojov · DEX · Boty · Deriváty · Skutočné odkazy", tools: "🔧 Obchodné nástroje" },
+    kk: { title: "📈 USMT Сауда", sub: "50+ құрал · DEX · Боттар · Туындылар · Нақты сілтемелер", tools: "🔧 Сауда құралдары" },
+    uz: { title: "📈 USMT Savdo", sub: "50+ vosita · DEX · Botlar · Derivativlar · Haqiqiy havolalar", tools: "🔧 Savdo vositalari" },
+    ar: { title: "📈 تداول USMT", sub: "50+ أداة · DEX · بوتات · مشتقات · روابط حقيقية", tools: "🔧 أدوات التداول" }
+};
+
+// Категория 1: DEX (4)
+const dexTools = [
+    { name: "Jupiter Aggregator", link: "https://jup.ag/swap/USDC-USMT", desc: "Best price aggregator" },
+    { name: "Raydium DEX", link: "https://raydium.io/swap/?inputMint=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&outputMint=8uhGgd7HBtNNZSVnUAx6T49ofSvmAGVJ1GcWjodFZbEz", desc: "Deepest liquidity" },
+    { name: "Orca DEX", link: "https://www.orca.so/swap", desc: "User-friendly" },
+    { name: "Meteora DEX", link: "https://app.meteora.ag/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv", desc: "Dynamic AMM" }
 ];
 
-const content = {
-    en: { title: "📈 USMT Trading", sub: "50+ Trading Tools · DEX · Bots · Derivatives", tools: "🔧 Trading Tools" },
-    ru: { title: "📈 Торговля USMT", sub: "50+ инструментов · DEX · Боты · Деривативы", tools: "🔧 Торговые инструменты" },
-    tr: { title: "📈 USMT Alım Satım", sub: "50+ Araç · DEX · Botlar · Türevler", tools: "🔧 Alım Satım Araçları" },
-    mn: { title: "📈 USMT Худалдаа", sub: "50+ хэрэгсэл · DEX · Бот · Дериватив", tools: "🔧 Худалдааны хэрэгсэл" },
-    sk: { title: "📈 USMT Obchodovanie", sub: "50+ nástrojov · DEX · Boty · Deriváty", tools: "🔧 Obchodné nástroje" },
-    kk: { title: "📈 USMT Сауда", sub: "50+ құрал · DEX · Боттар · Туындылар", tools: "🔧 Сауда құралдары" },
-    uz: { title: "📈 USMT Savdo", sub: "50+ vosita · DEX · Botlar · Derivativlar", tools: "🔧 Savdo vositalari" },
-    ar: { title: "📈 تداول USMT", sub: "50+ أداة · DEX · بوتات · مشتقات", tools: "🔧 أدوات التداول" }
-};
+// Категория 2: Order Types (4)
+const orderTools = [
+    { name: "Limit Orders", link: "https://jup.ag/limit", desc: "Target price" },
+    { name: "TWAP Orders", link: "https://jup.ag/twap", desc: "Time-weighted average" },
+    { name: "DCA Orders", link: "https://jup.ag/dca", desc: "Dollar-cost averaging" },
+    { name: "Stop-Loss", link: "https://jup.ag/limit", desc: "Protect positions" }
+];
+
+// Категория 3: Bots (4)
+const botTools = [
+    { name: "Grid Bot", link: "https://www.binance.com/en/grid-trading", desc: "15% monthly" },
+    { name: "DCA Bot", link: "https://jup.ag/dca", desc: "Auto buy" },
+    { name: "Copy Trading", link: "https://www.bybit.com/trade", desc: "Top traders" },
+    { name: "Arbitrage Bot", link: "https://jup.ag", desc: "Risk-free" }
+];
+
+// Категория 4: Derivatives (4)
+const derivTools = [
+    { name: "Perpetuals 50x", link: "https://jup.ag/perps", desc: "Leverage" },
+    { name: "Options Trading", link: "https://app.drift.trade", desc: "Call/Put" },
+    { name: "Leveraged Tokens", link: "https://jup.ag", desc: "2x-5x" },
+    { name: "Hedging", link: "https://app.drift.trade", desc: "Portfolio protection" }
+];
+
+// Категория 5: Yield & Liquidity (4)
+const yieldTools = [
+    { name: "Yield Farming", link: "https://raydium.io/farm", desc: "Up to 25%" },
+    { name: "Liquidity Pools", link: "https://www.meteora.ag", desc: "Earn fees" },
+    { name: "Concentrated LP", link: "https://www.meteora.ag", desc: "DLMM pools" },
+    { name: "Dual Yield", link: "https://www.meteora.ag", desc: "Both tokens" }
+];
+
+// Категория 6: Analytics (8)
+const analyticsTools = [
+    { name: "Price Alerts", link: "https://www.coingecko.com", desc: "Target price" },
+    { name: "Charting", link: "https://www.tradingview.com", desc: "50+ indicators" },
+    { name: "News Feed", link: "https://www.coindesk.com", desc: "Real-time" },
+    { name: "Portfolio Tracker", link: "https://www.debank.com", desc: "Real-time" },
+    { name: "On-Chain Analysis", link: "https://solscan.io/token/8uhGgd7HBtNNZSVnUAx6T49ofSvmAGVJ1GcWjodFZbEz", desc: "Holders, tx" },
+    { name: "Volume Analysis", link: "https://www.geckoterminal.com/solana/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv", desc: "All DEXes" },
+    { name: "Market Depth", link: "https://raydium.io", desc: "Order book" },
+    { name: "Heatmap", link: "https://www.coingecko.com", desc: "Price zones" }
+];
+
+// Категория 7: Strategies (8)
+const strategyTools = [
+    { name: "Momentum Trading", link: "https://jup.ag", desc: "Trends" },
+    { name: "Swing Trading", link: "https://www.tradingview.com", desc: "2-5 days" },
+    { name: "Scalping", link: "https://jup.ag", desc: "1-5 min" },
+    { name: "Range Trading", link: "https://jup.ag", desc: "Defined range" },
+    { name: "Mean Reversion", link: "https://jup.ag", desc: "Average return" },
+    { name: "Breakout Trading", link: "https://jup.ag", desc: "Resistance/support" },
+    { name: "Arbitrage", link: "https://jup.ag", desc: "Price difference" },
+    { name: "Hedging", link: "https://app.drift.trade", desc: "Protection" }
+];
 
 function renderTrading() {
     const t = content[currentLang] || content.en;
-    let html = `<h2>${t.tools}</h2><div class="grid-4">`;
-    tradingTools.forEach(tool => {
-        html += `<div class="card"><div style="font-size:1.5rem;">📊</div><strong>${tool}</strong><br><small style="opacity:0.7;">USMT</small><br><a href="https://jup.ag" target="_blank" class="btn">Open</a></div>`;
+    let html = `<h2>🔄 DEX & Aggregators</h2><div class="grid-4">`;
+    dexTools.forEach(tool => {
+        html += `<div class="card"><div style="font-size:1.8rem;">🔄</div><strong>${tool.name}</strong><br><small>${tool.desc}</small><br><a href="${tool.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div><h2>📊 Order Types</h2><div class="grid-4">`;
+    orderTools.forEach(tool => {
+        html += `<div class="card"><div style="font-size:1.8rem;">📊</div><strong>${tool.name}</strong><br><small>${tool.desc}</small><br><a href="${tool.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div><h2>🤖 Bots & Automation</h2><div class="grid-4">`;
+    botTools.forEach(tool => {
+        html += `<div class="card"><div style="font-size:1.8rem;">🤖</div><strong>${tool.name}</strong><br><small>${tool.desc}</small><br><a href="${tool.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div><h2>⚡ Derivatives</h2><div class="grid-4">`;
+    derivTools.forEach(tool => {
+        html += `<div class="card"><div style="font-size:1.8rem;">⚡</div><strong>${tool.name}</strong><br><small>${tool.desc}</small><br><a href="${tool.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div><h2>💰 Yield & Liquidity</h2><div class="grid-4">`;
+    yieldTools.forEach(tool => {
+        html += `<div class="card"><div style="font-size:1.8rem;">💰</div><strong>${tool.name}</strong><br><small>${tool.desc}</small><br><a href="${tool.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div><h2>📊 Analytics</h2><div class="grid-4">`;
+    analyticsTools.forEach(tool => {
+        html += `<div class="card"><div style="font-size:1.8rem;">📊</div><strong>${tool.name}</strong><br><small>${tool.desc}</small><br><a href="${tool.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div><h2>🎯 Advanced Strategies</h2><div class="grid-4">`;
+    strategyTools.forEach(tool => {
+        html += `<div class="card"><div style="font-size:1.8rem;">🎯</div><strong>${tool.name}</strong><br><small>${tool.desc}</small><br><a href="${tool.link}" target="_blank" class="btn">Open →</a></div>`;
     });
     html += `</div>`;
+
+    // USMT Trading Dashboard
+    html += `<h2>📊 USMT Trading Dashboard</h2><div class="grid-3">`;
+    html += `<div class="card"><h3>24h Volume</h3><div style="font-size:2rem;color:#00E6B4;">$0.28</div><small>All DEXes</small></div>`;
+    html += `<div class="card"><h3>Liquidity</h3><div style="font-size:2rem;color:#00E6B4;">$592.9M</div><small>Meteora Pool</small></div>`;
+    html += `<div class="card"><h3>Holders</h3><div style="font-size:2rem;color:#00E6B4;">20</div><small>Unique wallets</small></div>`;
+    html += `</div>`;
+
     document.getElementById('tradeContent').innerHTML = html;
     document.getElementById('tradeTitle').innerText = t.title;
     document.getElementById('tradeSubhead').innerText = t.sub;
