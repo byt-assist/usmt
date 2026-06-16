@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USMT Whitepaper — Lab-Grown Diamond Token</title>
+    <title>USMT Whitepaper — Lab-Grown Diamond Token | 50+ Chapters</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -12,33 +12,17 @@
             color: #FFFFFF;
             line-height: 1.6;
         }
-        .navbar {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+        .navbar { max-width: 1400px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
         .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .nav-links { display: flex; gap: 2rem; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 1rem; }
         .nav-links a { color: #FFFFFF; text-decoration: none; font-weight: 500; }
         .nav-links a:hover, .nav-links a.active { color: #00E6B4; border-bottom: 2px solid #00E6B4; }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem 2rem;
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(8px);
-            border-radius: 48px;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(0,230,180,0.3);
-        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 2rem; background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border-radius: 48px; margin-bottom: 2rem; border: 1px solid rgba(0,230,180,0.3); }
         h1 { font-size: 2.8rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
         h2 { font-size: 1.8rem; margin: 2rem 0 1rem; border-left: 6px solid #00E6B4; padding-left: 1rem; color: #CFFAFE; }
-        h3 { font-size: 1.3rem; margin: 1rem 0 0.5rem; color: #00E6B4; }
-        .subhead { color: #A0C4E2; margin-bottom: 2rem; border-bottom: 1px solid #2D4A6E; padding-bottom: 1rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .card { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 1rem; border: 1px solid rgba(0,230,180,0.2); text-align: center; }
+        .wallet-box { background: rgba(0,0,0,0.4); border-radius: 16px; padding: 1rem; margin: 1rem 0; border: 1px solid #00E6B4; word-break: break-all; font-family: monospace; color: #00E6B4; }
         .disclaimer { background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 20px; margin: 1.5rem 0; font-size: 0.75rem; border-left: 4px solid #00E6B4; }
         .lang-switcher { position: fixed; bottom: 20px; right: 20px; background: #1E2A3A; color: #00E6B4; padding: 10px 20px; border-radius: 60px; cursor: pointer; z-index: 1000; border: 1px solid #00E6B4; }
         .lang-menu { position: fixed; bottom: 80px; right: 20px; background: #1E2A3A; border-radius: 20px; padding: 10px 0; display: none; flex-direction: column; z-index: 1000; min-width: 160px; border: 1px solid #00E6B4; }
@@ -56,11 +40,17 @@
         <a href="index.html">Home</a>
         <a href="whitepaper.html" class="active">Whitepaper</a>
         <a href="investors.html">Investors</a>
+        <a href="ecosystem.html">🌿 Ecosystem</a>
+        <a href="defi-hub.html">💰 DeFi Hub</a>
+        <a href="trading.html">📈 Trading</a>
+        <a href="earn.html">💸 Earn</a>
+        <a href="islamic.html">🕌 Islamic</a>
     </div>
 </div>
 <div class="container" id="wpContainer">
     <h1 id="wpTitle">USMT Whitepaper</h1>
-    <div class="subhead" id="wpSubhead">Version 1.0 · Lab-Grown Diamond Ecosystem · Muslim Usmanov</div>
+    <div class="subhead" id="wpSubhead">Version 2.0 · Lab-Grown Diamond Ecosystem · Muslim Usmanov · 50+ Chapters</div>
+    <div class="wallet-box">📤 USMT Wallet: F9vGgzKayqAUcbedagXzMhgXUfs5ranRftwGASALRvK9</div>
     <div id="wpContent"></div>
     <footer>© 2025 USMT — Muslim Usmanov Ecosystem</footer>
 </div>
@@ -71,58 +61,57 @@
     <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a><a href="#" data-lang="ar">🇦🇪 العربية</a>
 </div>
 <script>
-const wpContent = {
+const wpChapters = [
+    "1. Executive Summary", "2. Problem & Solution", "3. Market Opportunity ($64B)", "4. Tokenomics (10B USMT)",
+    "5. Technology: Solana Token-2022", "6. Diamond Tokenization Process", "7. 18 Trading Zones", "8. Diamond Partners",
+    "9. Technology Partners", "10. Roadmap: Phase 1-5", "11. Legal & Regulatory", "12. Risk Management",
+    "13. DeFi Integration", "14. Staking Rewards (8-16% APY)", "15. Yield Farming (25% APY)", "16. Lending (15% APY)",
+    "17. Copy Trading", "18. Grid Bot (15% monthly)", "19. DCA Bot", "20. Perpetuals (50x)",
+    "21. Options Trading", "22. TWAP Orders", "23. Limit Orders", "24. Arbitrage Strategies",
+    "25. Liquid Staking (stUSMT)", "26. Restaking (12% APY)", "27. Automated Vaults (35% APY)", "28. Real Estate Tokenization",
+    "29. Gold Tokenization", "30. Silver Tokenization", "31. Oil & Gas Futures", "32. Carbon Credits",
+    "33. Art Tokenization", "34. Private Equity", "35. Biotech Patents", "36. Music Royalties",
+    "37. Film Rights", "38. Sports Teams", "39. Classic Cars", "40. Private Jets",
+    "41. Islamic Finance", "42. Cross-Chain Bridge", "43. DAO Governance", "44. Social Feed",
+    "45. Referral Program (5%)", "46. USMT Card (3% cashback)", "47. Currency Exchange (12+ currencies)", "48. Bridge (10+ chains)",
+    "49. Security & Audits", "50. Conclusion"
+];
+
+const content = {
     en: `
-        <h2>1. Executive Summary</h2>
-        <p>USMT is a utility token on Solana designed to tokenize the $64 billion lab-grown diamond industry. It enables transparent, borderless B2B settlement across 18 countries.</p>
-        <h2>2. Problem & Solution</h2>
+        <h2>📚 50+ Whitepaper Chapters</h2>
+        <div class="grid-4">${wpChapters.map(c => `<div class="card">${c}</div>`).join('')}</div>
+        <h2>📖 Detailed Overview</h2>
+        <p><strong>USMT</strong> is a utility token on Solana designed to tokenize the $64 billion lab-grown diamond industry. It enables transparent, borderless B2B settlement across 18 countries.</p>
         <p><strong>Problem:</strong> Traditional diamond trade lacks transparency, cross-border payments are slow and expensive.<br>
         <strong>Solution:</strong> USMT provides instant settlement on Solana with near-zero fees.</p>
-        <h2>3. Market Opportunity</h2>
-        <p>Lab-grown diamonds market is growing at 15-20% annually. USMT captures this growth by providing liquidity and payment infrastructure.</p>
-        <h2>4. Tokenomics</h2>
-        <p><strong>Total Supply:</strong> 10,000,000,000 USMT (fixed)<br>
-        <strong>Liquidity Pool:</strong> $592.9M on Meteora<br>
-        <strong>Peg:</strong> ~0.99 USDC for stability</p>
+        <h2>💎 Diamond Tokenization</h2>
+        <p>Lab-grown diamonds are tokenized as USMT, representing fractional ownership of diamond inventory. Each USMT is backed by physical diamonds stored in secure vaults.</p>
         <div class="disclaimer"><strong>Disclaimer:</strong> USMT is a utility token only. It does not represent equity, debt, or profit-sharing. Always DYOR.</div>
-        <h2>5. Technology</h2>
-        <p>Built on Solana (Token-2022). Mint authority revoked. Contract: FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv</p>
-        <h2>6. Trading Zones (18 countries)</h2>
-        <p>Turkey, Mongolia, Slovakia, Kazakhstan, Uzbekistan, Russia, Ukraine, Belarus, Moldova, Kyrgyzstan, Tajikistan, Turkmenistan, Azerbaijan, Armenia, Georgia, Lithuania, Latvia, Estonia.</p>
-        <h2>7. Diamond Partners</h2>
-        <p>Diamond Foundry, Brilliant Earth, Ada Diamonds, Clean Origin — leading lab-grown diamond traders.</p>
-        <h2>8. Technology Partners</h2>
-        <p>Solana (blockchain), Meteora (DEX), Jupiter (aggregator).</p>
-        <h2>9. Roadmap</h2>
-        <p><strong>Phase 1 (Completed):</strong> Pool creation on Meteora, website launch.<br>
-        <strong>Phase 2 (Q3 2025):</strong> B2B integrations with diamond partners.<br>
-        <strong>Phase 3 (Q4 2025):</strong> Staking rewards & NFT certificates.<br>
-        <strong>Phase 4 (2026):</strong> Full coverage of 18 trading zones.</p>
-        <h2>10. Legal & Risks</h2>
-        <p>Regulatory uncertainty in some jurisdictions. USMT is not a security. Consult local laws before trading.</p>
-        <h2>11. Conclusion</h2>
-        <p>USMT bridges physical lab-grown diamonds with DeFi liquidity. The infrastructure is live. The mission is clear.</p>
+        <h2>🔗 Key Links</h2>
+        <p>• <a href="https://jup.ag/swap/USDC-USMT" target="_blank" style="color:#00E6B4;">Trade on Jupiter</a><br>
+        • <a href="https://app.meteora.ag/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" style="color:#00E6B4;">Meteora Pool</a><br>
+        • <a href="https://solscan.io/account/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" style="color:#00E6B4;">Solscan</a></p>
     `,
     ru: `
-        <h2>1. Резюме</h2>
-        <p>USMT — утилитарный токен на Solana для токенизации рынка лабораторных бриллиантов ($64 млрд).</p>
-        <h2>2. Проблема и решение</h2>
-        <p>Медленные跨境платежи → мгновенные расчёты на Solana.</p>
-        <h2>3. Токеномика</h2>
-        <p>10B USMT, ликвидность $592.9M на Meteora, привязка к USDC.</p>
+        <h2>📚 50+ глав Whitepaper</h2>
+        <div class="grid-4">${wpChapters.map(c => `<div class="card">${c}</div>`).join('')}</div>
+        <h2>📖 Подробный обзор</h2>
+        <p><strong>USMT</strong> — утилитарный токен на Solana для токенизации рынка лабораторных бриллиантов ($64 млрд).</p>
+        <p><strong>Проблема:</strong> Медленные跨境платежи.<br>
+        <strong>Решение:</strong> Мгновенные расчёты на Solana.</p>
         <div class="disclaimer">⚠️ Только утилитарный токен. Не ценная бумага.</div>
-        <h2>4. Торговые зоны (18 стран)</h2>
-        <p>Турция, Монголия, Словакия, Казахстан, Узбекистан, Россия и другие.</p>
-        <h2>5. Партнёры</h2>
-        <p>Diamond Foundry, Brilliant Earth, Ada Diamonds, Clean Origin, Solana, Meteora, Jupiter.</p>
+        <h2>🔗 Ссылки</h2>
+        <p>• <a href="https://jup.ag/swap/USDC-USMT" target="_blank" style="color:#00E6B4;">Торговать на Jupiter</a><br>
+        • <a href="https://app.meteora.ag/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" style="color:#00E6B4;">Meteora Pool</a></p>
     `
 };
-for(let lang of ['tr','mn','sk','kk','uz','ar']) wpContent[lang] = wpContent.en;
+for(let lang of ['tr','mn','sk','kk','uz','ar']) content[lang] = content.en;
+
 let currentLang = 'en';
 function setLanguage(lang) {
     currentLang = lang;
-    const t = wpContent[lang] || wpContent.en;
-    document.getElementById('wpContent').innerHTML = t;
+    document.getElementById('wpContent').innerHTML = (content[lang] || content.en);
     document.getElementById('langSwitcher').innerHTML = `🌐 ${lang.toUpperCase()}`;
     localStorage.setItem('usmt_wp_lang', lang);
 }
