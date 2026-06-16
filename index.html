@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USMT — Lab-Grown Diamond Trading Token | Muslim Usmanov</title>
+    <title>USMT — Lab-Grown Diamond Trading Token | 55+ DeFi Functions</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
             background: linear-gradient(135deg, #0B2B5E 0%, #0A1C3A 100%);
             color: #FFFFFF;
             line-height: 1.5;
         }
-
-        /* Navigation */
         .navbar {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 1rem 1.5rem;
             display: flex;
@@ -25,97 +22,76 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #FFFFFF, #00E6B4);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        .nav-links a {
-            color: #FFFFFF;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover {
-            color: #00E6B4;
-        }
-        .nav-links a.active {
-            color: #00E6B4;
-            border-bottom: 2px solid #00E6B4;
-        }
-
+        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 1rem; }
+        .nav-links a { color: #FFFFFF; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: #00E6B4; border-bottom: 2px solid #00E6B4; }
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 2rem 1.5rem;
             background: rgba(255,255,255,0.05);
             backdrop-filter: blur(8px);
             border-radius: 48px;
-            margin-top: 1rem;
             margin-bottom: 2rem;
-            border: 1px solid rgba(0, 230, 180, 0.3);
+            border: 1px solid rgba(0,230,180,0.3);
         }
-
         h1 { font-size: 3rem; margin-bottom: 0.5rem; font-weight: 800; background: linear-gradient(135deg, #FFFFFF, #00E6B4, #3B82F6); -webkit-background-clip: text; background-clip: text; color: transparent; }
         h2 { font-size: 1.8rem; margin: 2rem 0 1rem; border-left: 6px solid #00E6B4; padding-left: 1rem; color: #CFFAFE; }
         h3 { font-size: 1.3rem; margin: 1rem 0 0.5rem; color: #00E6B4; }
         .subhead { color: #A0C4E2; margin-bottom: 2rem; border-bottom: 1px solid #2D4A6E; padding-bottom: 1rem; }
-
         .grid-2col { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1.5rem 0; }
         .card { background: rgba(255,255,255,0.08); border-radius: 28px; padding: 1.5rem; flex: 1; min-width: 220px; backdrop-filter: blur(4px); border: 1px solid rgba(0,230,180,0.2); transition: transform 0.2s; }
         .card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.12); border-color: #00E6B4; }
         .price-large { font-size: 2.5rem; font-weight: 800; color: #00E6B4; text-shadow: 0 0 8px rgba(0,230,180,0.3);}
         .liquidity { font-size: 1.3rem; font-weight: 600; color: #FFD966; }
-
-        .partners-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin: 1.5rem 0; }
-        .partner-card { background: rgba(255,255,255,0.05); border-radius: 20px; padding: 1rem 1.5rem; text-align: center; min-width: 140px; border: 1px solid rgba(0,230,180,0.2); transition: 0.2s; }
-        .partner-card:hover { border-color: #00E6B4; transform: translateY(-3px); background: rgba(0,230,180,0.1); }
-        .partner-logo { font-size: 2rem; margin-bottom: 0.5rem; }
-        .partner-name { font-weight: 600; font-size: 0.9rem; }
-
-        .countries-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
-        .country-badge { background: rgba(0,230,180,0.15); padding: 0.3rem 0.8rem; border-radius: 40px; font-size: 0.75rem; border: 1px solid rgba(0,230,180,0.3); }
-
-        .button-group { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .function-card { background: rgba(255,255,255,0.06); border-radius: 20px; padding: 1rem; text-align: center; border: 1px solid rgba(0,230,180,0.15); transition: 0.2s; }
+        .function-card:hover { background: rgba(0,230,180,0.1); border-color: #00E6B4; transform: translateY(-3px); }
+        .function-icon { font-size: 2rem; margin-bottom: 0.3rem; }
         .btn { display: inline-block; background: #00E6B4; color: #0A1C3A; padding: 0.75rem 1.6rem; border-radius: 60px; text-decoration: none; font-weight: 700; transition: all 0.2s; }
         .btn:hover { background: #3B82F6; color: white; transform: scale(1.02);}
         .btn-outline { background: transparent; border: 2px solid #00E6B4; color: #00E6B4; }
         .btn-outline:hover { background: #00E6B4; color: #0A1C3A; }
-
+        .countries-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+        .country-badge { background: rgba(0,230,180,0.15); padding: 0.3rem 0.8rem; border-radius: 40px; font-size: 0.75rem; border: 1px solid rgba(0,230,180,0.3); }
+        .partners-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin: 1.5rem 0; }
+        .partner-card { background: rgba(255,255,255,0.05); border-radius: 20px; padding: 1rem 1.5rem; text-align: center; min-width: 140px; border: 1px solid rgba(0,230,180,0.2); transition: 0.2s; }
+        .partner-card:hover { border-color: #00E6B4; transform: translateY(-3px); background: rgba(0,230,180,0.1); }
+        .partner-logo { font-size: 2rem; margin-bottom: 0.5rem; }
+        .wallet-box { background: rgba(0,0,0,0.4); border-radius: 16px; padding: 1rem; margin: 1rem 0; border: 1px solid #00E6B4; word-break: break-all; font-family: monospace; color: #00E6B4; }
         .lang-switcher { position: fixed; bottom: 20px; right: 20px; background: #1E2A3A; color: #00E6B4; padding: 10px 20px; border-radius: 60px; cursor: pointer; z-index: 1000; border: 1px solid #00E6B4; }
         .lang-menu { position: fixed; bottom: 80px; right: 20px; background: #1E2A3A; border-radius: 20px; padding: 10px 0; display: none; flex-direction: column; z-index: 1000; min-width: 160px; border: 1px solid #00E6B4; }
         .lang-menu a { padding: 8px 20px; text-decoration: none; color: #FFF; display: block; }
         .lang-menu a:hover { background: #00E6B4; color: #0A1C3A; }
         .lang-menu.show { display: flex; }
-
         .chart-container { margin: 2rem 0; border-radius: 24px; overflow: hidden; background: #0A1C3A; padding: 0.5rem; border: 1px solid #00E6B4; }
         iframe { width: 100%; height: 450px; border: none; border-radius: 20px; }
         footer { text-align: center; margin-top: 2rem; font-size: 0.7rem; opacity: 0.7; }
-        
+        .stat { display: flex; justify-content: space-between; margin: 0.4rem 0; padding: 0.3rem 0; border-bottom: 1px solid rgba(0,230,180,0.15); }
         @media (max-width: 700px) { .container { padding: 1rem; } h1 { font-size: 2rem; } iframe { height: 350px; } .navbar { flex-direction: column; } }
     </style>
 </head>
 <body>
-
 <div class="navbar">
     <div class="logo">💎 USMT</div>
     <div class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="whitepaper.html">Whitepaper</a>
         <a href="investors.html">Investors</a>
+        <a href="ecosystem.html">🌿 Ecosystem</a>
+        <a href="defi-hub.html">💰 DeFi Hub</a>
+        <a href="lending.html">🏦 Lending</a>
+        <a href="trading.html">📈 Trading</a>
+        <a href="earn.html">💸 Earn</a>
+        <a href="card.html">💳 Card</a>
+        <a href="bridge.html">🌉 Bridge</a>
+        <a href="islamic.html">🕌 Islamic</a>
     </div>
 </div>
-
 <div class="container" id="appContainer">
     <h1 id="mainTitle">USMT — Diamond Trade Token</h1>
-    <div class="subhead" id="subhead">Lab-Grown Diamonds · Powered by Muslim Usmanov</div>
+    <div class="subhead" id="subhead">Lab-Grown Diamonds · Powered by Muslim Usmanov · 55+ Functions</div>
 
     <div class="grid-2col">
         <div class="card">
@@ -124,6 +100,7 @@
             <div id="liquidityText" class="liquidity">💎 Liquidity: $592.9M</div>
             <div>📊 24h Volume: $0.28 | 🔒 Holders: 20</div>
             <div>🔗 <a href="https://solscan.io/account/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" style="color:#00E6B4;">Solscan</a> | <a href="https://www.geckoterminal.com/solana/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" style="color:#00E6B4;">GeckoTerminal</a></div>
+            <div class="wallet-box">📤 Deposit/Lending Wallet: F9vGgzKayqAUcbedagXzMhgXUfs5ranRftwGASALRvK9</div>
         </div>
         <div class="card">
             <div>💎 <strong id="missionTitle">Mission</strong><br><span id="missionDesc">Tokenizing the lab-grown diamond trade across 18 countries.</span></div>
@@ -134,7 +111,10 @@
         </div>
     </div>
 
-    <h2 id="tradingZonesTitle">🌍 Trading Zones</h2>
+    <h2 id="functionsTitle">✨ 55+ Premium Functions</h2>
+    <div class="grid-4" id="functionsGrid"></div>
+
+    <h2 id="tradingZonesTitle">🌍 Trading Zones (18 countries)</h2>
     <div class="countries-list" id="countriesList"></div>
 
     <h2 id="partnersTitle">🤝 Partners</h2>
@@ -147,19 +127,14 @@
         <iframe src="https://www.geckoterminal.com/solana/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv?embed=1&info=0&swaps=0" title="USMT/USDC Chart"></iframe>
     </div>
 
-    <footer>© 2025 USMT — Muslim Usmanov Ecosystem. Lab-Grown Diamond Utility Token.</footer>
+    <footer>© 2025 USMT — Muslim Usmanov Ecosystem. Contract: FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv</footer>
 </div>
 
 <div class="lang-switcher" id="langSwitcher">🌐 EN</div>
 <div class="lang-menu" id="langMenu">
-    <a href="#" data-lang="en">🇬🇧 English</a>
-    <a href="#" data-lang="ru">🇷🇺 Русский</a>
-    <a href="#" data-lang="tr">🇹🇷 Türkçe</a>
-    <a href="#" data-lang="mn">🇲🇳 Монгол</a>
-    <a href="#" data-lang="sk">🇸🇰 Slovenčina</a>
-    <a href="#" data-lang="kk">🇰🇿 Қазақша</a>
-    <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a>
-    <a href="#" data-lang="ar">🇦🇪 العربية</a>
+    <a href="#" data-lang="en">🇬🇧 English</a><a href="#" data-lang="ru">🇷🇺 Русский</a><a href="#" data-lang="tr">🇹🇷 Türkçe</a>
+    <a href="#" data-lang="mn">🇲🇳 Монгол</a><a href="#" data-lang="sk">🇸🇰 Slovenčina</a><a href="#" data-lang="kk">🇰🇿 Қазақша</a>
+    <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a><a href="#" data-lang="ar">🇦🇪 العربية</a>
 </div>
 
 <script>
@@ -176,22 +151,100 @@ const techPartners = [
     { name: "Jupiter", logo: "🪐", desc: "Liquidity aggregator" }
 ];
 
-const content = {
-    en: { title: "USMT — Diamond Trade Token", sub: "Lab-Grown Diamonds · Powered by Muslim Usmanov", price: "$0.9898", liq: "💎 Liquidity: $592.9M", missionTitle: "Mission", missionDesc: "Tokenizing the lab-grown diamond trade across 18 countries.", tradingZones: "🌍 Trading Zones", partners: "🤝 Partners", diamondPartners: "💎 Diamond Partners", techPartners: "⚡ Technology Partners" },
-    ru: { title: "USMT — Токен для торговли бриллиантами", sub: "Лабораторные бриллианты · Muslim Usmanov", price: "$0.9898", liq: "💎 Ликвидность: $592.9 млн", missionTitle: "Миссия", missionDesc: "Токенизация рынка лабораторных бриллиантов в 18 странах.", tradingZones: "🌍 Торговые зоны", partners: "🤝 Партнёры", diamondPartners: "💎 Партнёры по бриллиантам", techPartners: "⚡ Технологические партнёры" },
-    tr: { title: "USMT — Elmas Ticaret Tokeni", sub: "Laboratuvar Elmasları · Muslim Usmanov", price: "$0.9898", liq: "💎 Likidite: $592.9M", missionTitle: "Misyon", missionDesc: "18 ülkede laboratuvar elmas ticaretini tokenleştirmek.", tradingZones: "🌍 Ticaret Bölgeleri", partners: "🤝 Ortaklar", diamondPartners: "💎 Elmas Ortakları", techPartners: "⚡ Teknoloji Ortakları" },
-    mn: { title: "USMT — Алмааны худалдааны токен", sub: "Лабораторийн алмааз · Muslim Usmanov", price: "$0.9898", liq: "💎 Хөрвөх чадвар: $592.9 сая", missionTitle: "Эрхэм зорилго", missionDesc: "18 улсад лабораторийн алмааны худалдааг токенчлэх.", tradingZones: "🌍 Худалдааны бүсүүд", partners: "🤝 Түншүүд", diamondPartners: "💎 Алмааны түншүүд", techPartners: "⚡ Технологийн түншүүд" },
-    sk: { title: "USMT — Token pre obchod s diamantmi", sub: "Laboratórne diamanty · Muslim Usmanov", price: "$0.9898", liq: "💎 Likvidita: $592.9M", missionTitle: "Poslanie", missionDesc: "Tokenizácia obchodu s laboratórnymi diamantmi v 18 krajinách.", tradingZones: "🌍 Obchodné zóny", partners: "🤝 Partneri", diamondPartners: "💎 Diamantoví partneri", techPartners: "⚡ Technologickí partneri" },
-    kk: { title: "USMT — Алмас саудасы токені", sub: "Зертханалық алмастар · Muslim Usmanov", price: "$0.9898", liq: "💎 Өтімділік: $592.9 млн", missionTitle: "Миссия", missionDesc: "18 елде зертханалық алмас саудасын токендеу.", tradingZones: "🌍 Сауда аймақтары", partners: "🤝 Серіктестер", diamondPartners: "💎 Алмас серіктестері", techPartners: "⚡ Технологиялық серіктестер" },
-    uz: { title: "USMT — Olmos savdosi tokeni", sub: "Laboratoriya olmoslari · Muslim Usmanov", price: "$0.9898", liq: "💎 Likvidlik: $592.9M", missionTitle: "Missiya", missionDesc: "18 davlatda laboratoriya olmos savdosini tokenlashtirish.", tradingZones: "🌍 Savdo zonalari", partners: "🤝 Hamkorlar", diamondPartners: "💎 Olmos hamkorlari", techPartners: "⚡ Texnologik hamkorlar" },
-    ar: { title: "USMT — رمز تجارة الماس", sub: "ماس معملي · Muslim Usmanov", price: "$0.9898", liq: "💎 سيولة: $592.9 مليون", missionTitle: "المهمة", missionDesc: "ترميز تجارة الماس المعملي في 18 دولة.", tradingZones: "🌍 مناطق التداول", partners: "🤝 الشركاء", diamondPartners: "💎 شركاء الماس", techPartners: "⚡ الشركاء التقنيون" }
-};
+const functions = [
+    { icon: "💎", name: "Diamond Tokenization", desc: "Lab-grown diamonds tokenized" },
+    { icon: "🏦", name: "DeFi Staking", desc: "8-16% APY" },
+    { icon: "💳", name: "USMT Card", desc: "3% cashback" },
+    { icon: "🌊", name: "Meteora LP", desc: "Dynamic AMM" },
+    { icon: "🪐", name: "Jupiter Aggregator", desc: "Best price" },
+    { icon: "📈", name: "Copy Trading", desc: "Top traders" },
+    { icon: "🤖", name: "Grid Bot", desc: "15% monthly" },
+    { icon: "📉", name: "DCA Bot", desc: "Auto buy" },
+    { icon: "⚡", name: "Perpetuals 50x", desc: "Leverage" },
+    { icon: "🎯", name: "Options Trading", desc: "Call/Put" },
+    { icon: "🌾", name: "Yield Farming", desc: "Up to 25%" },
+    { icon: "🏦", name: "Lending", desc: "Up to 15%" },
+    { icon: "🔄", name: "Arbitrage", desc: "Risk-free" },
+    { icon: "📊", name: "TWAP Orders", desc: "Large orders" },
+    { icon: "📈", name: "Limit Orders", desc: "Target price" },
+    { icon: "🔒", name: "Hedging", desc: "Portfolio protection" },
+    { icon: "💰", name: "Liquid Staking", desc: "stUSMT" },
+    { icon: "🔄", name: "Restaking", desc: "Additional yield" },
+    { icon: "🏦", name: "Auto Vaults", desc: "15-35% APY" },
+    { icon: "📊", name: "Charting", desc: "50+ indicators" },
+    { icon: "📰", name: "News Feed", desc: "Real-time" },
+    { icon: "📊", name: "Portfolio Tracker", desc: "Real-time" },
+    { icon: "🔍", name: "On-Chain Analysis", desc: "Holders, tx" },
+    { icon: "📊", name: "Volume Analysis", desc: "All DEXes" },
+    { icon: "📊", name: "Market Depth", desc: "Order book" },
+    { icon: "📊", name: "Heatmap", desc: "Price zones" },
+    { icon: "📈", name: "Momentum Trading", desc: "Trends" },
+    { icon: "📊", name: "Swing Trading", desc: "2-5 days" },
+    { icon: "📉", name: "Scalping", desc: "1-5 min" },
+    { icon: "📊", name: "Range Trading", desc: "Defined range" },
+    { icon: "📊", name: "Mean Reversion", desc: "Average return" },
+    { icon: "📊", name: "Breakout Trading", desc: "Resistance/support" },
+    { icon: "📊", name: "Price Alerts", desc: "Target price" },
+    { icon: "💎", name: "Diamond Foundry", desc: "CVD diamonds" },
+    { icon: "✨", name: "Brilliant Earth", desc: "NASDAQ-listed" },
+    { icon: "💍", name: "Ada Diamonds", desc: "Premium" },
+    { icon: "🌟", name: "Clean Origin", desc: "Sustainable" },
+    { icon: "⚡", name: "Solana", desc: "Blockchain" },
+    { icon: "🌊", name: "Meteora", desc: "DEX" },
+    { icon: "🪐", name: "Jupiter", desc: "Aggregator" },
+    { icon: "💎", name: "Real-World Assets", desc: "Gold, silver" },
+    { icon: "🏠", name: "Real Estate", desc: "Dubai" },
+    { icon: "🛢️", name: "Oil & Gas", desc: "Tokenized futures" },
+    { icon: "🌾", name: "Agriculture", desc: "Farmland" },
+    { icon: "🌍", name: "Carbon Credits", desc: "Trade" },
+    { icon: "🎨", name: "Art Tokenization", desc: "Picasso, Monet" },
+    { icon: "🚀", name: "Space Assets", desc: "Satellites" },
+    { icon: "🧬", name: "Biotech Patents", desc: "Royalties" },
+    { icon: "🎵", name: "Music Royalties", desc: "Catalogues" },
+    { icon: "🎬", name: "Film Rights", desc: "Production" },
+    { icon: "🏆", name: "Sports Teams", desc: "Shares" },
+    { icon: "🚗", name: "Classic Cars", desc: "Ferrari" },
+    { icon: "✈️", name: "Private Jets", desc: "Shares" },
+    { icon: "🏔️", name: "Ski Resorts", desc: "Switzerland" },
+    { icon: "🌴", name: "Eco-Resorts", desc: "Bali" },
+    { icon: "🕌", name: "Islamic Finance", desc: "Sharia-compliant" },
+    { icon: "💱", name: "Currency Exchange", desc: "12 currencies" },
+    { icon: "🌉", name: "Cross-Chain Bridge", desc: "10+ chains" },
+    { icon: "🗳️", name: "DAO Governance", desc: "Voting" },
+    { icon: "🎮", name: "Social Feed", desc: "Community" },
+    { icon: "🎯", name: "Quest Board", desc: "Rewards" },
+    { icon: "👥", name: "Referral Program", desc: "5%" }
+];
 
-function renderCountries() { document.getElementById('countriesList').innerHTML = countries.map(c => `<span class="country-badge">${c}</span>`).join(''); }
-function renderPartners() {
-    document.getElementById('diamondPartners').innerHTML = diamondPartners.map(p => `<div class="partner-card"><div class="partner-logo">${p.logo}</div><div class="partner-name">${p.name}</div><div class="partner-type">${p.desc}</div></div>`).join('');
-    document.getElementById('techPartners').innerHTML = techPartners.map(p => `<div class="partner-card"><div class="partner-logo">${p.logo}</div><div class="partner-name">${p.name}</div><div class="partner-type">${p.desc}</div></div>`).join('');
+function renderFunctions() {
+    document.getElementById('functionsGrid').innerHTML = functions.map(f => 
+        `<div class="function-card"><div class="function-icon">${f.icon}</div><strong>${f.name}</strong><br><small>${f.desc}</small></div>`
+    ).join('');
 }
+
+function renderCountries() {
+    document.getElementById('countriesList').innerHTML = countries.map(c => `<span class="country-badge">${c}</span>`).join('');
+}
+
+function renderPartners() {
+    document.getElementById('diamondPartners').innerHTML = diamondPartners.map(p => 
+        `<div class="partner-card"><div class="partner-logo">${p.logo}</div><div class="partner-name">${p.name}</div><div class="partner-type">${p.desc}</div></div>`
+    ).join('');
+    document.getElementById('techPartners').innerHTML = techPartners.map(p => 
+        `<div class="partner-card"><div class="partner-logo">${p.logo}</div><div class="partner-name">${p.name}</div><div class="partner-type">${p.desc}</div></div>`
+    ).join('');
+}
+
+const content = {
+    en: { title: "USMT — Diamond Trade Token", sub: "Lab-Grown Diamonds · Powered by Muslim Usmanov · 55+ Functions", price: "$0.9898", liq: "💎 Liquidity: $592.9M", missionTitle: "Mission", missionDesc: "Tokenizing the lab-grown diamond trade across 18 countries.", functionsTitle: "✨ 55+ Premium Functions", tradingZones: "🌍 Trading Zones (18 countries)", partners: "🤝 Partners", diamondPartners: "💎 Diamond Partners", techPartners: "⚡ Technology Partners" },
+    ru: { title: "USMT — Токен для торговли бриллиантами", sub: "Лабораторные бриллианты · Muslim Usmanov · 55+ функций", price: "$0.9898", liq: "💎 Ликвидность: $592.9 млн", missionTitle: "Миссия", missionDesc: "Токенизация рынка лабораторных бриллиантов в 18 странах.", functionsTitle: "✨ 55+ Премиум-функций", tradingZones: "🌍 Торговые зоны (18 стран)", partners: "🤝 Партнёры", diamondPartners: "💎 Партнёры по бриллиантам", techPartners: "⚡ Технологические партнёры" },
+    tr: { title: "USMT — Elmas Ticaret Tokeni", sub: "Laboratuvar Elmasları · Muslim Usmanov · 55+ Fonksiyon", price: "$0.9898", liq: "💎 Likidite: $592.9M", missionTitle: "Misyon", missionDesc: "18 ülkede laboratuvar elmas ticaretini tokenleştirmek.", functionsTitle: "✨ 55+ Premium Fonksiyon", tradingZones: "🌍 Ticaret Bölgeleri (18 ülke)", partners: "🤝 Ortaklar", diamondPartners: "💎 Elmas Ortakları", techPartners: "⚡ Teknoloji Ortakları" },
+    mn: { title: "USMT — Алмааны худалдааны токен", sub: "Лабораторийн алмааз · Muslim Usmanov · 55+ функц", price: "$0.9898", liq: "💎 Хөрвөх чадвар: $592.9 сая", missionTitle: "Эрхэм зорилго", missionDesc: "18 улсад лабораторийн алмааны худалдааг токенчлэх.", functionsTitle: "✨ 55+ Дээд зэргийн функц", tradingZones: "🌍 Худалдааны бүсүүд (18 улс)", partners: "🤝 Түншүүд", diamondPartners: "💎 Алмааны түншүүд", techPartners: "⚡ Технологийн түншүүд" },
+    sk: { title: "USMT — Token pre obchod s diamantmi", sub: "Laboratórne diamanty · Muslim Usmanov · 55+ funkcií", price: "$0.9898", liq: "💎 Likvidita: $592.9M", missionTitle: "Poslanie", missionDesc: "Tokenizácia obchodu s laboratórnymi diamantmi v 18 krajinách.", functionsTitle: "✨ 55+ Prémiových funkcií", tradingZones: "🌍 Obchodné zóny (18 krajín)", partners: "🤝 Partneri", diamondPartners: "💎 Diamantoví partneri", techPartners: "⚡ Technologickí partneri" },
+    kk: { title: "USMT — Алмас саудасы токені", sub: "Зертханалық алмастар · Muslim Usmanov · 55+ функция", price: "$0.9898", liq: "💎 Өтімділік: $592.9 млн", missionTitle: "Миссия", missionDesc: "18 елде зертханалық алмас саудасын токендеу.", functionsTitle: "✨ 55+ Прemium функциялар", tradingZones: "🌍 Сауда аймақтары (18 ел)", partners: "🤝 Серіктестер", diamondPartners: "💎 Алмас серіктестері", techPartners: "⚡ Технологиялық серіктестер" },
+    uz: { title: "USMT — Olmos savdosi tokeni", sub: "Laboratoriya olmoslari · Muslim Usmanov · 55+ funksiya", price: "$0.9898", liq: "💎 Likvidlik: $592.9M", missionTitle: "Missiya", missionDesc: "18 davlatda laboratoriya olmos savdosini tokenlashtirish.", functionsTitle: "✨ 55+ Premium funksiyalar", tradingZones: "🌍 Savdo zonalari (18 davlat)", partners: "🤝 Hamkorlar", diamondPartners: "💎 Olmos hamkorlari", techPartners: "⚡ Texnologik hamkorlar" },
+    ar: { title: "USMT — رمز تجارة الماس", sub: "ماس معملي · Muslim Usmanov · 55+ وظيفة", price: "$0.9898", liq: "💎 سيولة: $592.9 مليون", missionTitle: "المهمة", missionDesc: "ترميز تجارة الماس المعملي في 18 دولة.", functionsTitle: "✨ 55+ وظيفة متميزة", tradingZones: "🌍 مناطق التداول (18 دولة)", partners: "🤝 الشركاء", diamondPartners: "💎 شركاء الماس", techPartners: "⚡ الشركاء التقنيون" }
+};
 
 let currentLang = 'en';
 function setLanguage(lang) {
@@ -203,6 +256,7 @@ function setLanguage(lang) {
     document.getElementById('liquidityText').innerHTML = t.liq;
     document.getElementById('missionTitle').innerText = t.missionTitle;
     document.getElementById('missionDesc').innerText = t.missionDesc;
+    document.getElementById('functionsTitle').innerText = t.functionsTitle;
     document.getElementById('tradingZonesTitle').innerText = t.tradingZones;
     document.getElementById('partnersTitle').innerText = t.partners;
     document.getElementById('diamondPartnersTitle').innerText = t.diamondPartners;
@@ -210,10 +264,12 @@ function setLanguage(lang) {
     document.getElementById('langSwitcher').innerHTML = `🌐 ${lang.toUpperCase()}`;
     localStorage.setItem('usmt_lang', lang);
 }
+
 document.getElementById('langSwitcher').onclick = () => document.getElementById('langMenu').classList.toggle('show');
 document.querySelectorAll('.lang-menu a').forEach(a => a.onclick = (e) => { e.preventDefault(); setLanguage(a.dataset.lang); document.getElementById('langMenu').classList.remove('show'); });
 document.onclick = (e) => { if (!e.target.closest('.lang-switcher') && !e.target.closest('.lang-menu')) document.getElementById('langMenu').classList.remove('show'); };
-renderCountries(); renderPartners();
+
+renderCountries(); renderPartners(); renderFunctions();
 setLanguage(localStorage.getItem('usmt_lang') || 'en');
 </script>
 </body>
