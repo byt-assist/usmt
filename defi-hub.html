@@ -15,16 +15,13 @@
         .container { max-width: 1400px; margin: 0 auto; padding: 2rem; background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border-radius: 48px; margin-bottom: 2rem; border: 1px solid rgba(0,230,180,0.3); }
         h1 { font-size: 2.8rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
         h2 { font-size: 1.6rem; margin: 2rem 0 1rem; border-left: 6px solid #00E6B4; padding-left: 1rem; color: #CFFAFE; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
         .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
         .card { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 1.2rem; border: 1px solid rgba(0,230,180,0.2); transition: 0.2s; }
         .card:hover { transform: translateY(-3px); background: rgba(0,230,180,0.1); border-color: #00E6B4; }
         .wallet-box { background: rgba(0,0,0,0.4); border-radius: 16px; padding: 1rem; margin: 1rem 0; border: 1px solid #00E6B4; word-break: break-all; font-family: monospace; color: #00E6B4; }
-        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; border: none; cursor: pointer; }
+        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; }
         .btn:hover { background: #3B82F6; color: white; }
-        .btn-outline { background: transparent; border: 1px solid #00E6B4; color: #00E6B4; }
-        .btn-outline:hover { background: #00E6B4; color: #0A1C3A; }
-        .stat { display: flex; justify-content: space-between; margin: 0.5rem 0; padding: 0.3rem 0; border-bottom: 1px solid rgba(0,230,180,0.15); }
+        .stat { display: flex; justify-content: space-between; margin: 0.4rem 0; padding: 0.3rem 0; border-bottom: 1px solid rgba(0,230,180,0.15); }
         .apy { color: #00E6B4; font-weight: bold; font-size: 1.2rem; }
         .lang-switcher { position: fixed; bottom: 20px; right: 20px; background: #1E2A3A; color: #00E6B4; padding: 10px 20px; border-radius: 60px; cursor: pointer; z-index: 1000; border: 1px solid #00E6B4; }
         .lang-menu { position: fixed; bottom: 80px; right: 20px; background: #1E2A3A; border-radius: 20px; padding: 10px 0; display: none; flex-direction: column; z-index: 1000; min-width: 160px; border: 1px solid #00E6B4; }
@@ -48,8 +45,11 @@
         <a href="card.html">💳 Card</a>
         <a href="bridge.html">🌉 Bridge</a>
         <a href="islamic.html">🕌 Islamic</a>
+        <a href="precious.html">💎 Precious</a>
+        <a href="mining.html">⛏️ Mining</a>
         <a href="whitepaper.html">📄 WP</a>
         <a href="investors.html">📊 Investors</a>
+        <a href="how-to-buy.html">🇹🇲 How to Buy</a>
     </div>
 </div>
 <div class="container" id="defiContainer">
@@ -66,121 +66,37 @@
     <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a><a href="#" data-lang="ar">🇦🇪 العربية</a>
 </div>
 <script>
+const defiProducts = [
+    { name: "USMT Staking", apy: "8-16%", min: "1,000 USMT", lock: "30-365 days", link: "https://jup.ag/swap/SOL-USMT" },
+    { name: "Liquid Staking", apy: "7.5%", min: "100 USMT", lock: "Flexible", link: "https://jup.ag/swap/SOL-USMT" },
+    { name: "Restaking", apy: "12%", min: "500 stUSMT", lock: "Flexible", link: "https://app.kamino.finance" },
+    { name: "Auto Vaults", apy: "15-35%", min: "100 USMT", lock: "Flexible", link: "https://www.meteora.ag" },
+    { name: "USMT/USDC LP", apy: "25%", min: "100 USMT + 100 USDC", lock: "Flexible", link: "https://raydium.io/farm" },
+    { name: "USMT/SOL LP", apy: "22%", min: "100 USMT + 0.5 SOL", lock: "Flexible", link: "https://raydium.io/farm" },
+    { name: "USMT Lending", apy: "15%", min: "1,000 USMT", lock: "30-365 days", link: "https://jup.ag/lend" },
+    { name: "USDC Lending", apy: "12%", min: "100 USDC", lock: "30-365 days", link: "https://jup.ag/lend" }
+];
 const content = {
-    en: { title: "💰 USMT DeFi Hub", sub: "Staking · Deposits · Farming · Lending · 20+ Products", staking: "🔒 Staking & Vaults", farming: "🌾 Yield Farming", lending: "🏦 Lending", bank: "💎 USMT BANK 50+", dashboard: "📊 DeFi Dashboard" },
-    ru: { title: "💰 USMT DeFi Hub", sub: "Стейкинг · Депозиты · Фарминг · Кредитование · 20+ продуктов", staking: "🔒 Стейкинг и Vaults", farming: "🌾 Фарминг", lending: "🏦 Кредитование", bank: "💎 USMT BANK 50+", dashboard: "📊 DeFi Дашборд" },
-    tr: { title: "💰 USMT DeFi Merkezi", sub: "Staking · Mevduat · Farming · Borç Verme · 20+ Ürün", staking: "🔒 Staking ve Vaultlar", farming: "🌾 Yield Farming", lending: "🏦 Borç Verme", bank: "💎 USMT BANK 50+", dashboard: "📊 DeFi Göstergesi" },
-    mn: { title: "💰 USMT DeFi Төв", sub: "Staking · Хадгаламж · Farming · Зээл · 20+ бүтээгдэхүүн", staking: "🔒 Staking ба Vaults", farming: "🌾 Yield Farming", lending: "🏦 Зээл", bank: "💎 USMT BANK 50+", dashboard: "📊 DeFi хяналтын самбар" },
-    sk: { title: "💰 USMT DeFi Centrum", sub: "Staking · Vklady · Farming · Požičiavanie · 20+ produktov", staking: "🔒 Staking a Vaulty", farming: "🌾 Yield Farming", lending: "🏦 Požičiavanie", bank: "💎 USMT BANK 50+", dashboard: "📊 DeFi dashboard" },
-    kk: { title: "💰 USMT DeFi Орталығы", sub: "Staking · Депозиттер · Farming · Кредиттеу · 20+ өнім", staking: "🔒 Staking және Vaults", farming: "🌾 Yield Farming", lending: "🏦 Кредиттеу", bank: "💎 USMT BANK 50+", dashboard: "📊 DeFi тақтасы" },
-    uz: { title: "💰 USMT DeFi Markazi", sub: "Staking · Depozitlar · Farming · Kreditlash · 20+ mahsulot", staking: "🔒 Staking va Vaultlar", farming: "🌾 Yield Farming", lending: "🏦 Kreditlash", bank: "💎 USMT BANK 50+", dashboard: "📊 DeFi paneli" },
-    ar: { title: "💰 مركز USMT للتمويل اللامركزي", sub: "التجميد · الودائع · الزراعة · الإقراض · 20+ منتج", staking: "🔒 التجميد والخزائن", farming: "🌾 الزراعة", lending: "🏦 الإقراض", bank: "💎 USMT BANK 50+", dashboard: "📊 لوحة معلومات DeFi" }
+    en: { title: "💰 USMT DeFi Hub", sub: "Staking · Deposits · Farming · Lending · 20+ Products" },
+    ru: { title: "💰 USMT DeFi Hub", sub: "Стейкинг · Депозиты · Фарминг · Кредитование · 20+ продуктов" },
+    tr: { title: "💰 USMT DeFi Merkezi", sub: "Staking · Mevduat · Farming · Borç Verme · 20+ Ürün" },
+    mn: { title: "💰 USMT DeFi Төв", sub: "Staking · Хадгаламж · Farming · Зээл · 20+ бүтээгдэхүүн" },
+    sk: { title: "💰 USMT DeFi Centrum", sub: "Staking · Vklady · Farming · Požičiavanie · 20+ produktov" },
+    kk: { title: "💰 USMT DeFi Орталығы", sub: "Staking · Депозиттер · Farming · Кредиттеу · 20+ өнім" },
+    uz: { title: "💰 USMT DeFi Markazi", sub: "Staking · Depozitlar · Farming · Kreditlash · 20+ mahsulot" },
+    ar: { title: "💰 مركز USMT للتمويل اللامركزي", sub: "التجميد · الودائع · الزراعة · الإقراض · 20+ منتج" }
 };
-
-// ============ СТЕЙКИНГ (с минимальными суммами) ============
-const stakingProducts = [
-    { name: "USMT Staking", apy: "8-16%", min: "1,000 USMT", lock: "30-365 days", desc: "Lock USMT, earn rewards", link: "https://jup.ag/swap/SOL-USMT" },
-    { name: "Liquid Staking", apy: "7.5%", min: "100 USMT", lock: "Flexible", desc: "Stake → get stUSMT", link: "https://jup.ag/swap/SOL-USMT" },
-    { name: "Restaking", apy: "12%", min: "500 stUSMT", lock: "Flexible", desc: "Reuse stUSMT for extra yield", link: "https://app.kamino.finance" },
-    { name: "Auto Vaults", apy: "15-35%", min: "100 USMT", lock: "Flexible", desc: "Automated strategies on Meteora", link: "https://www.meteora.ag" }
-];
-
-// ============ ФАРМИНГ (с минимальными суммами) ============
-const farmingProducts = [
-    { name: "USMT/USDC LP", apy: "25%", min: "100 USMT + 100 USDC", lock: "Flexible", desc: "Earn swap fees", link: "https://raydium.io/farm" },
-    { name: "USMT/SOL LP", apy: "22%", min: "100 USMT + 0.5 SOL", lock: "Flexible", desc: "Earn swap fees", link: "https://raydium.io/farm" },
-    { name: "USMT/USDT LP", apy: "20%", min: "100 USMT + 100 USDT", lock: "Flexible", desc: "Earn swap fees", link: "https://raydium.io/farm" },
-    { name: "Concentrated LP", apy: "15-35%", min: "500 USMT", lock: "Flexible", desc: "DLMM pools on Meteora", link: "https://www.meteora.ag" },
-    { name: "Dual Yield", apy: "18-30%", min: "200 USMT", lock: "Flexible", desc: "Earn in both tokens", link: "https://www.meteora.ag" }
-];
-
-// ============ КРЕДИТОВАНИЕ (с минимальными суммами) ============
-const lendingProducts = [
-    { name: "USMT Lending", apy: "15%", min: "1,000 USMT", lock: "30-365 days", desc: "Lend USMT, earn interest", link: "https://jup.ag/lend" },
-    { name: "USDC Lending", apy: "12%", min: "100 USDC", lock: "30-365 days", desc: "Lend USDC, earn interest", link: "https://jup.ag/lend" },
-    { name: "SOL Lending", apy: "10%", min: "1 SOL", lock: "30-365 days", desc: "Lend SOL, earn interest", link: "https://jup.ag/lend" },
-    { name: "USMT Collateralized", apy: "9-20%", min: "5,000 USMT", lock: "30-365 days", desc: "Borrow against USMT", link: "https://jup.ag/lend" }
-];
-
-// ============ USMT BANK 50+ (с минимальными суммами) ============
-const bankProducts = [
-    { name: "USMT BANK 50+", apy: "10-24%", min: "1,000 USMT", lock: "30-365 days", desc: "Deposit program with rates 50% higher than standard market rates.", link: "#" }
-];
-
 function renderDefi() {
     const t = content[currentLang] || content.en;
-
-    let html = '';
-
-    // ===== СТЕЙКИНГ =====
-    html += `<h2>${t.staking}</h2><div class="grid-4">`;
-    stakingProducts.forEach(p => {
-        html += `<div class="card">
-            <h3>${p.name}</h3>
-            <div class="apy">${p.apy}</div>
-            <div class="stat"><span>Min Amount</span><span>${p.min}</span></div>
-            <div class="stat"><span>Lock Period</span><span>${p.lock}</span></div>
-            <p>${p.desc}</p>
-            <a href="${p.link}" target="_blank" class="btn">Start →</a>
-        </div>`;
+    let html = `<h2>🔒 DeFi Products</h2><div class="grid-4">`;
+    defiProducts.forEach(p => {
+        html += `<div class="card"><h3>${p.name}</h3><div class="apy">${p.apy}</div><div class="stat"><span>Min</span><span>${p.min}</span></div><div class="stat"><span>Lock</span><span>${p.lock}</span></div><a href="${p.link}" target="_blank" class="btn">Start →</a></div>`;
     });
-    html += `</div>`;
-
-    // ===== ФАРМИНГ =====
-    html += `<h2>${t.farming}</h2><div class="grid-4">`;
-    farmingProducts.forEach(p => {
-        html += `<div class="card">
-            <h3>${p.name}</h3>
-            <div class="apy">${p.apy}</div>
-            <div class="stat"><span>Min Amount</span><span>${p.min}</span></div>
-            <div class="stat"><span>Lock Period</span><span>${p.lock}</span></div>
-            <p>${p.desc}</p>
-            <a href="${p.link}" target="_blank" class="btn">Start →</a>
-        </div>`;
-    });
-    html += `</div>`;
-
-    // ===== КРЕДИТОВАНИЕ =====
-    html += `<h2>${t.lending}</h2><div class="grid-4">`;
-    lendingProducts.forEach(p => {
-        html += `<div class="card">
-            <h3>${p.name}</h3>
-            <div class="apy">${p.apy}</div>
-            <div class="stat"><span>Min Amount</span><span>${p.min}</span></div>
-            <div class="stat"><span>Lock Period</span><span>${p.lock}</span></div>
-            <p>${p.desc}</p>
-            <a href="${p.link}" target="_blank" class="btn">Start →</a>
-        </div>`;
-    });
-    html += `</div>`;
-
-    // ===== USMT BANK 50+ =====
-    html += `<h2>${t.bank}</h2><div class="grid-3">`;
-    bankProducts.forEach(p => {
-        html += `<div class="card" style="border-color:#00E6B4; background:rgba(0,230,180,0.05);">
-            <h3>${p.name}</h3>
-            <div class="apy">${p.apy}</div>
-            <div class="stat"><span>Min Amount</span><span>${p.min}</span></div>
-            <div class="stat"><span>Lock Period</span><span>${p.lock}</span></div>
-            <p>${p.desc}</p>
-            <a href="${p.link}" target="_blank" class="btn">Deposit →</a>
-        </div>`;
-    });
-    html += `</div>`;
-
-    // ===== ДАШБОРД =====
-    html += `<h2>${t.dashboard}</h2><div class="grid-4">
-        <div class="card"><h3>Total Value Locked</h3><div style="font-size:2rem;color:#00E6B4;">$487.3M</div><small>All products</small></div>
-        <div class="card"><h3>Daily Active Users</h3><div style="font-size:2rem;color:#00E6B4;">1,247</div><small>Unique wallets</small></div>
-        <div class="card"><h3>Total Staked</h3><div style="font-size:2rem;color:#00E6B4;">12.5B USMT</div><small>All staking pools</small></div>
-        <div class="card"><h3>Protocol Fees (24h)</h3><div style="font-size:2rem;color:#00E6B4;">$12,450</div><small>All protocols</small></div>
-    </div>`;
-
+    html += `</div><h2>💎 USMT BANK 50+</h2><div class="grid-4"><div class="card" style="border-color:#00E6B4;background:rgba(0,230,180,0.05);"><h3>USMT BANK 50+</h3><div class="apy">10-24%</div><div class="stat"><span>Min</span><span>1,000 USMT</span></div><div class="stat"><span>Lock</span><span>30-365 days</span></div><p>Deposit program with rates 50% higher than standard market rates.</p><a href="#" class="btn">Deposit →</a></div></div>`;
     document.getElementById('defiContent').innerHTML = html;
     document.getElementById('defiTitle').innerText = t.title;
     document.getElementById('defiSubhead').innerText = t.sub;
 }
-
 let currentLang = 'en';
 function setLanguage(lang) {
     currentLang = lang;
