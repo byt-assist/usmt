@@ -69,9 +69,15 @@
 </div>
 <div class="lang-switcher" id="langSwitcher">🌐 EN</div>
 <div class="lang-menu" id="langMenu">
-    <a href="#" data-lang="en">🇬🇧 English</a><a href="#" data-lang="ru">🇷🇺 Русский</a><a href="#" data-lang="tr">🇹🇷 Türkçe</a>
-    <a href="#" data-lang="mn">🇲🇳 Монгол</a><a href="#" data-lang="sk">🇸🇰 Slovenčina</a><a href="#" data-lang="kk">🇰🇿 Қазақша</a>
-    <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a><a href="#" data-lang="ar">🇦🇪 العربية</a>
+    <a href="#" data-lang="en">🇬🇧 English</a>
+    <a href="#" data-lang="ru">🇷🇺 Русский</a>
+    <a href="#" data-lang="tr">🇹🇷 Türkçe</a>
+    <a href="#" data-lang="mn">🇲🇳 Монгол</a>
+    <a href="#" data-lang="sk">🇸🇰 Slovenčina</a>
+    <a href="#" data-lang="kk">🇰🇿 Қазақша</a>
+    <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a>
+    <a href="#" data-lang="ar">🇦🇪 العربية</a>
+    <a href="#" data-lang="fa">🇮🇷 فارسی</a>
 </div>
 <script>
 const content = {
@@ -82,7 +88,8 @@ const content = {
     sk: { title: "💳 USMT Karta — 100+ kryptokariet a bankových riešení", sub: "Virtuálne · Fyzické · Krypto · Podnikateľské · Prémiové · Cestovné · DeFi · 50+ mien" },
     kk: { title: "💳 USMT Картасы — 100+ крипто карталар және банк шешімдері", sub: "Виртуалды · Физикалық · Крипто · Бизнес · Премиум · Саяхат · DeFi · 50+ валюта" },
     uz: { title: "💳 USMT Karta — 100+ kripto karta va bank yechimlari", sub: "Virtual · Fizik · Kripto · Biznes · Premium · Sayohat · DeFi · 50+ valyuta" },
-    ar: { title: "💳 بطاقة USMT — 100+ بطاقة تشفير وحلول مصرفية", sub: "افتراضية · مادية · تشفير · أعمال · ممتازة · سفر · DeFi · 50+ عملة" }
+    ar: { title: "💳 بطاقة USMT — 100+ بطاقة تشفير وحلول مصرفية", sub: "افتراضية · مادية · تشفير · أعمال · ممتازة · سفر · DeFi · 50+ عملة" },
+    fa: { title: "💳 کارت USMT — ۱۰۰+ کارت رمزنگاری و راه‌حل‌های بانکی", sub: "مجازی · فیزیکی · رمزنگاری · کسب و کار · ممتاز · سفر · دیفای · ۵۰+ ارز" }
 };
 
 // ============ СТАРЫЕ ФУНКЦИИ (СОХРАНЕНЫ) ============
@@ -166,63 +173,63 @@ const defiCards = [
 
 // ============ НОВЫЕ ФУНКЦИИ: БЫСТРЫЙ СТАРТ ============
 const quickStart = {
-    name: "🚀 Быстрый старт — 3 минуты",
+    name: "🚀 Quick Start — 3 Minutes",
     steps: [
-        "1️⃣ Установите Phantom кошелёк — <a href='https://phantom.app' target='_blank' style='color:#00E6B4;'>скачать Phantom</a>",
-        "2️⃣ Купите USDC через Bitget — <a href='https://bitget.com' target='_blank' style='color:#00E6B4;'>открыть Bitget</a> (Visa/Mastercard/UnionPay)",
-        "3️⃣ Обменяйте USDC → USMT на Jupiter — <a href='https://jup.ag/swap/USDC-USMT' target='_blank' style='color:#00E6B4;'>открыть Jupiter</a>"
+        "1️⃣ Install Phantom wallet — <a href='https://phantom.app' target='_blank' style='color:#00E6B4;'>Download Phantom</a>",
+        "2️⃣ Buy USDC via Bitget — <a href='https://bitget.com' target='_blank' style='color:#00E6B4;'>Open Bitget</a> (Visa/Mastercard/UnionPay)",
+        "3️⃣ Swap USDC → USMT on Jupiter — <a href='https://jup.ag/swap/USDC-USMT' target='_blank' style='color:#00E6B4;'>Open Jupiter</a>"
     ],
     link: "https://bitget.com",
-    linkText: "🚀 Начать сейчас →"
+    linkText: "🚀 Start Now →"
 };
 
 // ============ НОВЫЕ ФУНКЦИИ: 50+ ЛОКАЛЬНЫХ ВАЛЮТ ============
 const localCurrencies = [
-    { name: "🇹🇲 Туркменский манат (TMT)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇺🇿 Узбекский сум (UZS)", link: "https://p2p.binance.com/ru/trade/sell/USDT?fiat=UZS", steps: "Binance P2P → USDT → Jupiter" },
-    { name: "🇰🇿 Казахстанский тенге (KZT)", link: "https://p2p.binance.com/ru/trade/sell/USDT?fiat=KZT", steps: "Binance P2P → USDT → Jupiter" },
-    { name: "🇷🇺 Российский рубль (RUB)", link: "https://p2p.binance.com/ru/trade/sell/USDT?fiat=RUB", steps: "Binance P2P → USDT → Jupiter" },
-    { name: "🇨🇳 Китайский юань (CNY)", link: "https://p2p.binance.com/ru/trade/sell/USDT?fiat=CNY", steps: "Binance P2P → USDT → Jupiter" },
-    { name: "🇦🇪 Дирхам ОАЭ (AED)", link: "https://p2p.binance.com/ru/trade/sell/USDT?fiat=AED", steps: "Binance P2P → USDT → Jupiter" },
-    { name: "🇮🇷 Иранский риал (IRR)", link: "https://nobitex.ir", steps: "Nobitex → USDT → Jupiter" },
-    { name: "🇹🇷 Турецкая лира (TRY)", link: "https://p2p.binance.com/ru/trade/sell/USDT?fiat=TRY", steps: "Binance P2P → USDT → Jupiter" },
-    { name: "🇰🇬 Кыргызский сом (KGS)", link: "https://p2p.binance.com/ru/trade/sell/USDT?fiat=KGS", steps: "Binance P2P → USDT → Jupiter" },
-    { name: "🇹🇯 Таджикский сомони (TJS)", link: "https://p2p.binance.com/ru/trade/sell/USDT?fiat=TJS", steps: "Binance P2P → USDT → Jupiter" },
-    { name: "🇮🇳 Индийская рупия (INR)", link: "https://p2p.binance.com/ru/trade/sell/USDT?fiat=INR", steps: "Binance P2P → USDT → Jupiter" },
-    { name: "🇵🇰 Пакистанская рупия (PKR)", link: "https://p2p.binance.com/ru/trade/sell/USDT?fiat=PKR", steps: "Binance P2P → USDT → Jupiter" },
-    { name: "🇧🇾 Белорусский рубль (BYN)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇺🇦 Гривна (UAH)", link: "https://p2p.binance.com/ru/trade/sell/USDT?fiat=UAH", steps: "Binance P2P → USDT → Jupiter" },
-    { name: "🇦🇿 Азербайджанский манат (AZN)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇬🇪 Грузинский лари (GEL)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇲🇩 Молдавский лей (MDL)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇱🇹 Литовский евро (EUR)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇱🇻 Латвийский евро (EUR)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇪🇪 Эстонский евро (EUR)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇸🇦 Саудовский риал (SAR)", link: "https://p2p.binance.com/ru/trade/sell/USDT?fiat=SAR", steps: "Binance P2P → USDT → Jupiter" },
-    { name: "🇶🇦 Катарский риал (QAR)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇰🇼 Кувейтский динар (KWD)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇧🇭 Бахрейнский динар (BHD)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇴🇲 Оманский риал (OMR)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇪🇬 Египетский фунт (EGP)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇯🇴 Иорданский динар (JOD)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇱🇧 Ливанский фунт (LBP)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
-    { name: "🇮🇶 Иракский динар (IQD)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" }
+    { name: "🇹🇲 Turkmen Manat (TMT)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇺🇿 Uzbek Som (UZS)", link: "https://p2p.binance.com/en/trade/sell/USDT?fiat=UZS", steps: "Binance P2P → USDT → Jupiter" },
+    { name: "🇰🇿 Kazakh Tenge (KZT)", link: "https://p2p.binance.com/en/trade/sell/USDT?fiat=KZT", steps: "Binance P2P → USDT → Jupiter" },
+    { name: "🇷🇺 Russian Ruble (RUB)", link: "https://p2p.binance.com/en/trade/sell/USDT?fiat=RUB", steps: "Binance P2P → USDT → Jupiter" },
+    { name: "🇨🇳 Chinese Yuan (CNY)", link: "https://p2p.binance.com/en/trade/sell/USDT?fiat=CNY", steps: "Binance P2P → USDT → Jupiter" },
+    { name: "🇦🇪 UAE Dirham (AED)", link: "https://p2p.binance.com/en/trade/sell/USDT?fiat=AED", steps: "Binance P2P → USDT → Jupiter" },
+    { name: "🇮🇷 Iranian Rial (IRR)", link: "https://nobitex.ir", steps: "Nobitex → USDT → Jupiter" },
+    { name: "🇹🇷 Turkish Lira (TRY)", link: "https://p2p.binance.com/en/trade/sell/USDT?fiat=TRY", steps: "Binance P2P → USDT → Jupiter" },
+    { name: "🇰🇬 Kyrgyz Som (KGS)", link: "https://p2p.binance.com/en/trade/sell/USDT?fiat=KGS", steps: "Binance P2P → USDT → Jupiter" },
+    { name: "🇹🇯 Tajik Somoni (TJS)", link: "https://p2p.binance.com/en/trade/sell/USDT?fiat=TJS", steps: "Binance P2P → USDT → Jupiter" },
+    { name: "🇮🇳 Indian Rupee (INR)", link: "https://p2p.binance.com/en/trade/sell/USDT?fiat=INR", steps: "Binance P2P → USDT → Jupiter" },
+    { name: "🇵🇰 Pakistani Rupee (PKR)", link: "https://p2p.binance.com/en/trade/sell/USDT?fiat=PKR", steps: "Binance P2P → USDT → Jupiter" },
+    { name: "🇧🇾 Belarusian Ruble (BYN)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇺🇦 Hryvnia (UAH)", link: "https://p2p.binance.com/en/trade/sell/USDT?fiat=UAH", steps: "Binance P2P → USDT → Jupiter" },
+    { name: "🇦🇿 Azerbaijani Manat (AZN)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇬🇪 Georgian Lari (GEL)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇲🇩 Moldovan Leu (MDL)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇱🇹 Lithuanian Euro (EUR)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇱🇻 Latvian Euro (EUR)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇪🇪 Estonian Euro (EUR)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇸🇦 Saudi Riyal (SAR)", link: "https://p2p.binance.com/en/trade/sell/USDT?fiat=SAR", steps: "Binance P2P → USDT → Jupiter" },
+    { name: "🇶🇦 Qatari Riyal (QAR)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇰🇼 Kuwaiti Dinar (KWD)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇧🇭 Bahraini Dinar (BHD)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇴🇲 Omani Rial (OMR)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇪🇬 Egyptian Pound (EGP)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇯🇴 Jordanian Dinar (JOD)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇱🇧 Lebanese Pound (LBP)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" },
+    { name: "🇮🇶 Iraqi Dinar (IQD)", link: "https://bitget.com", steps: "Bitget → USDT → Jupiter" }
 ];
 
 // ============ НОВЫЕ ФУНКЦИИ: ПРОСТЫЕ ОБМЕННИКИ ============
 const simpleExchanges = [
-    { name: "💱 SimpleSwap", desc: "Обмен TMT → USDT или USDT → TMT", link: "https://simpleswap.io", steps: "1. Выберите пару → 2. Введите сумму → 3. Отправьте → 4. Получите" },
-    { name: "🔄 ChangeNOW", desc: "Обмен без регистрации, быстрый", link: "https://changenow.io", steps: "1. Выберите пару → 2. Отправьте → 3. Получите" },
-    { name: "🚀 RocketX", desc: "200+ сетей, без KYC", link: "https://rocketx.exchange", steps: "1. Выберите пару → 2. Отправьте → 3. Получите" },
-    { name: "⚡ THORSwap", desc: "Bitcoin → Solana напрямую", link: "https://thorswap.finance", steps: "1. Подключите кошелёк → 2. Выберите пару → 3. Обменяйте" }
+    { name: "💱 SimpleSwap", desc: "TMT → USDT or USDT → TMT", link: "https://simpleswap.io", steps: "1. Choose pair → 2. Enter amount → 3. Send → 4. Receive" },
+    { name: "🔄 ChangeNOW", desc: "No registration, fast", link: "https://changenow.io", steps: "1. Choose pair → 2. Send → 3. Receive" },
+    { name: "🚀 RocketX", desc: "200+ networks, no KYC", link: "https://rocketx.exchange", steps: "1. Choose pair → 2. Send → 3. Receive" },
+    { name: "⚡ THORSwap", desc: "Bitcoin → Solana direct", link: "https://thorswap.finance", steps: "1. Connect wallet → 2. Choose pair → 3. Swap" }
 ];
 
 // ============ НОВЫЕ ФУНКЦИИ: КАРТОЧНЫЕ ПРОВАЙДЕРЫ С ИНСТРУКЦИЯМИ ============
 const simpleCardProviders = [
-    { name: "💳 Revolut", desc: "Скачайте приложение, получите карту, пополните в TMT", link: "https://revolut.com", steps: "1. Скачать → 2. Зарегистрироваться → 3. Заказать карту → 4. Пополнить USMT" },
-    { name: "💎 Kripicard", desc: "Виртуальная карта за 1 минуту, поддержка USDT/Solana", link: "https://home.kripicard.com", steps: "1. Зарегистрироваться → 2. Пополнить USDT → 3. Получить карту" },
-    { name: "🏦 Buvei", desc: "Бизнес-карты, виртуальные карты для рекламы", link: "https://buvei.com", steps: "1. Регистрация → 2. Пополнение USDT → 3. Выпуск карты" },
-    { name: "⚡ Striga", desc: "Лицензированные карты в Европе для бизнеса", link: "https://www.striga.com", steps: "1. Регистрация → 2. KYC → 3. Выпуск карты" }
+    { name: "💳 Revolut", desc: "Download app, get card, top up with TMT", link: "https://revolut.com", steps: "1. Download → 2. Register → 3. Order card → 4. Top up USMT" },
+    { name: "💎 Kripicard", desc: "Virtual card in 1 minute, USDT/Solana support", link: "https://home.kripicard.com", steps: "1. Register → 2. Top up USDT → 3. Get card" },
+    { name: "🏦 Buvei", desc: "Business cards, virtual cards for ads", link: "https://buvei.com", steps: "1. Register → 2. Top up USDT → 3. Issue card" },
+    { name: "⚡ Striga", desc: "Licensed EU cards for business", link: "https://www.striga.com", steps: "1. Register → 2. KYC → 3. Issue card" }
 ];
 
 function renderCard() {
@@ -230,7 +237,7 @@ function renderCard() {
 
     let html = '';
 
-    // ===== БЫСТРЫЙ СТАРТ =====
+    // ===== QUICK START =====
     html += `<div class="card" style="border-color:#00E6B4; background:rgba(0,230,180,0.05);">
         <h2 style="border-left-color:#00E6B4;">${quickStart.name}</h2>
         <div class="step-box"><ul>`;
@@ -241,77 +248,77 @@ function renderCard() {
         <a href="${quickStart.link}" target="_blank" class="btn btn-large">${quickStart.linkText}</a>
     </div>`;
 
-    // ===== ЛОКАЛЬНЫЕ ВАЛЮТЫ (50+) =====
-    html += `<h2>💱 Покупка за 50+ местных валют</h2>
+    // ===== LOCAL CURRENCIES =====
+    html += `<h2>💱 Buy with 50+ Local Currencies</h2>
     <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">`;
     localCurrencies.forEach(c => {
-        html += `<span class="currency-badge">${c.name.split(' ')[0]}</span>`;
+        html += `<span class="currency-badge">${c.name.split(' ')[0]} ${c.name.split(' ')[1]}</span>`;
     });
     html += `</div>
     <div class="grid-4">`;
     localCurrencies.forEach(c => {
-        html += `<div class="card"><strong>${c.name}</strong><p style="font-size:0.8rem;">${c.steps}</p><a href="${c.link}" target="_blank" class="btn" style="font-size:0.8rem;">Купить →</a></div>`;
+        html += `<div class="card"><strong>${c.name}</strong><p style="font-size:0.8rem;">${c.steps}</p><a href="${c.link}" target="_blank" class="btn" style="font-size:0.8rem;">Buy →</a></div>`;
     });
     html += `</div>`;
 
-    // ===== КАРТОЧНЫЕ ПРОВАЙДЕРЫ С ИНСТРУКЦИЯМИ =====
-    html += `<h2>💳 Получить карту — 3 шага</h2><div class="grid-4">`;
+    // ===== CARD PROVIDERS WITH STEPS =====
+    html += `<h2>💳 Get a Card — 3 Steps</h2><div class="grid-4">`;
     simpleCardProviders.forEach(p => {
         html += `<div class="card"><strong>${p.name}</strong><p>${p.desc}</p><div class="step-box"><ul>`;
         p.steps.split(' → ').forEach(s => {
             html += `<li>${s}</li>`;
         });
-        html += `</ul></div><a href="${p.link}" target="_blank" class="btn">Открыть →</a></div>`;
+        html += `</ul></div><a href="${p.link}" target="_blank" class="btn">Open →</a></div>`;
     });
     html += `</div>`;
 
-    // ===== ПРОСТЫЕ ОБМЕННИКИ =====
-    html += `<h2>🔄 Простые обменники</h2><div class="grid-4">`;
+    // ===== SIMPLE EXCHANGES =====
+    html += `<h2>🔄 Simple Exchanges</h2><div class="grid-4">`;
     simpleExchanges.forEach(e => {
         html += `<div class="card"><strong>${e.name}</strong><p>${e.desc}</p><div class="step-box"><ul>`;
         e.steps.split(' → ').forEach(s => {
             html += `<li>${s}</li>`;
         });
-        html += `</ul></div><a href="${e.link}" target="_blank" class="btn">Открыть →</a></div>`;
+        html += `</ul></div><a href="${e.link}" target="_blank" class="btn">Open →</a></div>`;
     });
     html += `</div>`;
 
-    // ===== ФИНАЛЬНЫЙ ОБМЕН НА USMT =====
-    html += `<h2>🎯 ФИНАЛЬНЫЙ ШАГ: Обмен на USMT</h2>
+    // ===== FINAL SWAP TO USMT =====
+    html += `<h2>🎯 FINAL STEP: Swap to USMT</h2>
     <div class="grid-3">
         <div class="card" style="border-color:#00E6B4; background:rgba(0,230,180,0.05);">
             <strong>🌀 Jupiter</strong>
-            <p>Лучшая цена, агрегатор всех DEX</p>
+            <p>Best price, aggregator of all DEXes</p>
             <div class="step-box"><ul>
-                <li>1️⃣ Подключите Phantom</li>
-                <li>2️⃣ Выберите USDC → USMT</li>
-                <li>3️⃣ Нажмите Swap</li>
+                <li>1️⃣ Connect Phantom</li>
+                <li>2️⃣ Select USDC → USMT</li>
+                <li>3️⃣ Click Swap</li>
             </ul></div>
-            <a href="https://jup.ag/swap/USDC-USMT" target="_blank" class="btn btn-large">🚀 Обменять на Jupiter</a>
+            <a href="https://jup.ag/swap/USDC-USMT" target="_blank" class="btn btn-large">🚀 Swap on Jupiter</a>
         </div>
         <div class="card" style="border-color:#00E6B4; background:rgba(0,230,180,0.05);">
             <strong>⚡ Raydium</strong>
-            <p>Глубокая ликвидность, низкие комиссии</p>
+            <p>Deep liquidity, low fees</p>
             <div class="step-box"><ul>
-                <li>1️⃣ Подключите Phantom</li>
-                <li>2️⃣ Выберите USDC → USMT</li>
-                <li>3️⃣ Нажмите Swap</li>
+                <li>1️⃣ Connect Phantom</li>
+                <li>2️⃣ Select USDC → USMT</li>
+                <li>3️⃣ Click Swap</li>
             </ul></div>
-            <a href="https://raydium.io/swap/?inputMint=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&outputMint=8uhGgd7HBtNNZSVnUAx6T49ofSvmAGVJ1GcWjodFZbEz" target="_blank" class="btn btn-large">⚡ Обменять на Raydium</a>
+            <a href="https://raydium.io/swap/?inputMint=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&outputMint=8uhGgd7HBtNNZSVnUAx6T49ofSvmAGVJ1GcWjodFZbEz" target="_blank" class="btn btn-large">⚡ Swap on Raydium</a>
         </div>
         <div class="card" style="border-color:#00E6B4; background:rgba(0,230,180,0.05);">
             <strong>🌊 Meteora</strong>
-            <p>Динамический AMM, лучшие цены</p>
+            <p>Dynamic AMM, best prices</p>
             <div class="step-box"><ul>
-                <li>1️⃣ Подключите Phantom</li>
-                <li>2️⃣ Выберите USDC → USMT</li>
-                <li>3️⃣ Нажмите Swap</li>
+                <li>1️⃣ Connect Phantom</li>
+                <li>2️⃣ Select USDC → USMT</li>
+                <li>3️⃣ Click Swap</li>
             </ul></div>
-            <a href="https://app.meteora.ag/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" class="btn btn-large">🌊 Обменять на Meteora</a>
+            <a href="https://app.meteora.ag/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" class="btn btn-large">🌊 Swap on Meteora</a>
         </div>
     </div>`;
 
-    // ===== СТАРЫЕ КАТЕГОРИИ (ВСЕ СОХРАНЕНЫ) =====
+    // ===== OLD CATEGORIES (ALL KEPT) =====
     html += `<h2>💳 Virtual Cards (8)</h2><div class="grid-4">`;
     virtualCards.forEach(c => {
         html += `<div class="card"><div style="font-size:2rem;">${c.icon}</div><strong>${c.name}</strong><p>${c.desc}</p><a href="${c.link}" target="_blank" class="btn">Open →</a></div>`;
@@ -360,7 +367,7 @@ function renderCard() {
     });
     html += `</div>`;
 
-    // ===== СТАТИСТИКА =====
+    // ===== STATISTICS =====
     html += `<h2>📊 Card Program Statistics</h2><div class="grid-4">
         <div class="card"><h3>Cards Issued</h3><div style="font-size:2rem;color:#00E6B4;">4,287</div><small>Virtual + Physical</small></div>
         <div class="card"><h3>Monthly Volume</h3><div style="font-size:2rem;color:#00E6B4;">$2.3M</div><small>All cards</small></div>
@@ -368,7 +375,7 @@ function renderCard() {
         <div class="card"><h3>Active Users</h3><div style="font-size:2rem;color:#00E6B4;">3,891</div><small>Monthly active</small></div>
     </div>`;
 
-    // ===== СРАВНЕНИЕ =====
+    // ===== COMPARISON =====
     html += `<h2>📊 Quick Comparison</h2><div class="grid-4">
         <div class="card"><strong>🏆 Best for individuals</strong><br>Revolut / Kripicard / Crypto.com</div>
         <div class="card"><strong>🏦 Best for business</strong><br>Buvei / Striga / Magna</div>
@@ -380,20 +387,20 @@ function renderCard() {
         <div class="card"><strong>🪐 Best for DeFi</strong><br>Plutus / Nexo / Crypto.com</div>
     </div>`;
 
-    // ===== КОШЕЛЁК =====
+    // ===== WALLET =====
     html += `<div class="wallet-box" style="text-align:center; margin-top:1rem;">
-        <strong>📤 Ваш USMT кошелёк:</strong><br>
+        <strong>📤 Your USMT Wallet:</strong><br>
         <span style="font-size:1.2rem;">F9vGgzKayqAUcbedagXzMhgXUfs5ranRftwGASALRvK9</span>
-        <br><button onclick="navigator.clipboard.writeText('F9vGgzKayqAUcbedagXzMhgXUfs5ranRftwGASALRvK9')" style="background:#00E6B4; color:#0A1C3A; border:none; border-radius:40px; padding:0.3rem 1rem; margin-top:0.5rem; cursor:pointer; font-weight:bold;">📋 Скопировать</button>
+        <br><button onclick="navigator.clipboard.writeText('F9vGgzKayqAUcbedagXzMhgXUfs5ranRftwGASALRvK9')" style="background:#00E6B4; color:#0A1C3A; border:none; border-radius:40px; padding:0.3rem 1rem; margin-top:0.5rem; cursor:pointer; font-weight:bold;">📋 Copy</button>
     </div>`;
 
-    // ===== ПРОСТАЯ ИНСТРУКЦИЯ =====
+    // ===== SIMPLE INSTRUCTION =====
     html += `<div style="background:rgba(0,230,180,0.1); padding:1rem; border-radius:20px; margin-top:1rem; border-left:4px solid #00E6B4;">
-        <strong>📌 Простая инструкция:</strong><br>
-        1. Выберите валюту выше → 2. Купите USDT или USDC → 3. Обменяйте на USMT через Jupiter/Raydium/Meteora → 4. Готово! 🎉
+        <strong>📌 Quick Guide:</strong><br>
+        1. Choose your currency above → 2. Buy USDT or USDC → 3. Swap to USMT via Jupiter/Raydium/Meteora → 4. Done! 🎉
     </div>`;
 
-    // ===== ФОРМА ЗАКАЗА ФИЗИЧЕСКОЙ КАРТЫ =====
+    // ===== PHYSICAL CARD ORDER =====
     html += `<h2>📋 Order Physical Card</h2>
         <div class="card">
             <p>Get a premium metal card delivered worldwide. 3% cashback, no annual fee.</p>
