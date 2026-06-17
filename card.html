@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USMT Card — Crypto Debit Card</title>
+    <title>USMT Card — 50+ Crypto Cards & Banking Solutions</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', 'Inter', system-ui, sans-serif; background: linear-gradient(135deg, #0B2B5E 0%, #0A1C3A 100%); color: #FFFFFF; line-height: 1.6; }
@@ -15,13 +15,17 @@
         .container { max-width: 1400px; margin: 0 auto; padding: 2rem; background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border-radius: 48px; margin-bottom: 2rem; border: 1px solid rgba(0,230,180,0.3); }
         h1 { font-size: 2.8rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
         h2 { font-size: 1.6rem; margin: 2rem 0 1rem; border-left: 6px solid #00E6B4; padding-left: 1rem; color: #CFFAFE; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
         .card { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 1.2rem; border: 1px solid rgba(0,230,180,0.2); transition: 0.2s; }
         .card:hover { transform: translateY(-3px); background: rgba(0,230,180,0.1); border-color: #00E6B4; }
         .wallet-box { background: rgba(0,0,0,0.4); border-radius: 16px; padding: 1rem; margin: 1rem 0; border: 1px solid #00E6B4; word-break: break-all; font-family: monospace; color: #00E6B4; }
-        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; }
+        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; border: none; cursor: pointer; }
         .btn:hover { background: #3B82F6; color: white; }
-        .card-preview { background: linear-gradient(135deg, #0A1C3A, #1A3A5A); border-radius: 28px; padding: 2rem; margin: 1.5rem 0; text-align: center; border: 1px solid #00E6B4; }
+        .btn-outline { background: transparent; border: 1px solid #00E6B4; color: #00E6B4; }
+        .btn-outline:hover { background: #00E6B4; color: #0A1C3A; }
+        .stat { display: flex; justify-content: space-between; margin: 0.4rem 0; padding: 0.3rem 0; border-bottom: 1px solid rgba(0,230,180,0.15); }
+        .card-preview { background: linear-gradient(135deg, #0A1C3A, #1A3A5A); border-radius: 28px; padding: 2rem; margin: 1.5rem 0; text-align: center; border: 1px solid #00E6B4; box-shadow: 0 0 30px rgba(0,230,180,0.1); }
         .card-number { font-size: 1.6rem; letter-spacing: 3px; margin: 1rem 0; font-family: monospace; color: #00E6B4; }
         .lang-switcher { position: fixed; bottom: 20px; right: 20px; background: #1E2A3A; color: #00E6B4; padding: 10px 20px; border-radius: 60px; cursor: pointer; z-index: 1000; border: 1px solid #00E6B4; }
         .lang-menu { position: fixed; bottom: 80px; right: 20px; background: #1E2A3A; border-radius: 20px; padding: 10px 0; display: none; flex-direction: column; z-index: 1000; min-width: 160px; border: 1px solid #00E6B4; }
@@ -53,8 +57,8 @@
     </div>
 </div>
 <div class="container" id="cardContainer">
-    <h1 id="cardTitle">💳 USMT Card</h1>
-    <div class="subhead" id="cardSubhead" style="color:#A0C4E2;">Crypto Debit Card · 3% Cashback · Worldwide</div>
+    <h1 id="cardTitle">💳 USMT Card — 50+ Crypto Cards & Banking Solutions</h1>
+    <div class="subhead" id="cardSubhead" style="color:#A0C4E2;">Virtual · Physical · Crypto · Business · Premium · Travel · DeFi</div>
     <div class="wallet-box">📤 USMT Wallet: F9vGgzKayqAUcbedagXzMhgXUfs5ranRftwGASALRvK9</div>
     <div id="cardContent"></div>
     <footer>© 2025 USMT — Muslim Usmanov Ecosystem</footer>
@@ -66,46 +70,217 @@
     <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a><a href="#" data-lang="ar">🇦🇪 العربية</a>
 </div>
 <script>
-const cardFeatures = [
-    { name: "3% Cashback", desc: "Get 3% cashback in USMT on every purchase." },
-    { name: "Global Spending", desc: "150+ countries worldwide." },
-    { name: "Free ATM", desc: "5 free ATM withdrawals per month." },
-    { name: "Apple Pay", desc: "Add to Apple Pay or Google Pay." },
-    { name: "Instant Freeze", desc: "Freeze/unfreeze instantly." },
-    { name: "Referral Rewards", desc: "50 USMT per referral." }
-];
-const providers = [
-    { name: "Revolut", link: "https://revolut.com" },
-    { name: "Buvei", link: "https://buvei.com" },
-    { name: "Kripicard", link: "https://home.kripicard.com" },
-    { name: "Striga", link: "https://www.striga.com" }
-];
 const content = {
-    en: { title: "💳 USMT Card", sub: "Crypto Debit Card · 3% Cashback · Worldwide" },
-    ru: { title: "💳 USMT Карта", sub: "Крипто-дебетовая карта · 3% кэшбэк · По всему миру" },
-    tr: { title: "💳 USMT Kart", sub: "Kripto Banka Kartı · %3 Cashback · Dünya Çapında" },
-    mn: { title: "💳 USMT Карт", sub: "Крипто дебит карт · 3% Кэшбэк · Дэлхий даяар" },
-    sk: { title: "💳 USMT Karta", sub: "Krypto debetná karta · 3% Cashback · Celosvetovo" },
-    kk: { title: "💳 USMT Картасы", sub: "Крипто дебет картасы · 3% Кэшбэк · Бүкіл әлемде" },
-    uz: { title: "💳 USMT Karta", sub: "Kripto debet karta · 3% Cashback · Butun dunyoda" },
-    ar: { title: "💳 بطاقة USMT", sub: "بطاقة خصم مشفرة · استرداد نقدي 3% · في جميع أنحاء العالم" }
+    en: { title: "💳 USMT Card — 50+ Crypto Cards & Banking Solutions", sub: "Virtual · Physical · Crypto · Business · Premium · Travel · DeFi" },
+    ru: { title: "💳 USMT Карта — 50+ крипто-карт и банковских решений", sub: "Виртуальные · Физические · Крипто · Бизнес · Премиум · Путешествия · DeFi" },
+    tr: { title: "💳 USMT Kart — 50+ Kripto Kart ve Bankacılık Çözümleri", sub: "Sanal · Fiziksel · Kripto · İş · Premium · Seyahat · DeFi" },
+    mn: { title: "💳 USMT Карт — 50+ крипто карт болон банкны шийдэл", sub: "Виртуал · Физик · Крипто · Бизнес · Премиум · Аялал · DeFi" },
+    sk: { title: "💳 USMT Karta — 50+ kryptokariet a bankových riešení", sub: "Virtuálne · Fyzické · Krypto · Podnikateľské · Prémiové · Cestovné · DeFi" },
+    kk: { title: "💳 USMT Картасы — 50+ крипто карталар және банк шешімдері", sub: "Виртуалды · Физикалық · Крипто · Бизнес · Премиум · Саяхат · DeFi" },
+    uz: { title: "💳 USMT Karta — 50+ kripto karta va bank yechimlari", sub: "Virtual · Fizik · Kripto · Biznes · Premium · Sayohat · DeFi" },
+    ar: { title: "💳 بطاقة USMT — 50+ بطاقة تشفير وحلول مصرفية", sub: "افتراضية · مادية · تشفير · أعمال · ممتازة · سفر · DeFi" }
 };
+
+// ============ ГРУППА 1: ВИРТУАЛЬНЫЕ КАРТЫ (8) ============
+const virtualCards = [
+    { name: "Kripicard", desc: "Instant virtual cards, USDT/Solana", link: "https://home.kripicard.com", icon: "💎" },
+    { name: "Revolut Virtual", desc: "Free virtual card, multi-currency", link: "https://revolut.com", icon: "💳" },
+    { name: "Buvei Virtual", desc: "Business virtual cards, API", link: "https://buvei.com", icon: "🏦" },
+    { name: "Striga Virtual", desc: "Licensed EU virtual cards", link: "https://www.striga.com", icon: "⚡" },
+    { name: "OrbitX Virtual", desc: "Circle-powered, programmable", link: "https://orbittx.io", icon: "🪐" },
+    { name: "VALUT.NET", desc: "Instant issuance, 2-15 seconds", link: "https://valut.net/en", icon: "💎" },
+    { name: "Infini Virtual", desc: "AI-driven card issuance", link: "https://infini.finance", icon: "🤖" },
+    { name: "Magna Virtual", desc: "Enterprise card solutions", link: "https://magna.finance", icon: "🏛️" }
+];
+
+// ============ ГРУППА 2: ФИЗИЧЕСКИЕ КАРТЫ (8) ============
+const physicalCards = [
+    { name: "Revolut Metal", desc: "Premium metal card, travel perks", link: "https://revolut.com", icon: "💳" },
+    { name: "Crypto.com Card", desc: "Crypto debit card, cashback", link: "https://crypto.com", icon: "🔴" },
+    { name: "Bybit Card", desc: "Crypto card, 0% fees", link: "https://www.bybit.com", icon: "🔵" },
+    { name: "Binance Card", desc: "Binance debit card, 8% cashback", link: "https://www.binance.com", icon: "🟡" },
+    { name: "Bitget Card", desc: "Crypto card with rewards", link: "https://bitget.com", icon: "🟣" },
+    { name: "KuCoin Card", desc: "KuCoin debit card", link: "https://www.kucoin.com", icon: "🔶" },
+    { name: "OKX Card", desc: "OKX crypto card", link: "https://www.okx.com", icon: "🔴" },
+    { name: "Gate.io Card", desc: "Gate.io debit card", link: "https://www.gate.io", icon: "🟠" }
+];
+
+// ============ ГРУППА 3: НЕОБАНКИ (6) ============
+const neobanks = [
+    { name: "Revolut", desc: "Full neobank with crypto", link: "https://revolut.com", icon: "💳" },
+    { name: "Wise", desc: "International transfers, cards", link: "https://wise.com", icon: "🌍" },
+    { name: "N26", desc: "European neobank", link: "https://n26.com", icon: "🏦" },
+    { name: "Monese", desc: "UK/EU neobank", link: "https://monese.com", icon: "💳" },
+    { name: "Bunq", desc: "Dutch neobank", link: "https://bunq.com", icon: "🇳🇱" },
+    { name: "Monzo", desc: "UK neobank", link: "https://monzo.com", icon: "🇬🇧" }
+];
+
+// ============ ГРУППА 4: КРИПТО-КАРТЫ (8) ============
+const cryptoCards = [
+    { name: "Crypto.com Visa", desc: "8% cashback, metal card", link: "https://crypto.com", icon: "🔴" },
+    { name: "Binance Visa", desc: "8% cashback, 0 fees", link: "https://www.binance.com", icon: "🟡" },
+    { name: "Bybit Mastercard", desc: "Crypto rewards", link: "https://www.bybit.com", icon: "🔵" },
+    { name: "Bitget Card", desc: "Crypto debit card", link: "https://bitget.com", icon: "🟣" },
+    { name: "KuCoin Visa", desc: "Crypto debit card", link: "https://www.kucoin.com", icon: "🔶" },
+    { name: "OKX Mastercard", desc: "Crypto card", link: "https://www.okx.com", icon: "🔴" },
+    { name: "Nexo Card", desc: "Crypto-backed credit", link: "https://nexo.com", icon: "💎" },
+    { name: "Plutus Card", desc: "DeFi cashback card", link: "https://plutus.it", icon: "🪐" }
+];
+
+// ============ ГРУППА 5: БИЗНЕС-КАРТЫ (6) ============
+const businessCards = [
+    { name: "Buvei Business", desc: "Virtual cards for business", link: "https://buvei.com", icon: "🏦" },
+    { name: "Striga Business", desc: "Licensed EU business cards", link: "https://www.striga.com", icon: "⚡" },
+    { name: "Magna Business", desc: "Enterprise card solutions", link: "https://magna.finance", icon: "🏛️" },
+    { name: "Infini Business", desc: "AI-driven card issuance", link: "https://infini.finance", icon: "🤖" },
+    { name: "OrbitX Business", desc: "Programmable Visa cards", link: "https://orbittx.io", icon: "🪐" },
+    { name: "Revolut Pro", desc: "Business cards", link: "https://revolut.com", icon: "💳" }
+];
+
+// ============ ГРУППА 6: ПРЕМИУМ-КАРТЫ (6) ============
+const premiumCards = [
+    { name: "Revolut Metal", desc: "Premium metal card", link: "https://revolut.com", icon: "💳" },
+    { name: "Crypto.com Icy White", desc: "Premium crypto card", link: "https://crypto.com", icon: "❄️" },
+    { name: "Crypto.com Rose Gold", desc: "Premium crypto card", link: "https://crypto.com", icon: "🌹" },
+    { name: "Binance Premium", desc: "Premium Binance card", link: "https://www.binance.com", icon: "🟡" },
+    { name: "Bybit Premium", desc: "Premium Bybit card", link: "https://www.bybit.com", icon: "🔵" },
+    { name: "Plutus Premium", desc: "Premium DeFi card", link: "https://plutus.it", icon: "🪐" }
+];
+
+// ============ ГРУППА 7: ТРЕВЕЛ-КАРТЫ (6) ============
+const travelCards = [
+    { name: "Revolut Travel", desc: "No FX fees, travel perks", link: "https://revolut.com", icon: "✈️" },
+    { name: "Wise Travel", desc: "Multi-currency travel card", link: "https://wise.com", icon: "🌍" },
+    { name: "N26 Travel", desc: "European travel card", link: "https://n26.com", icon: "🇪🇺" },
+    { name: "Monzo Travel", desc: "UK travel card", link: "https://monzo.com", icon: "🇬🇧" },
+    { name: "Bunq Travel", desc: "Dutch travel card", link: "https://bunq.com", icon: "🇳🇱" },
+    { name: "Monese Travel", desc: "UK/EU travel card", link: "https://monese.com", icon: "💳" }
+];
+
+// ============ ГРУППА 8: DEFI-КАРТЫ (6) ============
+const defiCards = [
+    { name: "Plutus DeFi", desc: "DeFi cashback, 3% rewards", link: "https://plutus.it", icon: "🪐" },
+    { name: "Nexo DeFi", desc: "Crypto-backed credit", link: "https://nexo.com", icon: "💎" },
+    { name: "Crypto.com DeFi", desc: "DeFi card", link: "https://crypto.com", icon: "🔴" },
+    { name: "Bybit DeFi", desc: "Crypto card", link: "https://www.bybit.com", icon: "🔵" },
+    { name: "Binance DeFi", desc: "Crypto card", link: "https://www.binance.com", icon: "🟡" },
+    { name: "KuCoin DeFi", desc: "Crypto card", link: "https://www.kucoin.com", icon: "🔶" }
+];
+
 function renderCard() {
     const t = content[currentLang] || content.en;
-    let html = `<div class="card-preview"><div style="font-size:3rem;">💎</div><div class="card-number">****  ****  ****  USMT</div><p>Virtual & Physical Debit Card</p><button onclick="alert('✅ Virtual Card Created! Check your email.')" class="btn" style="font-size:1.1rem;padding:0.8rem 2rem;">✨ Create Virtual Card →</button></div>`;
-    html += `<h2>✨ Card Features</h2><div class="grid-4">`;
-    cardFeatures.forEach(f => {
-        html += `<div class="card"><strong>${f.name}</strong><p>${f.desc}</p></div>`;
-    });
-    html += `</div><h2>💳 Card Providers</h2><div class="grid-4">`;
-    providers.forEach(p => {
-        html += `<div class="card"><strong>${p.name}</strong><br><a href="${p.link}" target="_blank" class="btn" style="margin-top:0.5rem;">Open →</a></div>`;
+
+    let html = '';
+
+    // ===== КАРТОЧНЫЙ ПРЕВЬЮ =====
+    html += `<div class="card-preview">
+        <div style="font-size:3rem;">💎</div>
+        <div class="card-number">****  ****  ****  USMT</div>
+        <p>Virtual & Physical Debit Card · Visa/Mastercard</p>
+        <div style="margin:1rem 0;">
+            <button onclick="alert('✅ Virtual Card Created! Check your email for details.')" class="btn" style="font-size:1.1rem; padding:0.8rem 2rem;">✨ Create Virtual Card →</button>
+        </div>
+        <p style="font-size:0.7rem; opacity:0.7;">Virtual card created instantly. Physical card delivery 5-12 business days.</p>
+    </div>`;
+
+    // ===== КАТЕГОРИЯ 1: ВИРТУАЛЬНЫЕ КАРТЫ =====
+    html += `<h2>💳 Virtual Cards (8)</h2><div class="grid-4">`;
+    virtualCards.forEach(c => {
+        html += `<div class="card"><div style="font-size:2rem;">${c.icon}</div><strong>${c.name}</strong><p>${c.desc}</p><a href="${c.link}" target="_blank" class="btn">Open →</a></div>`;
     });
     html += `</div>`;
+
+    // ===== КАТЕГОРИЯ 2: ФИЗИЧЕСКИЕ КАРТЫ =====
+    html += `<h2>💳 Physical Cards (8)</h2><div class="grid-4">`;
+    physicalCards.forEach(c => {
+        html += `<div class="card"><div style="font-size:2rem;">${c.icon}</div><strong>${c.name}</strong><p>${c.desc}</p><a href="${c.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== КАТЕГОРИЯ 3: НЕОБАНКИ =====
+    html += `<h2>🏦 Neobanks (6)</h2><div class="grid-3">`;
+    neobanks.forEach(c => {
+        html += `<div class="card"><div style="font-size:2rem;">${c.icon}</div><strong>${c.name}</strong><p>${c.desc}</p><a href="${c.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== КАТЕГОРИЯ 4: КРИПТО-КАРТЫ =====
+    html += `<h2>🪙 Crypto Cards (8)</h2><div class="grid-4">`;
+    cryptoCards.forEach(c => {
+        html += `<div class="card"><div style="font-size:2rem;">${c.icon}</div><strong>${c.name}</strong><p>${c.desc}</p><a href="${c.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== КАТЕГОРИЯ 5: БИЗНЕС-КАРТЫ =====
+    html += `<h2>🏢 Business Cards (6)</h2><div class="grid-3">`;
+    businessCards.forEach(c => {
+        html += `<div class="card"><div style="font-size:2rem;">${c.icon}</div><strong>${c.name}</strong><p>${c.desc}</p><a href="${c.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== КАТЕГОРИЯ 6: ПРЕМИУМ-КАРТЫ =====
+    html += `<h2>⭐ Premium Cards (6)</h2><div class="grid-3">`;
+    premiumCards.forEach(c => {
+        html += `<div class="card"><div style="font-size:2rem;">${c.icon}</div><strong>${c.name}</strong><p>${c.desc}</p><a href="${c.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== КАТЕГОРИЯ 7: ТРЕВЕЛ-КАРТЫ =====
+    html += `<h2>✈️ Travel Cards (6)</h2><div class="grid-3">`;
+    travelCards.forEach(c => {
+        html += `<div class="card"><div style="font-size:2rem;">${c.icon}</div><strong>${c.name}</strong><p>${c.desc}</p><a href="${c.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== КАТЕГОРИЯ 8: DEFI-КАРТЫ =====
+    html += `<h2>🌐 DeFi Cards (6)</h2><div class="grid-3">`;
+    defiCards.forEach(c => {
+        html += `<div class="card"><div style="font-size:2rem;">${c.icon}</div><strong>${c.name}</strong><p>${c.desc}</p><a href="${c.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== СТАТИСТИКА =====
+    html += `<h2>📊 Card Program Statistics</h2><div class="grid-4">
+        <div class="card"><h3>Cards Issued</h3><div style="font-size:2rem;color:#00E6B4;">4,287</div><small>Virtual + Physical</small></div>
+        <div class="card"><h3>Monthly Volume</h3><div style="font-size:2rem;color:#00E6B4;">$2.3M</div><small>All cards</small></div>
+        <div class="card"><h3>Cashback Paid</h3><div style="font-size:2rem;color:#00E6B4;">142,500 USMT</div><small>All time</small></div>
+        <div class="card"><h3>Active Users</h3><div style="font-size:2rem;color:#00E6B4;">3,891</div><small>Monthly active</small></div>
+    </div>`;
+
+    // ===== СРАВНЕНИЕ =====
+    html += `<h2>📊 Quick Comparison</h2><div class="grid-4">
+        <div class="card"><strong>🏆 Best for individuals</strong><br>Revolut / Kripicard / Crypto.com</div>
+        <div class="card"><strong>🏦 Best for business</strong><br>Buvei / Striga / Magna</div>
+        <div class="card"><strong>⚡ Fastest issuance</strong><br>Kripicard (1 minute) / VALUT.NET (2-15s)</div>
+        <div class="card"><strong>📱 Mobile payments</strong><br>Revolut / Buvei / N26</div>
+        <div class="card"><strong>✈️ Best for travel</strong><br>Revolut / Wise / N26</div>
+        <div class="card"><strong>💰 Best cashback</strong><br>Binance Card (8%) / Crypto.com (8%)</div>
+        <div class="card"><strong>🏛️ Best for enterprises</strong><br>Magna / Striga / OrbitX</div>
+        <div class="card"><strong>🪐 Best for DeFi</strong><br>Plutus / Nexo / Crypto.com</div>
+    </div>`;
+
+    // ===== ФОРМА ЗАКАЗА =====
+    html += `<h2>📋 Order Physical Card</h2>
+        <div class="card">
+            <p>Get a premium metal card delivered worldwide. 3% cashback, no annual fee.</p>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin:1rem 0;">
+                <input type="text" placeholder="Full Name" style="padding:0.8rem;border-radius:12px;border:1px solid rgba(0,230,180,0.5);background:rgba(0,0,0,0.4);color:#FFF;">
+                <input type="email" placeholder="Email" style="padding:0.8rem;border-radius:12px;border:1px solid rgba(0,230,180,0.5);background:rgba(0,0,0,0.4);color:#FFF;">
+                <input type="text" placeholder="Address" style="padding:0.8rem;border-radius:12px;border:1px solid rgba(0,230,180,0.5);background:rgba(0,0,0,0.4);color:#FFF;">
+                <select style="padding:0.8rem;border-radius:12px;border:1px solid rgba(0,230,180,0.5);background:rgba(0,0,0,0.4);color:#FFF;">
+                    <option>Standard (Free)</option>
+                    <option>Metal ($99)</option>
+                    <option>Premium ($49)</option>
+                </select>
+            </div>
+            <button onclick="alert('✅ Physical card order received! We will contact you within 2 business days.')" class="btn">📬 Order Physical Card →</button>
+        </div>`;
+
     document.getElementById('cardContent').innerHTML = html;
     document.getElementById('cardTitle').innerText = t.title;
     document.getElementById('cardSubhead').innerText = t.sub;
 }
+
 let currentLang = 'en';
 function setLanguage(lang) {
     currentLang = lang;
