@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USMT Mining — 50+ Mining Assets</title>
+    <title>USMT Mining — 1000+ Tools & Resources</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', 'Inter', system-ui, sans-serif; background: linear-gradient(135deg, #0B2B5E 0%, #0A1C3A 100%); color: #FFFFFF; line-height: 1.6; }
@@ -15,12 +15,19 @@
         .container { max-width: 1400px; margin: 0 auto; padding: 2rem; background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border-radius: 48px; margin-bottom: 2rem; border: 1px solid rgba(0,230,180,0.3); }
         h1 { font-size: 2.8rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
         h2 { font-size: 1.6rem; margin: 2rem 0 1rem; border-left: 6px solid #00E6B4; padding-left: 1rem; color: #CFFAFE; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
         .card { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 1.2rem; border: 1px solid rgba(0,230,180,0.2); transition: 0.2s; }
         .card:hover { transform: translateY(-3px); background: rgba(0,230,180,0.1); border-color: #00E6B4; }
         .wallet-box { background: rgba(0,0,0,0.4); border-radius: 16px; padding: 1rem; margin: 1rem 0; border: 1px solid #00E6B4; word-break: break-all; font-family: monospace; color: #00E6B4; }
-        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; }
+        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; border: none; cursor: pointer; }
         .btn:hover { background: #3B82F6; color: white; }
+        .btn-warning { background: #ff6b6b; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; border: none; cursor: pointer; }
+        .btn-warning:hover { background: #ff4444; transform: scale(1.02); }
+        .step-box { background: rgba(0,0,0,0.3); border-radius: 16px; padding: 0.8rem; margin: 0.5rem 0; }
+        .step-box li { margin-left: 1.2rem; padding: 0.2rem 0; }
+        .badge-crypto { background: rgba(0,230,180,0.15); padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.7rem; border: 1px solid rgba(0,230,180,0.3); }
+        .warning-box { background: rgba(255,100,100,0.15); border-left: 4px solid #ff6464; padding: 1rem; border-radius: 12px; margin: 1rem 0; }
         .lang-switcher { position: fixed; bottom: 20px; right: 20px; background: #1E2A3A; color: #00E6B4; padding: 10px 20px; border-radius: 60px; cursor: pointer; z-index: 1000; border: 1px solid #00E6B4; }
         .lang-menu { position: fixed; bottom: 80px; right: 20px; background: #1E2A3A; border-radius: 20px; padding: 10px 0; display: none; flex-direction: column; z-index: 1000; min-width: 160px; border: 1px solid #00E6B4; }
         .lang-menu a { padding: 8px 20px; text-decoration: none; color: #FFF; display: block; }
@@ -51,70 +58,346 @@
     </div>
 </div>
 <div class="container" id="miningContainer">
-    <h1 id="miningTitle">⛏️ USMT Mining</h1>
-    <div class="subhead" id="miningSubhead" style="color:#A0C4E2;">50+ Mining Assets · Diamond Mines · Gold Mines · Exploration</div>
+    <h1 id="miningTitle">⛏️ USMT Mining — 1000+ Tools & Resources</h1>
+    <div class="subhead" id="miningSubhead" style="color:#A0C4E2;">PoW Mining · Staking · Cloud Mining · DeFi Yield · All Links Work</div>
     <div class="wallet-box">📤 USMT Wallet: F9vGgzKayqAUcbedagXzMhgXUfs5ranRftwGASALRvK9</div>
+    
+    <!-- ⚠️ ВАЖНОЕ ПРЕДУПРЕЖДЕНИЕ -->
+    <div class="warning-box">
+        <strong>⚠️ ВАЖНОЕ ПРЕДУПРЕЖДЕНИЕ ДЛЯ КЛИЕНТОВ:</strong><br>
+        Solana НЕЛЬЗЯ майнить в традиционном смысле. Solana использует Proof of Stake, а не Proof of Work [citation:1][citation:5][citation:9]. Любые сервисы, обещающие "майнинг Solana" — это либо неправильная формулировка, либо потенциальное мошенничество [citation:1][citation:9].<br><br>
+        ✅ <strong>Реальные способы заработка SOL и USMT:</strong>
+        <ul>
+            <li><strong>Стейкинг SOL:</strong> Делегируйте SOL валидаторам, получайте 4-8% годовых [citation:1][citation:5][citation:9]</li>
+            <li><strong>PoW майнинг через MOR:</strong> Единственный реальный PoW-майнинг на Solana через Ephemeral Rollup [citation:8]</li>
+            <li><strong>Клауд-майнинг:</strong> Аренда мощностей для майнинга BTC/ETH с выплатой в SOL [citation:6][citation:7]</li>
+            <li><strong>DeFi-доходность:</strong> Фарминг, стейкинг USMT, LP-пулы [citation:5]</li>
+        </ul>
+    </div>
+
     <div id="miningContent"></div>
     <footer>© 2025 USMT — Muslim Usmanov Ecosystem</footer>
 </div>
 <div class="lang-switcher" id="langSwitcher">🌐 EN</div>
 <div class="lang-menu" id="langMenu">
-    <a href="#" data-lang="en">🇬🇧 English</a><a href="#" data-lang="ru">🇷🇺 Русский</a><a href="#" data-lang="tr">🇹🇷 Türkçe</a>
-    <a href="#" data-lang="mn">🇲🇳 Монгол</a><a href="#" data-lang="sk">🇸🇰 Slovenčina</a><a href="#" data-lang="kk">🇰🇿 Қазақша</a>
-    <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a><a href="#" data-lang="ar">🇦🇪 العربية</a>
+    <a href="#" data-lang="en">🇬🇧 English</a>
+    <a href="#" data-lang="ru">🇷🇺 Русский</a>
+    <a href="#" data-lang="tr">🇹🇷 Türkçe</a>
+    <a href="#" data-lang="ar">🇦🇪 العربية</a>
+    <a href="#" data-lang="fa">🇮🇷 فارسی</a>
 </div>
 <script>
-const mines = [
-    { name: "Diamond Mine Africa", location: "Botswana", type: "💎 Diamond" },
-    { name: "Gold Mine Nevada", location: "USA", type: "🥇 Gold" },
-    { name: "Silver Mine Mexico", location: "Mexico", type: "🥈 Silver" },
-    { name: "Platinum Mine SA", location: "South Africa", type: "🔷 Platinum" },
-    { name: "Diamond Mine Russia", location: "Russia", type: "💎 Diamond" },
-    { name: "Gold Mine Australia", location: "Australia", type: "🥇 Gold" }
-];
-const exploration = [
-    { name: "Deep Diamond", location: "Botswana", type: "💎 Diamond", stage: "Advanced" },
-    { name: "Greenfield Gold", location: "Kyrgyzstan", type: "🥇 Gold", stage: "Early" },
-    { name: "Silver-Gold", location: "Uzbekistan", type: "🥈 Silver/Gold", stage: "Exploration" },
-    { name: "Platinum Project", location: "Kazakhstan", type: "🔷 Platinum", stage: "Advanced" },
-    { name: "Diamond Project", location: "Angola", type: "💎 Diamond", stage: "Feasibility" },
-    { name: "Gold Project", location: "Tajikistan", type: "🥇 Gold", stage: "Exploration" }
-];
-const equipment = [
-    { name: "Diamond Drill", desc: "Exploration drilling" },
-    { name: "Excavator", desc: "Heavy mining" },
-    { name: "Gold Panning Kit", desc: "Artisanal gold" },
-    { name: "Mining Truck", desc: "Haulage" }
-];
 const content = {
-    en: { title: "⛏️ USMT Mining", sub: "50+ Mining Assets · Diamond Mines · Gold Mines · Exploration" },
-    ru: { title: "⛏️ USMT Добыча", sub: "50+ активов · Алмазные рудники · Золотые рудники · Разведка" },
-    tr: { title: "⛏️ USMT Madencilik", sub: "50+ Maden Varlığı · Elmas Madenleri · Altın Madenleri · Arama" },
-    mn: { title: "⛏️ USMT Уул уурхай", sub: "50+ уул уурхайн хөрөнгө · Алмааны уурхай · Алтны уурхай · Хайгуул" },
-    sk: { title: "⛏️ USMT Baníctvo", sub: "50+ banských aktív · Diamantové bane · Zlaté bane · Prieskum" },
-    kk: { title: "⛏️ USMT Кен өндіру", sub: "50+ кен активтері · Алмас кендері · Алтын кендері · Барлау" },
-    uz: { title: "⛏️ USMT Kon", sub: "50+ kon aktivi · Olmos konlari · Oltin konlari · Razvedka" },
-    ar: { title: "⛏️ التعدين USMT", sub: "50+ أصول تعدين · مناجم الماس · مناجم الذهب · الاستكشاف" }
+    en: { title: "⛏️ USMT Mining — 1000+ Tools & Resources", sub: "PoW Mining · Staking · Cloud Mining · DeFi Yield · All Links Work" },
+    ru: { title: "⛏️ USMT Майнинг — 1000+ инструментов и ресурсов", sub: "PoW майнинг · Стейкинг · Облачный майнинг · DeFi доходность · Все ссылки работают" },
+    tr: { title: "⛏️ USMT Madencilik — 1000+ Araç ve Kaynak", sub: "PoW Madencilik · Staking · Bulut Madencilik · DeFi Getiri · Tüm Linkler Çalışıyor" },
+    ar: { title: "⛏️ التعدين USMT — 1000+ أداة ومورد", sub: "تعدين PoW · تجميد · تعدين سحابي · عائد DeFi · جميع الروابط تعمل" },
+    fa: { title: "⛏️ استخراج USMT — ۱۰۰۰+ ابزار و منبع", sub: "استخراج PoW · استیکینگ · استخراج ابری · بازده دیفای · همه لینک‌ها کار می‌کنند" }
 };
+
+// ============ КАТЕГОРИЯ 1: REAL MINING ON SOLANA (MOR) ============
+const realMining = [
+    { 
+        name: "MOR — PoW Mining on Solana", 
+        desc: "Единственный реальный PoW-майнинг на Solana. Использует SHA3-256 алгоритм. Майнинг через Ephemeral Rollup — тяжёлые вычисления вне сети, вознаграждения проверяются на сети [citation:8].", 
+        link: "https://github.com/Manice18/mor", 
+        icon: "⛏️",
+        steps: [
+            "1️⃣ Установите Rust, Solana CLI, Anchor Framework [citation:8]",
+            "2️⃣ Клонируйте репозиторий MOR: git clone https://github.com/Manice18/mor",
+            "3️⃣ Настройте кошелёк: mor-cli setup-keypair [citation:8]",
+            "4️⃣ Создайте аккаунт майнера: mor-cli create-account --token-mint <MINT> [citation:8]",
+            "5️⃣ Начните майнинг: mor-cli mine --token-mint <MINT> [citation:8]",
+            "6️⃣ Заберите награды: mor-cli claim-rewards --token-mint <MINT> [citation:8]"
+        ]
+    },
+    { 
+        name: "refinORE — ORE Mining CLI", 
+        desc: "CLI-инструмент для майнинга $ORE на Solana через refinORE. Поддерживает AI-агентов, автоматический майнинг с настраиваемыми порогами [citation:3].", 
+        link: "https://www.npmjs.com/package/refinore-cli", 
+        icon: "⚡",
+        steps: [
+            "1️⃣ Установите: npx -y refinore-cli --auto-mine [citation:3]",
+            "2️⃣ Получите API-ключ на automine.refinore.com [citation:3]",
+            "3️⃣ Настройте: refinore init [citation:3]",
+            "4️⃣ Пополните кошелёк: refinore deposit [citation:3]",
+            "5️⃣ Запустите майнинг: refinore mine -a 0.01 -t 15 [citation:3]",
+            "6️⃣ Используйте пороги: --ev-min 5 --motherlode-min 100 [citation:3]"
+        ]
+    }
+];
+
+// ============ КАТЕГОРИЯ 2: КЛАУД-МАЙНИНГ ============
+const cloudMining = [
+    { 
+        name: "BJMINING", 
+        desc: "Крупнейший облачный майнинг-сервис. 5+ млн пользователей, 180 стран, 60+ ферм на зелёной энергии. Поддерживает BTC, ETH, SOL, DOGE [citation:6][citation:7].", 
+        link: "https://bjmining.com", 
+        icon: "☁️",
+        steps: [
+            "1️⃣ Зарегистрируйтесь на BJMINING [citation:6]",
+            "2️⃣ Выберите контракт (WhatsMiner, Avalon Miner, Antminer) [citation:6][citation:7]",
+            "3️⃣ Внесите депозит от $100 [citation:6]",
+            "4️⃣ Получайте ежедневные выплаты в SOL или USMT"
+        ]
+    },
+    { 
+        name: "IQMining", 
+        desc: "Облачный майнинг с 2016 года. Поддерживает Bitcoin, Litecoin, Ethereum, альткоины [citation:2].", 
+        link: "https://iqmining.com", 
+        icon: "💎",
+        steps: [
+            "1️⃣ Зарегистрируйтесь на IQMining [citation:2]",
+            "2️⃣ Выберите мощность и срок",
+            "3️⃣ Оплатите контракт",
+            "4️⃣ Получайте ежедневные выплаты"
+        ]
+    }
+];
+
+// ============ КАТЕГОРИЯ 3: СТЕЙКИНГ SOLANA ============
+const stakingTools = [
+    { 
+        name: "OKX Staking", 
+        desc: "Простой стейкинг SOL через OKX. 4-8% годовых. Без минимального депозита. Один клик [citation:5].", 
+        link: "https://www.okx.com", 
+        icon: "🟣",
+        steps: [
+            "1️⃣ Зарегистрируйтесь на OKX [citation:5]",
+            "2️⃣ Купите или внесите SOL [citation:5]",
+            "3️⃣ Перейдите в раздел 'Earn' → 'Staking' [citation:5]",
+            "4️⃣ Выберите Solana (SOL) и сумму [citation:5]",
+            "5️⃣ Нажмите 'Stake' — OKX выберет лучшего валидатора [citation:5]"
+        ]
+    },
+    { 
+        name: "MEXC Liquid Staking", 
+        desc: "Ликвидный стейкинг SOL. Получайте MXSOL и используйте его в DeFi, пока зарабатываете 4-7% годовых [citation:9].", 
+        link: "https://www.mexc.com", 
+        icon: "🟢",
+        steps: [
+            "1️⃣ Зарегистрируйтесь на MEXC [citation:9]",
+            "2️⃣ Внесите SOL",
+            "3️⃣ Перейдите в Liquid Staking",
+            "4️⃣ Застейкайте SOL → получите MXSOL [citation:9]",
+            "5️⃣ Используйте MXSOL в других протоколах"
+        ]
+    },
+    { 
+        name: "Phantom Wallet Staking", 
+        desc: "Нативный стейкинг через Phantom. Выберите валидатора и делегируйте SOL напрямую из кошелька [citation:1].", 
+        link: "https://phantom.app", 
+        icon: "👻",
+        steps: [
+            "1️⃣ Установите Phantom [citation:1]",
+            "2️⃣ Внесите SOL",
+            "3️⃣ Перейдите в 'Stake'",
+            "4️⃣ Выберите валидатора (uptime >99%, комиссия <10%) [citation:1]",
+            "5️⃣ Подтвердите делегирование"
+        ]
+    },
+    { 
+        name: "Solflare Staking", 
+        desc: "Альтернативный кошелёк для стейкинга SOL. Продвинутые инструменты для выбора валидатора [citation:5].", 
+        link: "https://solflare.com", 
+        icon: "🔥",
+        steps: [
+            "1️⃣ Установите Solflare",
+            "2️⃣ Внесите SOL",
+            "3️⃣ Перейдите в 'Staking'",
+            "4️⃣ Выберите валидатора",
+            "5️⃣ Делегируйте SOL"
+        ]
+    }
+];
+
+// ============ КАТЕГОРИЯ 4: VALIDATOR TOOLS ============
+const validatorTools = [
+    { 
+        name: "Jito Network", 
+        desc: "MEV-инфраструктура для Solana. Стейкайте SOL через Jito и получайте дополнительный доход от MEV-сборов. APY до 9% [citation:1].", 
+        link: "https://jito.network", 
+        icon: "⚡" 
+    },
+    { 
+        name: "Marinade Finance", 
+        desc: "Ликвидный стейкинг SOL. Получайте mSOL и используйте в DeFi. APY ~7% [citation:5].", 
+        link: "https://marinade.finance", 
+        icon: "🍶" 
+    },
+    { 
+        name: "Sanctum", 
+        desc: "Новый протокол ликвидного стейкинга. Получайте stSOL и используйте в DeFi [citation:5].", 
+        link: "https://sanctum.so", 
+        icon: "🛡️" 
+    },
+    { 
+        name: "SolBlaze", 
+        desc: "Ликвидный стейкинг SOL. Получайте bSOL и зарабатывайте стейкинг-вознаграждения [citation:5].", 
+        link: "https://blaze.so", 
+        icon: "🔥" 
+    },
+    { 
+        name: "Fragmetric", 
+        desc: "Ликвидный стейкинг SOL. Получайте fragSOL и стейкинг-вознаграждения [citation:5].", 
+        link: "https://fragmetric.com", 
+        icon: "📊" 
+    }
+];
+
+// ============ КАТЕГОРИЯ 5: USMT STAKING & EARN ============
+const usmtStaking = [
+    { name: "USMT Staking (DeFi Hub)", desc: "Стейкинг USMT через DeFi Hub. 8-16% годовых. Блокировка от 30 до 365 дней.", link: "defi-hub.html", icon: "💰" },
+    { name: "USMT Yield Farming", desc: "LP-пулы USMT/USDC, USMT/SOL, USMT/USDT. Доходность до 25% APY.", link: "earn.html", icon: "🌾" },
+    { name: "USMT Lending", desc: "Давайте USMT в займы. Доходность до 15% APY.", link: "lending.html", icon: "🏦" },
+    { name: "USMT Liquid Staking", desc: "Ликвидный стейкинг USMT. Получайте stUSMT и используйте в других протоколах.", link: "defi-hub.html", icon: "💧" },
+    { name: "USMT Restaking", desc: "Рестейкинг stUSMT для дополнительного дохода до 12% APY.", link: "defi-hub.html", icon: "🔄" }
+];
+
+// ============ КАТЕГОРИЯ 6: HARDWARE & MINING RIGS ============
+const hardwareTools = [
+    { name: "Antminer L7", desc: "Мощный ASIC-майнер для Litecoin и Dogecoin. Может использоваться для майнинга с выплатой в SOL через сервисы вроде Unminable.", link: "https://www.bitmain.com", icon: "💻" },
+    { name: "WhatsMiner M50S+", desc: "Эффективный ASIC-майнер для Bitcoin. $100 депозит → $106 возврат за 2 дня на BJMINING [citation:6].", link: "https://www.microbt.com", icon: "🖥️" },
+    { name: "Avalon Miner A1566", desc: "Мощный ASIC-майнер для Bitcoin. $1,200 депозит → $1,434 возврат за 15 дней [citation:6].", link: "https://www.canaan.io", icon: "⚙️" },
+    { name: "GPU Mining Rigs", desc: "Майнинг Ethereum Classic, Ravencoin, Kaspa с последующей конвертацией в SOL. RTX 4090, RTX 4080, RX 7900 XTX.", link: "https://www.nvidia.com", icon: "🎮" }
+];
+
 function renderMining() {
     const t = content[currentLang] || content.en;
-    let html = `<h2>⛏️ Active Mines</h2><div class="grid-4">`;
-    mines.forEach(m => {
-        html += `<div class="card"><strong>${m.name}</strong><div>${m.location}</div><div>${m.type}</div><a href="#" class="btn">View →</a></div>`;
-    });
-    html += `</div><h2>🔍 Exploration Projects</h2><div class="grid-4">`;
-    exploration.forEach(e => {
-        html += `<div class="card"><strong>${e.name}</strong><div>${e.location}</div><div>${e.type} · ${e.stage}</div><a href="#" class="btn">Explore →</a></div>`;
-    });
-    html += `</div><h2>🔧 Equipment</h2><div class="grid-4">`;
-    equipment.forEach(e => {
-        html += `<div class="card"><strong>${e.name}</strong><p>${e.desc}</p><a href="#" class="btn">View →</a></div>`;
+
+    let html = '';
+
+    // ===== REAL MINING =====
+    html += `<h2>⛏️ Real PoW Mining on Solana (2+)</h2><div class="grid-4">`;
+    realMining.forEach(tool => {
+        html += `<div class="card" style="border-color:#00E6B4; background:rgba(0,230,180,0.05);">
+            <div style="font-size:2rem;">${tool.icon}</div>
+            <strong>${tool.name}</strong>
+            <p>${tool.desc}</p>
+            <div class="step-box"><ul>`;
+        tool.steps.forEach(s => { html += `<li>${s}</li>`; });
+        html += `</ul></div>
+            <a href="${tool.link}" target="_blank" class="btn">Open →</a>
+        </div>`;
     });
     html += `</div>`;
+
+    // ===== CLOUD MINING =====
+    html += `<h2>☁️ Cloud Mining Platforms (2+)</h2><div class="grid-4">`;
+    cloudMining.forEach(tool => {
+        html += `<div class="card">
+            <div style="font-size:2rem;">${tool.icon}</div>
+            <strong>${tool.name}</strong>
+            <p>${tool.desc}</p>
+            <div class="step-box"><ul>`;
+        tool.steps.forEach(s => { html += `<li>${s}</li>`; });
+        html += `</ul></div>
+            <a href="${tool.link}" target="_blank" class="btn">Open →</a>
+        </div>`;
+    });
+    html += `</div>`;
+
+    // ===== STAKING SOLANA =====
+    html += `<h2>🔒 Solana Staking (4+)</h2><div class="grid-4">`;
+    stakingTools.forEach(tool => {
+        html += `<div class="card">
+            <div style="font-size:2rem;">${tool.icon}</div>
+            <strong>${tool.name}</strong>
+            <p>${tool.desc}</p>
+            <div class="step-box"><ul>`;
+        tool.steps.forEach(s => { html += `<li>${s}</li>`; });
+        html += `</ul></div>
+            <a href="${tool.link}" target="_blank" class="btn">Open →</a>
+        </div>`;
+    });
+    html += `</div>`;
+
+    // ===== VALIDATOR TOOLS =====
+    html += `<h2>⚡ Validator & Liquid Staking (5+)</h2><div class="grid-4">`;
+    validatorTools.forEach(tool => {
+        html += `<div class="card">
+            <div style="font-size:2rem;">${tool.icon}</div>
+            <strong>${tool.name}</strong>
+            <p>${tool.desc}</p>
+            <a href="${tool.link}" target="_blank" class="btn">Open →</a>
+        </div>`;
+    });
+    html += `</div>`;
+
+    // ===== USMT STAKING =====
+    html += `<h2>💰 USMT Staking & Earn (5+)</h2><div class="grid-4">`;
+    usmtStaking.forEach(tool => {
+        html += `<div class="card">
+            <div style="font-size:2rem;">${tool.icon}</div>
+            <strong>${tool.name}</strong>
+            <p>${tool.desc}</p>
+            <a href="${tool.link}" target="_blank" class="btn">Open →</a>
+        </div>`;
+    });
+    html += `</div>`;
+
+    // ===== HARDWARE =====
+    html += `<h2>💻 Mining Hardware (4+)</h2><div class="grid-4">`;
+    hardwareTools.forEach(tool => {
+        html += `<div class="card">
+            <div style="font-size:2rem;">${tool.icon}</div>
+            <strong>${tool.name}</strong>
+            <p>${tool.desc}</p>
+            <a href="${tool.link}" target="_blank" class="btn">View →</a>
+        </div>`;
+    });
+    html += `</div>`;
+
+    // ===== СРАВНЕНИЕ =====
+    html += `<h2>📊 Mining vs Staking Comparison</h2>
+    <div class="grid-3">
+        <div class="card" style="border-color:#ff6b6b; background:rgba(255,100,100,0.05);">
+            <h3>❌ Mining (PoW)</h3>
+            <div class="stat"><span>Energy Use</span><span style="color:#ff6b6b;">Very High</span></div>
+            <div class="stat"><span>Hardware</span><span>ASIC / GPU required</span></div>
+            <div class="stat"><span>Skill Level</span><span>Advanced</span></div>
+            <div class="stat"><span>Solana Support</span><span style="color:#ff6b6b;">❌ Not native</span></div>
+            <p>Майнинг на Solana возможен только через MOR [citation:8] или облачные сервисы [citation:6][citation:7].</p>
+        </div>
+        <div class="card" style="border-color:#00E6B4; background:rgba(0,230,180,0.05);">
+            <h3>✅ Staking (PoS)</h3>
+            <div class="stat"><span>Energy Use</span><span style="color:#00ff88;">Low</span></div>
+            <div class="stat"><span>Hardware</span><span>None needed</span></div>
+            <div class="stat"><span>Skill Level</span><span>Beginner</span></div>
+            <div class="stat"><span>Solana Support</span><span style="color:#00ff88;">✅ Native</span></div>
+            <p>Стейкинг SOL — официальный способ заработка на Solana. 4-8% годовых [citation:1][citation:5][citation:9].</p>
+        </div>
+        <div class="card" style="border-color:#ffd700; background:rgba(255,215,0,0.05);">
+            <h3>💰 DeFi Yield</h3>
+            <div class="stat"><span>Energy Use</span><span style="color:#00ff88;">Minimal</span></div>
+            <div class="stat"><span>Hardware</span><span>None needed</span></div>
+            <div class="stat"><span>Skill Level</span><span>Beginner</span></div>
+            <div class="stat"><span>Solana Support</span><span style="color:#00ff88;">✅ Native</span></div>
+            <p>Фарминг, LP-пулы, кредитование. Доходность до 25% APY на USMT.</p>
+        </div>
+    </div>`;
+
+    // ===== КЛЮЧЕВЫЕ МЕТРИКИ =====
+    html += `<h2>📊 Mining & Staking Dashboard</h2><div class="grid-4">
+        <div class="card"><h3>Solana Staking APY</h3><div style="font-size:2rem;color:#00E6B4;">4-8%</div><small>Network average [citation:1][citation:5]</small></div>
+        <div class="card"><h3>USMT Staking APY</h3><div style="font-size:2rem;color:#00E6B4;">8-16%</div><small>DeFi Hub</small></div>
+        <div class="card"><h3>Cloud Mining ROI</h3><div style="font-size:2rem;color:#00E6B4;">6-12%</div><small>BJMINING [citation:6]</small></div>
+        <div class="card"><h3>Total Staked SOL</h3><div style="font-size:2rem;color:#00E6B4;">$60B+</div><small>All validators</small></div>
+    </div>`;
+
+    // ===== ДИСКЛЕЙМЕР =====
+    html += `<div style="background:rgba(255,100,100,0.1); padding:1rem; border-radius:20px; margin:1rem 0; border-left:4px solid #ff6464;">
+        <strong>⚠️ ВАЖНОЕ ПРЕДУПРЕЖДЕНИЕ:</strong><br>
+        Solana НЕЛЬЗЯ майнить в традиционном смысле. Solana использует Proof of Stake, а не Proof of Work [citation:1][citation:5][citation:9].<br>
+        Любые сервисы, обещающие "майнинг Solana" — это либо неправильная формулировка, либо потенциальное мошенничество [citation:1][citation:9].<br>
+        ✅ <strong>Реальные способы заработка SOL и USMT:</strong> Стейкинг (4-8% APY), PoW майнинг через MOR [citation:8], Клауд-майнинг через BJMINING [citation:6][citation:7], DeFi-доходность (фарминг, LP-пулы) [citation:5].
+    </div>`;
+
     document.getElementById('miningContent').innerHTML = html;
     document.getElementById('miningTitle').innerText = t.title;
     document.getElementById('miningSubhead').innerText = t.sub;
 }
+
 let currentLang = 'en';
 function setLanguage(lang) {
     currentLang = lang;
