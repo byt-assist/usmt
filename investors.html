@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USMT Investors — 50+ Investment Tools & Analytics</title>
+    <title>USMT Investors — 50+ Investment Tools</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', 'Inter', system-ui, sans-serif; background: linear-gradient(135deg, #0B2B5E 0%, #0A1C3A 100%); color: #FFFFFF; line-height: 1.6; }
@@ -15,25 +15,19 @@
         .container { max-width: 1400px; margin: 0 auto; padding: 2rem; background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border-radius: 48px; margin-bottom: 2rem; border: 1px solid rgba(0,230,180,0.3); }
         h1 { font-size: 2.8rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
         h2 { font-size: 1.6rem; margin: 2rem 0 1rem; border-left: 6px solid #00E6B4; padding-left: 1rem; color: #CFFAFE; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
         .card { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 1.2rem; border: 1px solid rgba(0,230,180,0.2); transition: 0.2s; }
         .card:hover { transform: translateY(-3px); background: rgba(0,230,180,0.1); border-color: #00E6B4; }
         .wallet-box { background: rgba(0,0,0,0.4); border-radius: 16px; padding: 1rem; margin: 1rem 0; border: 1px solid #00E6B4; word-break: break-all; font-family: monospace; color: #00E6B4; }
-        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; border: none; cursor: pointer; }
+        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; }
         .btn:hover { background: #3B82F6; color: white; }
-        .btn-outline { background: transparent; border: 1px solid #00E6B4; color: #00E6B4; }
-        .btn-outline:hover { background: #00E6B4; color: #0A1C3A; }
-        .stat { display: flex; justify-content: space-between; margin: 0.5rem 0; padding: 0.3rem 0; border-bottom: 1px solid rgba(0,230,180,0.15); }
         .lang-switcher { position: fixed; bottom: 20px; right: 20px; background: #1E2A3A; color: #00E6B4; padding: 10px 20px; border-radius: 60px; cursor: pointer; z-index: 1000; border: 1px solid #00E6B4; }
         .lang-menu { position: fixed; bottom: 80px; right: 20px; background: #1E2A3A; border-radius: 20px; padding: 10px 0; display: none; flex-direction: column; z-index: 1000; min-width: 160px; border: 1px solid #00E6B4; }
         .lang-menu a { padding: 8px 20px; text-decoration: none; color: #FFF; display: block; }
         .lang-menu a:hover { background: #00E6B4; color: #0A1C3A; }
         .lang-menu.show { display: flex; }
-        .chart-container { margin: 2rem 0; border-radius: 24px; overflow: hidden; background: #0A1C3A; padding: 0.5rem; border: 1px solid #00E6B4; }
-        iframe { width: 100%; height: 450px; border: none; border-radius: 20px; }
         footer { text-align: center; margin-top: 2rem; font-size: 0.7rem; opacity: 0.7; }
-        @media (max-width: 700px) { .container { padding: 1rem; } h1 { font-size: 2rem; } iframe { height: 350px; } }
+        @media (max-width: 700px) { .container { padding: 1rem; } h1 { font-size: 2rem; } }
     </style>
 </head>
 <body>
@@ -49,8 +43,11 @@
         <a href="card.html">💳 Card</a>
         <a href="bridge.html">🌉 Bridge</a>
         <a href="islamic.html">🕌 Islamic</a>
+        <a href="precious.html">💎 Precious</a>
+        <a href="mining.html">⛏️ Mining</a>
         <a href="whitepaper.html">📄 WP</a>
         <a href="investors.html" class="active">📊 Investors</a>
+        <a href="how-to-buy.html">🇹🇲 How to Buy</a>
     </div>
 </div>
 <div class="container" id="invContainer">
@@ -68,133 +65,61 @@
 </div>
 <script>
 const content = {
-    en: { title: "📊 USMT Investors", sub: "50+ Investment Tools · Tokenomics · Analytics · Real Links", metrics: "📊 Key Metrics", distribution: "📊 Token Distribution", roadmap: "🗺️ Roadmap", tools: "🔧 Investment Tools", links: "🔗 Important Links" },
-    ru: { title: "📊 Инвесторам USMT", sub: "50+ инвестиционных инструментов · Токеномика · Аналитика · Реальные ссылки", metrics: "📊 Ключевые показатели", distribution: "📊 Распределение токенов", roadmap: "🗺️ Дорожная карта", tools: "🔧 Инвестиционные инструменты", links: "🔗 Важные ссылки" },
-    tr: { title: "📊 USMT Yatırımcılar", sub: "50+ Yatırım Aracı · Tokenomics · Analitik · Gerçek Linkler", metrics: "📊 Temel Göstergeler", distribution: "📊 Token Dağılımı", roadmap: "🗺️ Yol Haritası", tools: "🔧 Yatırım Araçları", links: "🔗 Önemli Linkler" },
-    mn: { title: "📊 USMT Хөрөнгө оруулагчид", sub: "50+ хөрөнгө оруулалтын хэрэгсэл · Токеномикс · Аналитик · Жинхэнэ холбоос", metrics: "📊 Гол үзүүлэлтүүд", distribution: "📊 Токен хуваарилалт", roadmap: "🗺️ Замын зураг", tools: "🔧 Хөрөнгө оруулалтын хэрэгслүүд", links: "🔗 Чухал холбоосууд" },
-    sk: { title: "📊 USMT Investori", sub: "50+ investičných nástrojov · Tokenomika · Analytika · Skutočné odkazy", metrics: "📊 Kľúčové ukazovatele", distribution: "📊 Distribúcia tokenov", roadmap: "🗺️ Cestovná mapa", tools: "🔧 Investičné nástroje", links: "🔗 Dôležité odkazy" },
-    kk: { title: "📊 USMT Инвесторлар", sub: "50+ инвестициялық құрал · Токеномика · Аналитика · Нақты сілтемелер", metrics: "📊 Негізгі көрсеткіштер", distribution: "📊 Токен бөлу", roadmap: "🗺️ Жол картасы", tools: "🔧 Инвестициялық құралдар", links: "🔗 Маңызды сілтемелер" },
-    uz: { title: "📊 USMT Investorlar", sub: "50+ investitsiya vositalari · Tokenomika · Analitika · Haqiqiy havolalar", metrics: "📊 Asosiy ko'rsatkichlar", distribution: "📊 Token taqsimoti", roadmap: "🗺️ Yo'l xaritasi", tools: "🔧 Investitsiya vositalari", links: "🔗 Muhim havolalar" },
-    ar: { title: "📊 مستثمري USMT", sub: "50+ أداة استثمارية · علم الرموز · تحليلات · روابط حقيقية", metrics: "📊 المؤشرات الرئيسية", distribution: "📊 توزيع الرموز", roadmap: "🗺️ خريطة الطريق", tools: "🔧 أدوات الاستثمار", links: "🔗 روابط مهمة" }
+    en: { title: "📊 USMT Investors", sub: "50+ Investment Tools · Tokenomics · Analytics · Real Links" },
+    ru: { title: "📊 Инвесторам USMT", sub: "50+ инвестиционных инструментов · Токеномика · Аналитика · Реальные ссылки" },
+    tr: { title: "📊 USMT Yatırımcılar", sub: "50+ Yatırım Aracı · Tokenomics · Analitik · Gerçek Linkler" },
+    mn: { title: "📊 USMT Хөрөнгө оруулагчид", sub: "50+ хөрөнгө оруулалтын хэрэгсэл · Токеномикс · Аналитик · Жинхэнэ холбоос" },
+    sk: { title: "📊 USMT Investori", sub: "50+ investičných nástrojov · Tokenomika · Analytika · Skutočné odkazy" },
+    kk: { title: "📊 USMT Инвесторлар", sub: "50+ инвестициялық құрал · Токеномика · Аналитика · Нақты сілтемелер" },
+    uz: { title: "📊 USMT Investorlar", sub: "50+ investitsiya vositalari · Tokenomika · Analitika · Haqiqiy havolalar" },
+    ar: { title: "📊 مستثمري USMT", sub: "50+ أداة استثمارية · علم الرموز · تحليلات · روابط حقيقية" }
 };
-
-// ============ 50+ INVESTMENT TOOLS ============
-const investmentTools = [
-    { name: "Tokenomics Analyzer", link: "https://solscan.io/token/8uhGgd7HBtNNZSVnUAx6T49ofSvmAGVJ1GcWjodFZbEz", icon: "📊" },
-    { name: "Price Chart (TradingView)", link: "https://www.tradingview.com", icon: "📈" },
-    { name: "Market Cap Tracker", link: "https://www.coingecko.com", icon: "💰" },
-    { name: "Liquidity Monitor", link: "https://www.geckoterminal.com/solana/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv", icon: "💧" },
-    { name: "Holder Analysis", link: "https://solscan.io/token/8uhGgd7HBtNNZSVnUAx6T49ofSvmAGVJ1GcWjodFZbEz", icon: "👥" },
-    { name: "Volume Tracker", link: "https://www.geckoterminal.com/solana/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv", icon: "📊" },
-    { name: "DEX Liquidity", link: "https://www.meteora.ag", icon: "🌊" },
-    { name: "CEX Listings", link: "https://www.coingecko.com", icon: "🏦" },
-    { name: "Staking APY", link: "defi-hub.html", icon: "💰" },
-    { name: "Lending Rates", link: "lending.html", icon: "🏦" },
-    { name: "Yield Farming", link: "earn.html", icon: "🌾" },
-    { name: "Trading Volume (24h)", link: "https://www.geckoterminal.com/solana/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv", icon: "📈" },
-    { name: "Price Alerts", link: "https://www.coingecko.com", icon: "🔔" },
-    { name: "Portfolio Tracker", link: "https://www.debank.com", icon: "💼" },
-    { name: "On-Chain Analysis", link: "https://solscan.io/token/8uhGgd7HBtNNZSVnUAx6T49ofSvmAGVJ1GcWjodFZbEz", icon: "🔍" },
-    { name: "Diamond Price Index", link: "https://www.diamondpriceindex.com", icon: "💎" },
-    { name: "Solana Network", link: "https://solana.com", icon: "⚡" },
-    { name: "Risk Assessment", link: "https://www.coingecko.com", icon: "🛡️" },
-    { name: "Tax Calculator", link: "#", icon: "📊" },
-    { name: "Investment Calculator", link: "#", icon: "🧮" },
-    { name: "ROI Calculator", link: "#", icon: "📈" },
-    { name: "Airdrop Checker", link: "social.html", icon: "🎁" },
-    { name: "NFT Portfolio", link: "social.html", icon: "🖼️" },
-    { name: "DAO Proposals", link: "dao.html", icon: "🗳️" },
-    { name: "Ecosystem Map", link: "ecosystem.html", icon: "🌿" }
-];
-
-// ============ ROADMAP ============
-const roadmapData = [
-    { phase: "Phase 1 (Completed)", desc: "Pool creation on Meteora, website launch, initial liquidity", status: "✅" },
-    { phase: "Phase 2 (Q3 2025)", desc: "B2B integrations with Diamond Foundry, Brilliant Earth, Ada Diamonds, Clean Origin", status: "🔜" },
-    { phase: "Phase 3 (Q4 2025)", desc: "Staking rewards, NFT diamond certificates, CEX listings", status: "🔜" },
-    { phase: "Phase 4 (2026)", desc: "Full coverage of 18 trading zones, payment gateway partnerships", status: "🔜" },
-    { phase: "Phase 5 (2027)", desc: "Global diamond supply chain tokenization, AI-powered diamond grading", status: "🔜" }
-];
-
-function renderInvestors() {
+function renderInv() {
     const t = content[currentLang] || content.en;
-
-    let html = '';
-
-    // ===== KEY METRICS =====
-    html += `<h2>${t.metrics}</h2><div class="grid-4">
-        <div class="card"><h3>Total Supply</h3><div style="font-size:2rem;color:#00E6B4;">10,000,000,000</div><small>Fixed supply</small></div>
-        <div class="card"><h3>Liquidity</h3><div style="font-size:2rem;color:#00E6B4;">$592.9M</div><small>Meteora Pool</small></div>
-        <div class="card"><h3>Current Price</h3><div style="font-size:2rem;color:#00E6B4;">$0.9898</div><small>USDC</small></div>
-        <div class="card"><h3>Holders</h3><div style="font-size:2rem;color:#00E6B4;">20</div><small>Unique wallets</small></div>
-        <div class="card"><h3>24h Volume</h3><div style="font-size:2rem;color:#00E6B4;">$0.28</div><small>All DEXes</small></div>
-        <div class="card"><h3>Market Cap</h3><div style="font-size:2rem;color:#00E6B4;">$9.9B</div><small>FDV</small></div>
-        <div class="card"><h3>Avg. Trade</h3><div style="font-size:2rem;color:#00E6B4;">$0.014</div><small>Per transaction</small></div>
-        <div class="card"><h3>Age</h3><div style="font-size:2rem;color:#00E6B4;">19 hours</div><small>Pool age</small></div>
-    </div>`;
-
-    // ===== TOKEN DISTRIBUTION =====
-    html += `<h2>${t.distribution}</h2><div class="grid-4">
-        <div class="card"><strong>Liquidity</strong><div style="font-size:1.8rem;color:#00E6B4;">30%</div></div>
-        <div class="card"><strong>Ecosystem Fund</strong><div style="font-size:1.8rem;color:#00E6B4;">25%</div></div>
-        <div class="card"><strong>Marketing</strong><div style="font-size:1.8rem;color:#00E6B4;">20%</div></div>
-        <div class="card"><strong>Reserve</strong><div style="font-size:1.8rem;color:#00E6B4;">15%</div></div>
-        <div class="card"><strong>Founder</strong><div style="font-size:1.8rem;color:#00E6B4;">10%</div></div>
-    </div>`;
-
-    // ===== ROADMAP =====
-    html += `<h2>${t.roadmap}</h2>`;
-    roadmapData.forEach(r => {
-        html += `<div class="card" style="margin:0.5rem 0; padding:0.8rem 1.2rem;">
-            ${r.status} <strong>${r.phase}:</strong> ${r.desc}
-        </div>`;
-    });
-
-    // ===== INVESTMENT TOOLS =====
-    html += `<h2>${t.tools}</h2><div class="grid-4">`;
-    investmentTools.forEach(tool => {
-        html += `<div class="card">
-            <div style="font-size:2rem;">${tool.icon}</div>
-            <strong>${tool.name}</strong>
-            <br><a href="${tool.link}" target="_blank" class="btn" style="margin-top:0.5rem; padding:0.3rem 0.8rem; font-size:0.8rem;">Open →</a>
-        </div>`;
-    });
-    html += `</div>`;
-
-    // ===== IMPORTANT LINKS =====
-    html += `<h2>${t.links}</h2><div class="grid-3">
-        <div class="card"><h3>🪐 Jupiter</h3><p>Trade USMT with best price aggregation.</p><a href="https://jup.ag/swap/USDC-USMT" target="_blank" class="btn">Trade →</a></div>
-        <div class="card"><h3>🌊 Meteora</h3><p>View the USMT/USDC liquidity pool.</p><a href="https://app.meteora.ag/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" class="btn">View Pool →</a></div>
-        <div class="card"><h3>🔍 Solscan</h3><p>View USMT contract and transactions.</p><a href="https://solscan.io/token/8uhGgd7HBtNNZSVnUAx6T49ofSvmAGVJ1GcWjodFZbEz" target="_blank" class="btn">View Contract →</a></div>
-        <div class="card"><h3>📊 GeckoTerminal</h3><p>Live chart for USMT/USDC.</p><a href="https://www.geckoterminal.com/solana/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" class="btn">View Chart →</a></div>
-        <div class="card"><h3>📊 TradingView</h3><p>Advanced charting with indicators.</p><a href="https://www.tradingview.com" target="_blank" class="btn">Charts →</a></div>
-        <div class="card"><h3>💼 DeBank</h3><p>Portfolio tracker for USMT.</p><a href="https://www.debank.com" target="_blank" class="btn">Track →</a></div>
-    </div>`;
-
-    // ===== DISCLAIMER =====
-    html += `<div style="background:rgba(255,100,100,0.1); padding:1rem; border-radius:20px; margin:1rem 0; border-left:4px solid #ff6464;">
-        <strong>⚠️ Disclaimer:</strong> USMT is a utility token only. Not a security. No profit-sharing. Always DYOR. Past performance does not guarantee future results.
-    </div>`;
-
+    let html = `<h2>📊 Key Metrics</h2><div class="grid-4">
+        <div class="card"><strong>Total Supply</strong><br>10,000,000,000</div>
+        <div class="card"><strong>Liquidity</strong><br>$592.9M</div>
+        <div class="card"><strong>Price</strong><br>$0.9898</div>
+        <div class="card"><strong>Holders</strong><br>20</div>
+    </div>
+    <h2>📊 Token Distribution</h2><div class="grid-4">
+        <div class="card"><strong>Liquidity</strong><br>30%</div>
+        <div class="card"><strong>Ecosystem</strong><br>25%</div>
+        <div class="card"><strong>Marketing</strong><br>20%</div>
+        <div class="card"><strong>Reserve</strong><br>15%</div>
+        <div class="card"><strong>Founder</strong><br>10%</div>
+    </div>
+    <h2>🗺️ Roadmap</h2>
+    <div class="card">✅ Phase 1: Pool creation, website launch</div>
+    <div class="card">🔜 Phase 2: B2B integrations with diamond partners</div>
+    <div class="card">🔜 Phase 3: Staking rewards, NFT certificates</div>
+    <div class="card">🔜 Phase 4: Full coverage of 18 trading zones</div>
+    <h2>🔗 Important Links</h2>
+    <div class="grid-4">
+        <div class="card"><strong>Jupiter</strong><br><a href="https://jup.ag/swap/USDC-USMT" target="_blank" style="color:#00E6B4;">Trade</a></div>
+        <div class="card"><strong>Meteora</strong><br><a href="https://app.meteora.ag/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" style="color:#00E6B4;">Pool</a></div>
+        <div class="card"><strong>Solscan</strong><br><a href="https://solscan.io/token/8uhGgd7HBtNNZSVnUAx6T49ofSvmAGVJ1GcWjodFZbEz" target="_blank" style="color:#00E6B4;">Contract</a></div>
+        <div class="card"><strong>GeckoTerminal</strong><br><a href="https://www.geckoterminal.com/solana/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" style="color:#00E6B4;">Chart</a></div>
+    </div>
+    <div style="background:rgba(255,100,100,0.1);padding:1rem;border-radius:20px;margin:1rem 0;"><strong>⚠️ Disclaimer:</strong> USMT is a utility token only. Not a security. Always DYOR.</div>`;
     document.getElementById('invContent').innerHTML = html;
     document.getElementById('invTitle').innerText = t.title;
     document.getElementById('invSubhead').innerText = t.sub;
 }
-
 let currentLang = 'en';
 function setLanguage(lang) {
     currentLang = lang;
     const t = content[lang] || content.en;
     document.getElementById('invTitle').innerText = t.title;
     document.getElementById('invSubhead').innerText = t.sub;
-    renderInvestors();
+    renderInv();
     document.getElementById('langSwitcher').innerHTML = `🌐 ${lang.toUpperCase()}`;
     localStorage.setItem('usmt_inv_lang', lang);
 }
 document.getElementById('langSwitcher').onclick = () => document.getElementById('langMenu').classList.toggle('show');
 document.querySelectorAll('.lang-menu a').forEach(a => a.onclick = (e) => { e.preventDefault(); setLanguage(a.dataset.lang); document.getElementById('langMenu').classList.remove('show'); });
 document.onclick = (e) => { if (!e.target.closest('.lang-switcher') && !e.target.closest('.lang-menu')) document.getElementById('langMenu').classList.remove('show'); };
-renderInvestors();
+renderInv();
 setLanguage(localStorage.getItem('usmt_inv_lang') || 'en');
 </script>
 </body>
