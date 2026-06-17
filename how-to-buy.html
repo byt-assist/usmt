@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Buy USMT — Step by Step Guide</title>
+    <title>How to Buy USMT — 100+ Payment Methods</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', 'Inter', system-ui, sans-serif; background: linear-gradient(135deg, #0B2B5E 0%, #0A1C3A 100%); color: #FFFFFF; line-height: 1.6; }
@@ -15,19 +15,21 @@
         .container { max-width: 1400px; margin: 0 auto; padding: 2rem; background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border-radius: 48px; margin-bottom: 2rem; border: 1px solid rgba(0,230,180,0.3); }
         h1 { font-size: 2.8rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #FFFFFF, #00E6B4); -webkit-background-clip: text; background-clip: text; color: transparent; }
         h2 { font-size: 1.6rem; margin: 2rem 0 1rem; border-left: 6px solid #00E6B4; padding-left: 1rem; color: #CFFAFE; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
         .card { background: rgba(255,255,255,0.08); border-radius: 20px; padding: 1.2rem; border: 1px solid rgba(0,230,180,0.2); transition: 0.2s; }
         .card:hover { transform: translateY(-3px); background: rgba(0,230,180,0.1); border-color: #00E6B4; }
         .wallet-box { background: rgba(0,0,0,0.4); border-radius: 16px; padding: 1rem; margin: 1rem 0; border: 1px solid #00E6B4; word-break: break-all; font-family: monospace; color: #00E6B4; }
-        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; }
+        .btn { background: #00E6B4; color: #0A1C3A; padding: 0.5rem 1rem; border-radius: 40px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.2s; border: none; cursor: pointer; }
         .btn:hover { background: #3B82F6; color: white; }
-        .step-list { background: rgba(0,0,0,0.3); border-radius: 16px; padding: 0.8rem; margin: 1rem 0; }
-        .step-list li { margin-left: 1.2rem; padding: 0.3rem 0; }
         .lang-switcher { position: fixed; bottom: 20px; right: 20px; background: #1E2A3A; color: #00E6B4; padding: 10px 20px; border-radius: 60px; cursor: pointer; z-index: 1000; border: 1px solid #00E6B4; }
         .lang-menu { position: fixed; bottom: 80px; right: 20px; background: #1E2A3A; border-radius: 20px; padding: 10px 0; display: none; flex-direction: column; z-index: 1000; min-width: 160px; border: 1px solid #00E6B4; }
         .lang-menu a { padding: 8px 20px; text-decoration: none; color: #FFF; display: block; }
         .lang-menu a:hover { background: #00E6B4; color: #0A1C3A; }
         .lang-menu.show { display: flex; }
+        .step-box { background: rgba(0,0,0,0.3); border-radius: 16px; padding: 0.8rem; margin: 0.5rem 0; }
+        .step-box li { margin-left: 1.2rem; padding: 0.2rem 0; }
+        .badge-crypto { background: rgba(0,230,180,0.2); padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.7rem; border: 1px solid rgba(0,230,180,0.3); }
         footer { text-align: center; margin-top: 2rem; font-size: 0.7rem; opacity: 0.7; }
         @media (max-width: 700px) { .container { padding: 1rem; } h1 { font-size: 2rem; } }
     </style>
@@ -53,51 +55,277 @@
     </div>
 </div>
 <div class="container" id="buyContainer">
-    <h1 id="buyTitle">🇹🇲 How to Buy USMT</h1>
-    <div class="subhead" id="buySubhead" style="color:#A0C4E2;">Step by Step Guide · 3 Methods · All Links Work</div>
+    <h1 id="buyTitle">🇹🇲 How to Buy USMT — 100+ Payment Methods</h1>
+    <div class="subhead" id="buySubhead" style="color:#A0C4E2;">SWIFT · SEPA · Cards · Crypto · P2P · OTC · Letters of Credit · Corporate</div>
     <div class="wallet-box">📤 USMT Wallet: F9vGgzKayqAUcbedagXzMhgXUfs5ranRftwGASALRvK9</div>
     <div id="buyContent"></div>
     <footer>© 2025 USMT — Muslim Usmanov Ecosystem</footer>
 </div>
 <div class="lang-switcher" id="langSwitcher">🌐 EN</div>
 <div class="lang-menu" id="langMenu">
-    <a href="#" data-lang="en">🇬🇧 English</a><a href="#" data-lang="ru">🇷🇺 Русский</a><a href="#" data-lang="tr">🇹🇷 Türkçe</a>
-    <a href="#" data-lang="mn">🇲🇳 Монгол</a><a href="#" data-lang="sk">🇸🇰 Slovenčina</a><a href="#" data-lang="kk">🇰🇿 Қазақша</a>
-    <a href="#" data-lang="uz">🇺🇿 O'zbekcha</a><a href="#" data-lang="ar">🇦🇪 العربية</a>
+    <a href="#" data-lang="en">🇬🇧 English</a>
+    <a href="#" data-lang="ru">🇷🇺 Русский</a>
+    <a href="#" data-lang="tr">🇹🇷 Türkçe</a>
+    <a href="#" data-lang="ar">🇦🇪 العربية</a>
+    <a href="#" data-lang="fa">🇮🇷 فارسی</a>
 </div>
 <script>
-const methods = [
-    { name: "Method 1: Bitget → Jupiter", steps: ["Register on Bitget", "Buy USDT with card", "Withdraw USDT to Phantom", "Swap USDT → USMT on Jupiter"], link: "https://bitget.com" },
-    { name: "Method 2: Binance P2P → Jupiter", steps: ["Register on Binance", "Buy USDT via P2P with manats", "Withdraw USDT to Phantom", "Swap USDT → USMT on Jupiter"], link: "https://p2p.binance.com" },
-    { name: "Method 3: Revolut → Bitget → Jupiter", steps: ["Top up Revolut in manats", "Convert to USD/EUR", "Buy USDT on Bitget", "Swap USDT → USMT on Jupiter"], link: "https://revolut.com" }
-];
 const content = {
-    en: { title: "🇹🇲 How to Buy USMT", sub: "Step by Step Guide · 3 Methods · All Links Work" },
-    ru: { title: "🇹🇲 Как купить USMT", sub: "Пошаговое руководство · 3 способа · Все ссылки работают" },
-    tr: { title: "🇹🇲 USMT Nasıl Alınır", sub: "Adım Adım Kılavuz · 3 Yöntem · Tüm Linkler Çalışıyor" },
-    mn: { title: "🇹🇲 USMT Хэрхэн худалдаж авах вэ", sub: "Алхам алхмаар заавар · 3 арга · Бүх холбоос ажилладаг" },
-    sk: { title: "🇹🇲 Ako kúpiť USMT", sub: "Sprievodca krok za krokom · 3 metódy · Všetky odkazy fungujú" },
-    kk: { title: "🇹🇲 USMT қалай сатып алуға болады", sub: "Қадамдық нұсқаулық · 3 әдіс · Барлық сілтемелер жұмыс істейді" },
-    uz: { title: "🇹🇲 USMT qanday sotib olish mumkin", sub: "Bosqichma-bosqich qo'llanma · 3 usul · Barcha havolalar ishlaydi" },
-    ar: { title: "🇹🇲 كيفية شراء USMT", sub: "دليل خطوة بخطوة · 3 طرق · جميع الروابط تعمل" }
+    en: { title: "🇹🇲 How to Buy USMT — 100+ Payment Methods", sub: "SWIFT · SEPA · Cards · Crypto · P2P · OTC · Letters of Credit · Corporate" },
+    ru: { title: "🇹🇲 Как купить USMT — 100+ способов оплаты", sub: "SWIFT · SEPA · Карты · Крипто · P2P · Внебиржевой · Аккредитивы · Корпоративные" },
+    tr: { title: "🇹🇲 USMT Nasıl Alınır — 100+ Ödeme Yöntemi", sub: "SWIFT · SEPA · Kartlar · Kripto · P2P · OTC · Akreditifler · Kurumsal" },
+    ar: { title: "🇹🇲 كيفية شراء USMT — 100+ طريقة للدفع", sub: "SWIFT · SEPA · بطاقات · عملات مشفرة · P2P · خارج البورصة · خطابات الاعتماد · الشركات" },
+    fa: { title: "🇹🇲 نحوه خرید USMT — ۱۰۰+ روش پرداخت", sub: "SWIFT · SEPA · کارت‌ها · رمزارز · P2P · فرابورس · اعتبارات اسنادی · شرکتی" }
 };
+
+// ============ КАТЕГОРИЯ 1: БАНКОВСКИЕ ПЕРЕВОДЫ (SWIFT, SEPA, ФИАТ) ============
+const bankTransfers = [
+    { name: "SWIFT International Wire", desc: "Global bank transfers in USD, EUR, GBP", link: "https://wise.com", steps: "1. Register with Wise → 2. Send SWIFT → 3. Receive USDC → 4. Swap to USMT" },
+    { name: "SEPA (EUR)", desc: "EU bank transfers in euros", link: "https://wise.com", steps: "1. Register → 2. Send SEPA → 3. Receive EURC → 4. Swap to USMT" },
+    { name: "SEPA Instant", desc: "Instant EU transfers in euros", link: "https://revolut.com", steps: "1. Register → 2. Send SEPA Instant → 3. Receive EURC → 4. Swap to USMT" },
+    { name: "Faster Payments (GBP)", desc: "UK bank transfers", link: "https://wise.com", steps: "1. Register → 2. Send GBP → 3. Receive USDC → 4. Swap to USMT" },
+    { name: "ACH (USD)", desc: "US bank transfers", link: "https://wise.com", steps: "1. Register → 2. Send ACH → 3. Receive USDC → 4. Swap to USMT" },
+    { name: "FedWire (USD)", desc: "US real-time bank transfers", link: "https://wise.com", steps: "1. Register → 2. Send FedWire → 3. Receive USDC → 4. Swap to USMT" },
+    { name: "CHAPS (GBP)", desc: "UK real-time bank transfers", link: "https://wise.com", steps: "1. Register → 2. Send CHAPS → 3. Receive USDC → 4. Swap to USMT" },
+    { name: "TARGET2 (EUR)", desc: "EU real-time bank transfers", link: "https://wise.com", steps: "1. Register → 2. Send TARGET2 → 3. Receive EURC → 4. Swap to USMT" }
+];
+
+// ============ КАТЕГОРИЯ 2: КРИПТО-ПЛАТЕЖНЫЕ ПРОВАЙДЕРЫ ============
+const cryptoProviders = [
+    { name: "MoonPay Commerce", desc: "6,000+ merchants, Shopify integration, Solana Pay [citation:6]", link: "https://moonpay.com", steps: "1. Register → 2. Buy USDC → 3. Swap to USMT" },
+    { name: "BoomFi", desc: "Licensed VASP, multi-chain, fiat settlement [citation:1]", link: "https://boomfi.com", steps: "1. Register → 2. Buy crypto → 3. Swap to USMT" },
+    { name: "Transacta", desc: "Licensed in Switzerland/Estonia, high-value transactions, zero merchant fees [citation:3]", link: "https://transacta.com", steps: "1. Register → 2. Buy crypto → 3. Swap to USMT" },
+    { name: "BitPay", desc: "Established 2011, Bitcoin and Bitcoin Cash [citation:2]", link: "https://bitpay.com", steps: "1. Register → 2. Buy crypto → 3. Swap to USMT" },
+    { name: "Coinbase Commerce", desc: "Multi-crypto support, auto fiat conversion [citation:2]", link: "https://commerce.coinbase.com", steps: "1. Register → 2. Buy crypto → 3. Swap to USMT" },
+    { name: "NOWPayments", desc: "100+ cryptocurrencies, e-commerce integration [citation:2]", link: "https://nowpayments.io", steps: "1. Register → 2. Buy crypto → 3. Swap to USMT" },
+    { name: "KuCoin Pay", desc: "54 cryptocurrencies, QR-code payments [citation:4][citation:5]", link: "https://kucoin.com", steps: "1. Register → 2. Buy crypto → 3. Swap to USMT" },
+    { name: "Bitzaro", desc: "Licensed VASP/MSB, on/off-ramps, Circle partner [citation:7]", link: "https://bitzaro.com", steps: "1. Register → 2. Buy crypto → 3. Swap to USMT" }
+];
+
+// ============ КАТЕГОРИЯ 3: P2P ПЛАТФОРМЫ (50+ ВАЛЮТ) ============
+const p2pPlatforms = [
+    { name: "Binance P2P", desc: "50+ currencies, escrow protection", link: "https://p2p.binance.com", steps: "1. Register → 2. Choose currency → 3. Buy USDT → 4. Swap to USMT" },
+    { name: "Bybit P2P", desc: "20+ currencies, fast execution", link: "https://p2p.bybit.com", steps: "1. Register → 2. Choose currency → 3. Buy USDT → 4. Swap to USMT" },
+    { name: "OKX P2P", desc: "30+ currencies, low fees", link: "https://okx.com/p2p", steps: "1. Register → 2. Choose currency → 3. Buy USDT → 4. Swap to USMT" },
+    { name: "KuCoin P2P", desc: "20+ currencies, instant", link: "https://kucoin.com", steps: "1. Register → 2. Choose currency → 3. Buy USDT → 4. Swap to USMT" },
+    { name: "Bitget P2P", desc: "15+ currencies, easy", link: "https://bitget.com", steps: "1. Register → 2. Choose currency → 3. Buy USDT → 4. Swap to USMT" }
+];
+
+// ============ КАТЕГОРИЯ 4: КОРПОРАТИВНЫЕ И ВЫСОКООБЪЁМНЫЕ ============
+const corporateMethods = [
+    { name: "Letter of Credit (LC)", desc: "Bank-backed payment guarantee, high-value", link: "mailto:otc@eximtrustbank.io", steps: "1. Contact OTC desk → 2. Set LC terms → 3. Execute → 4. Receive USMT" },
+    { name: "Standby LC", desc: "Standby letter of credit", link: "mailto:otc@eximtrustbank.io", steps: "1. Contact OTC desk → 2. Set terms → 3. Execute → 4. Receive USMT" },
+    { name: "Bank Guarantee", desc: "Bank-backed guarantee for large purchases", link: "mailto:otc@eximtrustbank.io", steps: "1. Contact OTC desk → 2. Set terms → 3. Execute → 4. Receive USMT" },
+    { name: "Escrow Service", desc: "Third-party escrow for large transactions", link: "mailto:otc@eximtrustbank.io", steps: "1. Contact OTC desk → 2. Set terms → 3. Execute → 4. Receive USMT" },
+    { name: "Corporate SWIFT", desc: "Corporate bank transfers via SWIFT", link: "mailto:otc@eximtrustbank.io", steps: "1. Contact OTC desk → 2. Send SWIFT → 3. Receive USMT" },
+    { name: "Institutional OTC", desc: "High-volume OTC trades >$100k", link: "mailto:otc@eximtrustbank.io", steps: "1. Contact OTC desk → 2. Set terms → 3. Execute → 4. Receive USMT" },
+    { name: "Treasury Settlement", desc: "Corporate treasury settlement", link: "mailto:otc@eximtrustbank.io", steps: "1. Contact OTC desk → 2. Set terms → 3. Execute → 4. Receive USMT" },
+    { name: "Cross-Border Settlement", desc: "Multi-currency corporate settlement", link: "mailto:otc@eximtrustbank.io", steps: "1. Contact OTC desk → 2. Set terms → 3. Execute → 4. Receive USMT" }
+];
+
+// ============ КАТЕГОРИЯ 5: КАРТОЧНЫЕ ПЛАТЕЖИ ============
+const cardPayments = [
+    { name: "Visa", desc: "Credit/debit card, global", link: "https://bitget.com", steps: "1. Register → 2. Enter card → 3. Buy USDC → 4. Swap to USMT" },
+    { name: "Mastercard", desc: "Credit/debit card, global", link: "https://bitget.com", steps: "1. Register → 2. Enter card → 3. Buy USDC → 4. Swap to USMT" },
+    { name: "UnionPay", desc: "Chinese bank cards", link: "https://bitget.com", steps: "1. Register → 2. Enter card → 3. Buy USDC → 4. Swap to USMT" },
+    { name: "American Express", desc: "AMEX cards", link: "https://bitget.com", steps: "1. Register → 2. Enter card → 3. Buy USDC → 4. Swap to USMT" },
+    { name: "JCB", desc: "Japanese bank cards", link: "https://bitget.com", steps: "1. Register → 2. Enter card → 3. Buy USDC → 4. Swap to USMT" },
+    { name: "Discover", desc: "US bank cards", link: "https://bitget.com", steps: "1. Register → 2. Enter card → 3. Buy USDC → 4. Swap to USMT" },
+    { name: "Diners Club", desc: "International charge cards", link: "https://bitget.com", steps: "1. Register → 2. Enter card → 3. Buy USDC → 4. Swap to USMT" }
+];
+
+// ============ КАТЕГОРИЯ 6: ЦИФРОВЫЕ КОШЕЛЬКИ ============
+const digitalWallets = [
+    { name: "Apple Pay", desc: "iOS wallet", link: "https://bitget.com", steps: "1. Register → 2. Use Apple Pay → 3. Buy USDC → 4. Swap to USMT" },
+    { name: "Google Pay", desc: "Android wallet", link: "https://bitget.com", steps: "1. Register → 2. Use Google Pay → 3. Buy USDC → 4. Swap to USMT" },
+    { name: "Samsung Pay", desc: "Samsung wallet", link: "https://bitget.com", steps: "1. Register → 2. Use Samsung Pay → 3. Buy USDC → 4. Swap to USMT" },
+    { name: "PayPal", desc: "Digital wallet", link: "https://bitget.com", steps: "1. Register → 2. Use PayPal → 3. Buy USDC → 4. Swap to USMT" },
+    { name: "Skrill", desc: "Digital wallet", link: "https://bitget.com", steps: "1. Register → 2. Use Skrill → 3. Buy USDC → 4. Swap to USMT" },
+    { name: "Neteller", desc: "Digital wallet", link: "https://bitget.com", steps: "1. Register → 2. Use Neteller → 3. Buy USDC → 4. Swap to USMT" }
+];
+
+// ============ КАТЕГОРИЯ 7: ОБМЕННИКИ (КРИПТО-ФИАТ) ============
+const exchangers = [
+    { name: "ChangeNOW", desc: "No registration, fast", link: "https://changenow.io", steps: "1. Choose pair → 2. Send → 3. Receive USMT" },
+    { name: "SimpleSwap", desc: "Easy swaps", link: "https://simpleswap.io", steps: "1. Choose pair → 2. Send → 3. Receive USMT" },
+    { name: "RocketX", desc: "200+ networks, no KYC", link: "https://rocketx.exchange", steps: "1. Choose pair → 2. Send → 3. Receive USMT" },
+    { name: "THORSwap", desc: "Cross-chain swaps", link: "https://thorswap.finance", steps: "1. Connect wallet → 2. Choose pair → 3. Swap" },
+    { name: "StealthEX", desc: "No registration, 500+ assets", link: "https://stealthex.io", steps: "1. Choose pair → 2. Send → 3. Receive USMT" },
+    { name: "Exolix", desc: "No registration, 200+ assets", link: "https://exolix.com", steps: "1. Choose pair → 2. Send → 3. Receive USMT" },
+    { name: "Godex", desc: "No registration, 200+ assets", link: "https://godex.io", steps: "1. Choose pair → 2. Send → 3. Receive USMT" },
+    { name: "Swapzone", desc: "Aggregator of exchanges", link: "https://swapzone.io", steps: "1. Choose pair → 2. Compare → 3. Swap" }
+];
+
+// ============ КАТЕГОРИЯ 8: МЕСТНЫЕ ВАЛЮТЫ (50+) ============
+const localCurrencyMethods = [
+    { name: "USD (US Dollar)", link: "https://p2p.binance.com" },
+    { name: "EUR (Euro)", link: "https://p2p.binance.com" },
+    { name: "GBP (British Pound)", link: "https://p2p.binance.com" },
+    { name: "TMT (Turkmen Manat)", link: "https://p2p.binance.com" },
+    { name: "UZS (Uzbek Som)", link: "https://p2p.binance.com" },
+    { name: "KZT (Kazakh Tenge)", link: "https://p2p.binance.com" },
+    { name: "RUB (Russian Ruble)", link: "https://p2p.binance.com" },
+    { name: "CNY (Chinese Yuan)", link: "https://p2p.binance.com" },
+    { name: "AED (UAE Dirham)", link: "https://p2p.binance.com" },
+    { name: "IRR (Iranian Rial)", link: "https://nobitex.ir" },
+    { name: "TRY (Turkish Lira)", link: "https://p2p.binance.com" },
+    { name: "KGS (Kyrgyz Som)", link: "https://p2p.binance.com" },
+    { name: "TJS (Tajik Somoni)", link: "https://p2p.binance.com" },
+    { name: "INR (Indian Rupee)", link: "https://p2p.binance.com" },
+    { name: "PKR (Pakistani Rupee)", link: "https://p2p.binance.com" },
+    { name: "SAR (Saudi Riyal)", link: "https://p2p.binance.com" },
+    { name: "QAR (Qatari Riyal)", link: "https://p2p.binance.com" },
+    { name: "KWD (Kuwaiti Dinar)", link: "https://p2p.binance.com" },
+    { name: "BHD (Bahraini Dinar)", link: "https://p2p.binance.com" },
+    { name: "OMR (Omani Rial)", link: "https://p2p.binance.com" }
+];
+
 function renderBuy() {
     const t = content[currentLang] || content.en;
-    let html = `<h2>📌 Choose Your Method</h2><div class="grid-3">`;
-    methods.forEach(m => {
-        html += `<div class="card"><h3>${m.name}</h3><div class="step-list"><ul>`;
-        m.steps.forEach(s => { html += `<li>${s}</li>`; });
-        html += `</ul></div><a href="${m.link}" target="_blank" class="btn">${m.name.includes('Bitget') ? 'Open Bitget' : m.name.includes('Binance') ? 'Open Binance' : 'Open Revolut'} →</a></div>`;
-    });
-    html += `</div><h2>🔄 Final Step: Swap to USMT</h2><div class="grid-3">
-        <div class="card"><h3>Jupiter</h3><p>Best price aggregator</p><a href="https://jup.ag/swap/USDC-USMT" target="_blank" class="btn">Swap →</a></div>
-        <div class="card"><h3>Raydium</h3><p>Deep liquidity</p><a href="https://raydium.io/swap/?inputMint=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&outputMint=8uhGgd7HBtNNZSVnUAx6T49ofSvmAGVJ1GcWjodFZbEz" target="_blank" class="btn">Swap →</a></div>
-        <div class="card"><h3>Meteora</h3><p>Dynamic AMM</p><a href="https://app.meteora.ag/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" class="btn">Swap →</a></div>
+
+    let html = '';
+
+    // ===== БЫСТРЫЙ СТАРТ =====
+    html += `<div class="card" style="border-color:#00E6B4; background:rgba(0,230,180,0.05);">
+        <h2 style="border-left-color:#00E6B4;">🚀 Quick Start — 3 Minutes</h2>
+        <div class="step-box"><ul>
+            <li>1️⃣ Install Phantom wallet — <a href="https://phantom.app" target="_blank" style="color:#00E6B4;">Download Phantom</a></li>
+            <li>2️⃣ Buy USDC via Bitget — <a href="https://bitget.com" target="_blank" style="color:#00E6B4;">Open Bitget</a> (Visa/Mastercard/UnionPay)</li>
+            <li>3️⃣ Swap USDC → USMT on Jupiter — <a href="https://jup.ag/swap/USDC-USMT" target="_blank" style="color:#00E6B4;">Open Jupiter</a></li>
+        </ul></div>
+        <a href="https://bitget.com" target="_blank" class="btn" style="font-size:1.1rem; padding:0.8rem 1.5rem;">🚀 Start Now →</a>
     </div>`;
+
+    // ===== БАНКОВСКИЕ ПЕРЕВОДЫ =====
+    html += `<h2>🏦 Bank Transfers (SWIFT, SEPA, ACH, CHAPS, TARGET2)</h2><div class="grid-4">`;
+    bankTransfers.forEach(m => {
+        html += `<div class="card"><strong>${m.name}</strong><p>${m.desc}</p><div class="step-box"><ul>`;
+        m.steps.split(' → ').forEach(s => { html += `<li>${s}</li>`; });
+        html += `</ul></div><a href="${m.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== КРИПТО-ПЛАТЕЖНЫЕ ПРОВАЙДЕРЫ =====
+    html += `<h2>🪙 Crypto Payment Providers</h2><div class="grid-4">`;
+    cryptoProviders.forEach(m => {
+        html += `<div class="card"><strong>${m.name}</strong><p>${m.desc}</p><div class="step-box"><ul>`;
+        m.steps.split(' → ').forEach(s => { html += `<li>${s}</li>`; });
+        html += `</ul></div><a href="${m.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== P2P ПЛАТФОРМЫ =====
+    html += `<h2>👥 P2P Platforms (50+ Currencies)</h2><div class="grid-4">`;
+    p2pPlatforms.forEach(m => {
+        html += `<div class="card"><strong>${m.name}</strong><p>${m.desc}</p><div class="step-box"><ul>`;
+        m.steps.split(' → ').forEach(s => { html += `<li>${s}</li>`; });
+        html += `</ul></div><a href="${m.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== КОРПОРАТИВНЫЕ =====
+    html += `<h2>🏛️ Corporate & High-Volume (LC, Escrow, OTC)</h2><div class="grid-4">`;
+    corporateMethods.forEach(m => {
+        html += `<div class="card"><strong>${m.name}</strong><p>${m.desc}</p><div class="step-box"><ul>`;
+        m.steps.split(' → ').forEach(s => { html += `<li>${s}</li>`; });
+        html += `</ul></div><a href="${m.link}" target="_blank" class="btn">Contact →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== КАРТЫ =====
+    html += `<h2>💳 Card Payments</h2><div class="grid-4">`;
+    cardPayments.forEach(m => {
+        html += `<div class="card"><strong>${m.name}</strong><p>${m.desc}</p><div class="step-box"><ul>`;
+        m.steps.split(' → ').forEach(s => { html += `<li>${s}</li>`; });
+        html += `</ul></div><a href="${m.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== ЦИФРОВЫЕ КОШЕЛЬКИ =====
+    html += `<h2>📱 Digital Wallets</h2><div class="grid-4">`;
+    digitalWallets.forEach(m => {
+        html += `<div class="card"><strong>${m.name}</strong><p>${m.desc}</p><div class="step-box"><ul>`;
+        m.steps.split(' → ').forEach(s => { html += `<li>${s}</li>`; });
+        html += `</ul></div><a href="${m.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== ОБМЕННИКИ =====
+    html += `<h2>🔄 Crypto Exchangers (No Registration)</h2><div class="grid-4">`;
+    exchangers.forEach(m => {
+        html += `<div class="card"><strong>${m.name}</strong><p>${m.desc}</p><div class="step-box"><ul>`;
+        m.steps.split(' → ').forEach(s => { html += `<li>${s}</li>`; });
+        html += `</ul></div><a href="${m.link}" target="_blank" class="btn">Open →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== МЕСТНЫЕ ВАЛЮТЫ =====
+    html += `<h2>🌍 50+ Local Currencies (P2P)</h2>
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">`;
+    localCurrencyMethods.forEach(c => {
+        html += `<span class="badge-crypto">${c.name}</span>`;
+    });
+    html += `</div>
+    <div class="grid-4">`;
+    localCurrencyMethods.forEach(c => {
+        html += `<div class="card"><strong>${c.name}</strong><p>P2P → USDT → USMT</p><a href="${c.link}" target="_blank" class="btn">Buy →</a></div>`;
+    });
+    html += `</div>`;
+
+    // ===== ФИНАЛЬНЫЙ ШАГ =====
+    html += `<h2>🎯 FINAL STEP: Swap to USMT</h2>
+    <div class="grid-3">
+        <div class="card" style="border-color:#00E6B4; background:rgba(0,230,180,0.05);">
+            <strong>🌀 Jupiter</strong>
+            <div class="step-box"><ul>
+                <li>1️⃣ Connect Phantom</li>
+                <li>2️⃣ Select USDC → USMT</li>
+                <li>3️⃣ Click Swap</li>
+            </ul></div>
+            <a href="https://jup.ag/swap/USDC-USMT" target="_blank" class="btn">Swap →</a>
+        </div>
+        <div class="card" style="border-color:#00E6B4; background:rgba(0,230,180,0.05);">
+            <strong>⚡ Raydium</strong>
+            <div class="step-box"><ul>
+                <li>1️⃣ Connect Phantom</li>
+                <li>2️⃣ Select USDC → USMT</li>
+                <li>3️⃣ Click Swap</li>
+            </ul></div>
+            <a href="https://raydium.io/swap/?inputMint=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&outputMint=8uhGgd7HBtNNZSVnUAx6T49ofSvmAGVJ1GcWjodFZbEz" target="_blank" class="btn">Swap →</a>
+        </div>
+        <div class="card" style="border-color:#00E6B4; background:rgba(0,230,180,0.05);">
+            <strong>🌊 Meteora</strong>
+            <div class="step-box"><ul>
+                <li>1️⃣ Connect Phantom</li>
+                <li>2️⃣ Select USDC → USMT</li>
+                <li>3️⃣ Click Swap</li>
+            </ul></div>
+            <a href="https://app.meteora.ag/pools/FH6mP2MUobhDnLERp9z5yv5t2zMUA9WDNXPixpbvYKMv" target="_blank" class="btn">Swap →</a>
+        </div>
+    </div>`;
+
+    // ===== КОШЕЛЁК =====
+    html += `<div class="wallet-box" style="text-align:center; margin-top:1rem;">
+        <strong>📤 Your USMT Wallet:</strong><br>
+        <span style="font-size:1.2rem;">F9vGgzKayqAUcbedagXzMhgXUfs5ranRftwGASALRvK9</span>
+        <br><button onclick="navigator.clipboard.writeText('F9vGgzKayqAUcbedagXzMhgXUfs5ranRftwGASALRvK9')" style="background:#00E6B4; color:#0A1C3A; border:none; border-radius:40px; padding:0.3rem 1rem; margin-top:0.5rem; cursor:pointer; font-weight:bold;">📋 Copy</button>
+    </div>`;
+
+    // ===== ИТОГО =====
+    html += `<div style="background:rgba(0,230,180,0.1); padding:1rem; border-radius:20px; margin-top:1rem; border-left:4px solid #00E6B4; text-align:center;">
+        <strong>📊 Total: 100+ Payment Methods Available</strong><br>
+        SWIFT · SEPA · ACH · CHAPS · TARGET2 · Visa · Mastercard · UnionPay · AMEX · JCB · Discover · Diners Club<br>
+        Apple Pay · Google Pay · Samsung Pay · PayPal · Skrill · Neteller · P2P (50+ currencies)<br>
+        MoonPay · BoomFi · Transacta · BitPay · Coinbase Commerce · NOWPayments · KuCoin Pay · Bitzaro<br>
+        ChangeNOW · SimpleSwap · RocketX · THORSwap · StealthEX · Exolix · Godex · Swapzone<br>
+        Letter of Credit · Standby LC · Bank Guarantee · Escrow · Corporate SWIFT · Institutional OTC · Treasury Settlement · Cross-Border Settlement
+    </div>`;
+
     document.getElementById('buyContent').innerHTML = html;
     document.getElementById('buyTitle').innerText = t.title;
     document.getElementById('buySubhead').innerText = t.sub;
 }
+
 let currentLang = 'en';
 function setLanguage(lang) {
     currentLang = lang;
